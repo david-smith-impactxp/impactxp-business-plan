@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #011935;
+  --accent: #FC5101;
+  --accent-light: #FFF2EB;
+  --accent-hover: #E54901;
+  --blue: #3566A0;
+  --blue-light: #EDF2F9;
+  --navy: #011935;
+  --navy-light: #486586;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --surface: #F7F7F7;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-roboto);
+}
+
+* { box-sizing: border-box; }
+
+html { background: var(--background); }
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-roboto), system-ui, sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+a, button { -webkit-tap-highlight-color: transparent; }
+
+::selection {
+  background: rgba(252, 81, 1, 0.15);
+  color: var(--foreground);
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+.animate-slideUp {
+  animation: slideUp 0.3s ease-out;
+}
+
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar { display: none; }
+
+@media print {
+  nav { display: none !important; }
+  body { font-size: 11pt; }
+}
