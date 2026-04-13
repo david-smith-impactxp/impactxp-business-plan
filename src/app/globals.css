@@ -3,16 +3,16 @@
 :root {
   --background: #ffffff;
   --foreground: #011935;
-  --accent: #FC5101;
-  --accent-light: #FFF2EB;
-  --accent-hover: #E54901;
-  --blue: #3566A0;
-  --blue-light: #EDF2F9;
+  --accent: #fc5101;
+  --accent-light: #fff2eb;
+  --accent-hover: #e54901;
+  --blue: #3566a0;
+  --blue-light: #edf2f9;
   --navy: #011935;
   --navy-light: #486586;
   --muted: #6b7280;
   --border: #e5e7eb;
-  --surface: #F7F7F7;
+  --surface: #f7f7f7;
 }
 
 @theme inline {
@@ -21,9 +21,13 @@
   --font-sans: var(--font-roboto);
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-html { background: var(--background); }
+html {
+  background: var(--background);
+}
 
 body {
   background: var(--background);
@@ -33,7 +37,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-a, button { -webkit-tap-highlight-color: transparent; }
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
 
 ::selection {
   background: rgba(252, 81, 1, 0.15);
@@ -41,8 +48,14 @@ a, button { -webkit-tap-highlight-color: transparent; }
 }
 
 @keyframes slideUp {
-  from { transform: translateY(100%); opacity: 0; }
-  to   { transform: translateY(0);    opacity: 1; }
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .animate-slideUp {
@@ -53,9 +66,15 @@ a, button { -webkit-tap-highlight-color: transparent; }
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-.scrollbar-none::-webkit-scrollbar { display: none; }
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
 
 @media print {
-  nav { display: none !important; }
-  body { font-size: 11pt; }
+  nav {
+    display: none !important;
+  }
+  body {
+    font-size: 11pt;
+  }
 }

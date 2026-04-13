@@ -14,7 +14,7 @@ export const coverQuote = {
     "Retailers Are Gaining Power in the Value Chain, but CPG's are Finding Success in Collaboration.",
   body: "By integrating advanced predictive analytics and real-time data, brands can transition from \u201Creporting the news\u201D of past performance to offering forward-looking solutions that drive total category growth rather than just brand-specific gains.",
   detail:
-    "This approach, characterized by transparency, executive-level commitment, and a focus on omnichannel strategies, positions CPGs as indispensable consultants who help retailers solve complex challenges, ultimately securing more favorable placement and long-term commitment in an increasingly competitive market.",
+    "This approach, characterised by transparency, executive-level commitment, and a focus on omnichannel strategies, positions CPGs as indispensable consultants who help retailers solve complex challenges, ultimately securing more favourable placement and long-term commitment in an increasingly competitive market.",
   attribution: "Shared with ImpactXP by Kraft Heinz.",
 };
 
