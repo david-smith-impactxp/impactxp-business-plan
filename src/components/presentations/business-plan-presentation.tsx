@@ -75,16 +75,7 @@ export function BusinessPlanPresentation() {
           id="cover"
           className="relative flex min-h-screen scroll-mt-0 items-center overflow-hidden bg-[#011935]"
         >
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            poster="/images/cover-bg.png"
-            className="absolute inset-0 h-full w-full object-cover opacity-60"
-          >
-            <source src="/images/hero-video.mp4" type="video/mp4" />
-          </video>
+          <img src="/images/cover-bg.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover opacity-60" />
           <div className="absolute inset-0 bg-gradient-to-br from-[#011935]/90 via-[#011935]/60 to-[#FC5101]/10" />
           <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#011935] to-transparent" />
 
