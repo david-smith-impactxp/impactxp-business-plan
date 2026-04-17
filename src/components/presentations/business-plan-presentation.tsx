@@ -33,7 +33,7 @@ import { AnimateIn } from "@/components/animate-in";
 import { useInView } from "motion/react";
 import {
   sections,
-  coverQuote,
+  marketContext,
   platformOverview,
   performanceData,
   arrChartData,
@@ -78,7 +78,7 @@ export function BusinessPlanPresentation() {
           className="relative flex min-h-screen scroll-mt-0 items-center justify-center overflow-hidden bg-[#011935]"
         >
           <img
-            src="/images/splash-bg.png"
+            src="/images/splash-bg.jpg"
             alt=""
             aria-hidden="true"
             className="absolute inset-0 h-full w-full object-cover opacity-70"
@@ -115,7 +115,7 @@ export function BusinessPlanPresentation() {
         <section id="platform-overview">
           <div className="relative h-[280px] overflow-hidden sm:h-[340px]">
             <img
-              src="/images/platform-overview.png"
+              src="/images/platform-overview.jpg"
               alt=""
               aria-hidden="true"
               className="absolute inset-0 h-full w-full object-cover"
@@ -229,49 +229,70 @@ export function BusinessPlanPresentation() {
           </div>
         </section>
 
-        {/* ═══ SLIDE 3 — COVER / DELOITTE QUOTE ═══ */}
-        <section
-          id="cover"
-          className="relative flex min-h-screen scroll-mt-0 items-center overflow-hidden bg-[#011935]"
-        >
-          <img src="/images/cover-bg.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover opacity-60" />
-          <div className="absolute inset-0 bg-gradient-to-br from-[#011935]/90 via-[#011935]/60 to-[#FC5101]/10" />
-          <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#011935] to-transparent" />
-
-          <div className="relative z-10 mx-auto max-w-5xl px-5 py-16 text-center sm:px-16 sm:py-24">
-            <AnimateIn>
-              <div className="mx-auto mb-6 h-px w-24 bg-[#FC5101]" />
-            </AnimateIn>
-
-            <AnimateIn delay={0.1}>
-              <QuoteBlock quote={coverQuote.headline} source={coverQuote.source} />
-            </AnimateIn>
-
-            <AnimateIn delay={0.2}>
-              <p className="mx-auto mt-6 max-w-3xl text-sm leading-7 text-white/75 sm:text-base">
-                {coverQuote.body}
-              </p>
-            </AnimateIn>
-            <AnimateIn delay={0.3}>
-              <p className="mx-auto mt-4 max-w-3xl text-sm leading-7 text-white/60 sm:text-base">
-                {coverQuote.detail}
-              </p>
-            </AnimateIn>
-
-            <AnimateIn delay={0.4}>
-              <div className="mt-10 sm:mt-12">
-                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#FC5101]">
-                  {coverQuote.attribution}
+        {/* ═══ SLIDE 3 — MARKET CONTEXT ═══ */}
+        <section id="market-context">
+          <div className="relative h-[280px] overflow-hidden sm:h-[340px]">
+            <img
+              src="/images/cover-bg.jpg"
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#011935] via-[#011935]/40 to-black/20" />
+            <div className="absolute inset-x-0 bottom-0 z-10 px-5 pb-8 sm:px-16">
+              <div className="mx-auto max-w-6xl">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#FC5101]">
+                  {marketContext.eyebrow}
+                </p>
+                <h2 className="mt-2 text-2xl font-bold text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] sm:text-3xl">
+                  {marketContext.slideTitle}
+                </h2>
+                <p className="mt-3 max-w-3xl text-sm leading-6 text-white/70">
+                  {marketContext.subtitle}
                 </p>
               </div>
-            </AnimateIn>
+            </div>
+          </div>
+
+          <div className="bg-white px-5 py-12 sm:px-16 sm:py-16">
+            <div className="mx-auto max-w-6xl">
+              <AnimateIn>
+                <div className="max-w-3xl">
+                  <QuoteBlock
+                    quote={marketContext.headline}
+                    source={marketContext.source}
+                    variant="light"
+                    align="left"
+                  />
+                </div>
+              </AnimateIn>
+
+              <AnimateIn delay={0.2}>
+                <p className="mt-10 max-w-3xl text-sm leading-7 text-[#011935] sm:text-base">
+                  {marketContext.body}
+                </p>
+              </AnimateIn>
+
+              <AnimateIn delay={0.3}>
+                <p className="mt-4 max-w-3xl text-sm leading-7 text-[#486586] sm:text-base">
+                  {marketContext.detail}
+                </p>
+              </AnimateIn>
+
+              <AnimateIn delay={0.4}>
+                <div className="mt-10 h-px w-16 bg-[#FC5101]/50" />
+                <p className="mt-4 text-xs font-semibold uppercase tracking-[0.3em] text-[#FC5101]">
+                  {marketContext.attribution}
+                </p>
+              </AnimateIn>
+            </div>
           </div>
         </section>
 
         {/* ═══ SLIDE 2 — STRONG CURRENT PERFORMANCE ═══ */}
         <section id="performance">
           <div className="relative h-[280px] overflow-hidden sm:h-[340px]">
-            <img src="/images/performance-hero.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover" />
+            <img src="/images/performance-hero.jpg" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#011935] via-[#011935]/40 to-black/20" />
             <div className="absolute inset-x-0 bottom-0 z-10 px-5 pb-8 sm:px-16">
               <div className="mx-auto max-w-6xl">
@@ -437,7 +458,7 @@ export function BusinessPlanPresentation() {
         {/* ═══ SLIDE 3 — SCALABLE GROWTH MODEL ═══ */}
         <section id="growth-model">
           <div className="relative h-[280px] overflow-hidden sm:h-[340px]">
-            <img src="/images/growth-model.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover" />
+            <img src="/images/growth-model.jpg" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#011935] via-[#011935]/40 to-black/20" />
             <div className="absolute inset-x-0 bottom-0 z-10 px-5 pb-8 sm:px-16">
               <div className="mx-auto max-w-6xl">
@@ -491,7 +512,7 @@ export function BusinessPlanPresentation() {
         {/* ═══ SLIDE 4 — ENTERPRISE FOUNDATIONS ═══ */}
         <section id="enterprise-foundations">
           <div className="relative h-[280px] overflow-hidden sm:h-[340px]">
-            <img src="/images/enterprise-foundations.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover" />
+            <img src="/images/enterprise-foundations.jpg" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#011935] via-[#011935]/40 to-black/20" />
             <div className="absolute inset-x-0 bottom-0 z-10 px-5 pb-8 sm:px-16">
               <div className="mx-auto max-w-6xl">
@@ -550,7 +571,7 @@ export function BusinessPlanPresentation() {
         {/* ═══ SLIDE 5 — INVESTMENT ALLOCATION ═══ */}
         <section id="investment">
           <div className="relative h-[280px] overflow-hidden sm:h-[340px]">
-            <img src="/images/investment-allocation.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover" />
+            <img src="/images/investment-allocation.jpg" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#011935] via-[#011935]/40 to-black/20" />
             <div className="absolute inset-x-0 bottom-0 z-10 px-5 pb-8 sm:px-16">
               <div className="mx-auto max-w-6xl">
@@ -626,7 +647,7 @@ export function BusinessPlanPresentation() {
         {/* ═══ SLIDE 6 — GLOBAL EXPANSION ═══ */}
         <section id="global-expansion">
           <div className="relative h-[280px] overflow-hidden sm:h-[340px]">
-            <img src="/images/global-expansion.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover" />
+            <img src="/images/global-expansion.jpg" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#011935] via-[#011935]/40 to-black/20" />
             <div className="absolute inset-x-0 bottom-0 z-10 px-5 pb-8 sm:px-16">
               <div className="mx-auto max-w-6xl">
@@ -687,7 +708,7 @@ export function BusinessPlanPresentation() {
         {/* ═══ SLIDE 7 — WHY NOW / INVESTMENT SUMMARY ═══ */}
         <section id="why-now">
           <div className="relative h-[280px] overflow-hidden sm:h-[340px]">
-            <img src="/images/why-now-closing.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover" />
+            <img src="/images/why-now-closing.jpg" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#011935] via-[#011935]/40 to-black/20" />
             <div className="absolute inset-x-0 bottom-0 z-10 px-5 pb-8 sm:px-16">
               <div className="mx-auto max-w-6xl">
@@ -723,7 +744,7 @@ export function BusinessPlanPresentation() {
             {/* Closing Statement */}
             <AnimateIn>
             <div className="relative mt-10 overflow-hidden rounded-xl bg-[#011935]">
-              <img src="/images/why-now-closing.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover opacity-40" />
+              <img src="/images/why-now-closing.jpg" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover opacity-40" />
               <div className="absolute inset-0 bg-gradient-to-r from-[#011935]/80 to-[#011935]/60" />
               <div className="relative h-1 bg-gradient-to-r from-[#FC5101] to-[#3566A0]" />
               <div className="relative p-6 sm:p-10">

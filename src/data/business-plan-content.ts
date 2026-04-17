@@ -1,7 +1,7 @@
 export const sections = [
   { id: "splash", label: "ImpactXP" },
   { id: "platform-overview", label: "Platform Overview" },
-  { id: "cover", label: "Cover" },
+  { id: "market-context", label: "Market Context" },
   { id: "performance", label: "Current Performance" },
   { id: "growth-model", label: "Growth Model" },
   { id: "enterprise-foundations", label: "Enterprise Foundations" },
@@ -56,7 +56,11 @@ export const platformOverview = {
     "Enabling CPGs to move from reporting past performance to shaping future category growth through data, collaboration, and execution.",
 };
 
-export const coverQuote = {
+export const marketContext = {
+  eyebrow: "Market Context",
+  slideTitle: "The Market Is Shifting Toward Collaboration",
+  subtitle:
+    "Retailers are gaining power in the value chain \u2014 and CPGs are finding success by moving from reporting to partnership.",
   source: "Deloitte",
   headline:
     "Retailers Are Gaining Power in the Value Chain, but CPG's are Finding Success in Collaboration.",
