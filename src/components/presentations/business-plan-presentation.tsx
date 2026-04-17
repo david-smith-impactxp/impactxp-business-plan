@@ -77,9 +77,13 @@ export function BusinessPlanPresentation() {
           id="splash"
           className="relative flex min-h-screen scroll-mt-0 items-center justify-center overflow-hidden bg-[#011935]"
         >
-          <img
-            src="/images/splash-bg.jpg"
-            alt=""
+          <video
+            src="/shop_zoom.mp4"
+            poster="/images/splash-bg.jpg"
+            autoPlay
+            muted
+            playsInline
+            preload="auto"
             aria-hidden="true"
             className="absolute inset-0 h-full w-full object-cover opacity-70"
           />
@@ -113,32 +117,21 @@ export function BusinessPlanPresentation() {
 
         {/* ═══ SLIDE 2 — PLATFORM OVERVIEW ═══ */}
         <section id="platform-overview">
-          <div className="relative h-[280px] overflow-hidden sm:h-[340px]">
-            <img
-              src="/images/platform-overview.jpg"
-              alt=""
-              aria-hidden="true"
-              className="absolute inset-0 h-full w-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#011935] via-[#011935]/40 to-black/20" />
-            <div className="absolute inset-x-0 bottom-0 z-10 px-5 pb-8 sm:px-16">
-              <div className="mx-auto max-w-6xl">
+          <div className="bg-white px-5 py-12 sm:px-16 sm:py-16">
+            <div className="mx-auto max-w-6xl">
+              <AnimateIn>
                 <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#FC5101]">
                   {platformOverview.eyebrow}
                 </p>
-                <h2 className="mt-2 text-2xl font-bold text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] sm:text-3xl">
+                <h2 className="mt-2 text-2xl font-bold text-[#011935] sm:text-3xl">
                   {platformOverview.title}
                 </h2>
-                <p className="mt-3 max-w-3xl text-sm leading-6 text-white/70">
+                <p className="mt-3 max-w-3xl text-sm leading-6 text-[#486586] sm:text-base">
                   {platformOverview.intro}
                 </p>
-              </div>
-            </div>
-          </div>
+              </AnimateIn>
 
-          <div className="bg-white px-5 py-12 sm:px-16 sm:py-16">
-            <div className="mx-auto max-w-6xl">
-              <div className="grid gap-6 sm:grid-cols-2">
+              <div className="mt-10 grid gap-6 sm:grid-cols-2">
                 {/* End-to-End Capability */}
                 <AnimateIn className="h-full">
                   <div className="h-full rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm">
@@ -254,33 +247,35 @@ export function BusinessPlanPresentation() {
             </div>
           </div>
 
-          <div className="bg-white px-5 py-12 sm:px-16 sm:py-16">
-            <div className="mx-auto max-w-6xl">
-              <AnimateIn>
-                <div className="max-w-3xl">
-                  <QuoteBlock
-                    quote={marketContext.headline}
-                    source={marketContext.source}
-                    variant="light"
-                    align="left"
-                  />
-                </div>
-              </AnimateIn>
+          <div className="flex min-h-screen flex-col bg-white px-5 py-12 sm:px-16 sm:py-16">
+            <div className="mx-auto flex w-full max-w-6xl flex-1 flex-col justify-between gap-12">
+              <div>
+                <AnimateIn>
+                  <div className="max-w-3xl">
+                    <QuoteBlock
+                      quote={marketContext.headline}
+                      source={marketContext.source}
+                      variant="light"
+                      align="left"
+                    />
+                  </div>
+                </AnimateIn>
 
-              <AnimateIn delay={0.2}>
-                <p className="mt-10 max-w-3xl text-sm leading-7 text-[#011935] sm:text-base">
-                  {marketContext.body}
-                </p>
-              </AnimateIn>
+                <AnimateIn delay={0.2}>
+                  <p className="mt-10 max-w-3xl text-sm leading-7 text-[#011935] sm:text-base">
+                    {marketContext.body}
+                  </p>
+                </AnimateIn>
 
-              <AnimateIn delay={0.3}>
-                <p className="mt-4 max-w-3xl text-sm leading-7 text-[#486586] sm:text-base">
-                  {marketContext.detail}
-                </p>
-              </AnimateIn>
+                <AnimateIn delay={0.3}>
+                  <p className="mt-4 max-w-3xl text-sm leading-7 text-[#486586] sm:text-base">
+                    {marketContext.detail}
+                  </p>
+                </AnimateIn>
+              </div>
 
               <AnimateIn delay={0.4}>
-                <div className="mt-10 h-px w-16 bg-[#FC5101]/50" />
+                <div className="h-px w-16 bg-[#FC5101]/50" />
                 <p className="mt-4 text-xs font-semibold uppercase tracking-[0.3em] text-[#FC5101]">
                   {marketContext.attribution}
                 </p>
