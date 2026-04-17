@@ -1,4 +1,6 @@
 export const sections = [
+  { id: "splash", label: "ImpactXP" },
+  { id: "platform-overview", label: "Platform Overview" },
   { id: "cover", label: "Cover" },
   { id: "performance", label: "Current Performance" },
   { id: "growth-model", label: "Growth Model" },
@@ -7,6 +9,52 @@ export const sections = [
   { id: "global-expansion", label: "Global Expansion" },
   { id: "why-now", label: "Why Now" },
 ] as const;
+
+export const platformOverview = {
+  eyebrow: "Platform Overview",
+  title: "A Connected Platform Driving Better Retail Decisions",
+  intro:
+    "ImpactXP is a modular SaaS platform designed to help CPG brands and retailers plan, visualise and validate better commercial decisions.",
+  endToEnd: {
+    title: "End-to-End Capability",
+    steps: [
+      { verb: "Plan", body: "Range, assortment and category strategy" },
+      { verb: "Visualise", body: "In-store execution and shopper experience" },
+      { verb: "Validate", body: "Real-world testing and optimisation" },
+    ],
+    note: "Moves clients from insight to action within a single connected environment",
+  },
+  modules: {
+    title: "Five Core Modules",
+    items: [
+      { name: "PlanogramXP", body: "Planogram creation and optimisation" },
+      { name: "RangeXP", body: "Range and assortment intelligence" },
+      { name: "ShopperXP", body: "In-store visualisation and experience" },
+      { name: "EngageXP", body: "Virtual retail environments and collaboration" },
+      { name: "ResearchXP", body: "Rapid validation with real shoppers" },
+    ],
+    note: "Each module can operate independently or as part of a fully integrated system",
+  },
+  differentiation: {
+    title: "Key Differentiation",
+    bullets: [
+      "Single connected platform vs fragmented legacy tools",
+      "Built from real-world shopper and retail experience",
+      "Designed for global, multi-market deployment",
+      "Increasingly enhanced by AI-driven workflows and automation",
+    ],
+  },
+  commercialImpact: {
+    title: "Commercial Impact",
+    bullets: [
+      "Faster, better-informed decision making",
+      "Improved collaboration between brands and retailers",
+      "Focus on total category growth, not just brand performance",
+    ],
+  },
+  positioningLine:
+    "Enabling CPGs to move from reporting past performance to shaping future category growth through data, collaboration, and execution.",
+};
 
 export const coverQuote = {
   source: "Deloitte",
@@ -156,43 +204,51 @@ export const enterpriseFoundations = {
   keyPoint: "The constraint is execution capacity, not market demand",
 };
 
+export const investmentSubtitle =
+  "Focused Investment to Convert Demand and Scale Client Value";
+
 export const investmentAreas = [
   {
     title: "Commercial Acceleration",
-    amount: "~£1.0\u20131.2m",
+    amount: "~£0.5m",
     bullets: [
-      "Sales leadership and structured pipeline conversion",
-      "Targeted marketing capability",
-      "Accelerates conversion of existing pipeline and drives new business",
+      "Strengthen sales leadership",
+      "Invest in a structured CRM system",
+      "Improve pipeline management and conversion",
+      "Targeted, high-quality marketing",
+      "Supports efficient conversion of existing pipeline and sustained inbound demand",
     ],
   },
   {
     title: "Product & AI Development",
-    amount: "~£0.8\u20131.0m",
+    amount: "~£0.5m",
     bullets: [
-      "AI / agent-led workflow development",
-      "App expansion capability",
-      "Improved onboarding and usability",
-      "Increases scalability and revenue potential",
+      "Focused investment in AI / workflow acceleration",
+      "Rapid solution prototyping capability",
+      "Improve onboarding speed and usability",
+      "Enhances platform efficiency and speed to value",
     ],
   },
   {
     title: "Delivery & Customer Success",
-    amount: "~£0.5\u20130.6m",
+    amount: "~£1.5m",
     bullets: [
-      "Onboarding and client success teams",
-      "Support multi-market expansion",
-      "Enables faster rollout and deeper client penetration",
+      "Build a higher-calibre customer success function",
+      "Recruit additional expertise in shopper behaviour, category strategy, and data & analytics",
+      "Deeply understand client challenges",
+      "Use AI to generate rapid, insight-led solutions",
+      "Work with development for QA and productisation",
+      "Drives faster expansion, higher retention, and increased ARR per client",
     ],
   },
   {
     title: "Infrastructure & Global Enablement",
-    amount: "~£0.5\u20130.8m",
+    amount: "~£0.5m",
     bullets: [
-      "Legal / contracts manager (MSA / SLA)",
-      "ISO completion and SOC accreditation",
+      "Legal / contracts manager (MSA / SLA efficiency)",
+      "ISO completion + SOC accreditation",
       "US entity setup and initial presence",
-      "Global delivery model (time zone coverage)",
+      "Global delivery capability (time zone support)",
       "Removes structural friction and enables scalable global operations",
     ],
   },
@@ -200,7 +256,7 @@ export const investmentAreas = [
 
 export const investmentSummary = {
   keyPoint:
-    "This investment is designed to convert existing demand into ARR and accelerate expansion within our global client base",
+    "Investment is focused on converting demand and accelerating expansion within existing clients, where the greatest value creation opportunity exists",
   closing:
     "This is targeted investment to accelerate a proven model, not to fund early-stage growth.",
 };

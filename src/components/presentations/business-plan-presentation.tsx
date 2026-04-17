@@ -34,11 +34,13 @@ import { useInView } from "motion/react";
 import {
   sections,
   coverQuote,
+  platformOverview,
   performanceData,
   arrChartData,
   growthModelPillars,
   enterpriseFoundations,
   investmentAreas,
+  investmentSubtitle,
   investmentSummary,
   globalExpansionSteps,
   globalExpansionSummary,
@@ -70,7 +72,164 @@ export function BusinessPlanPresentation() {
       {!hideSidebar && <SideIndex items={sections} />}
 
       <main className={`min-w-0 flex-1 ${!hideSidebar ? "xl:ml-[220px]" : ""}`}>
-        {/* ═══ SLIDE 1 — COVER / DELOITTE QUOTE ═══ */}
+        {/* ═══ SLIDE 1 — SPLASH ═══ */}
+        <section
+          id="splash"
+          className="relative flex min-h-screen scroll-mt-0 items-center justify-center overflow-hidden bg-[#011935]"
+        >
+          <img
+            src="/images/splash-bg.png"
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full object-cover opacity-70"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#011935]/85 via-[#011935]/55 to-[#FC5101]/10" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(1,25,53,0)_0%,_rgba(1,25,53,0.6)_70%,_rgba(1,25,53,0.9)_100%)]" />
+
+          <div className="relative z-10 mx-auto max-w-4xl px-5 text-center sm:px-16">
+            <AnimateIn>
+              <Image
+                src="/logos/impactxp-logo-white.svg"
+                alt="ImpactXP"
+                width={696}
+                height={132}
+                priority
+                unoptimized
+                className="mx-auto h-20 w-auto object-contain sm:h-24"
+              />
+            </AnimateIn>
+
+            <AnimateIn delay={0.2}>
+              <div className="mx-auto mt-8 h-px w-24 bg-[#FC5101]" />
+            </AnimateIn>
+
+            <AnimateIn delay={0.3}>
+              <p className="mt-6 text-[10px] font-semibold uppercase tracking-[0.4em] text-white/60 sm:text-xs">
+                Business Plan · April 2026
+              </p>
+            </AnimateIn>
+          </div>
+        </section>
+
+        {/* ═══ SLIDE 2 — PLATFORM OVERVIEW ═══ */}
+        <section id="platform-overview">
+          <div className="relative h-[280px] overflow-hidden sm:h-[340px]">
+            <img
+              src="/images/platform-overview.png"
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#011935] via-[#011935]/40 to-black/20" />
+            <div className="absolute inset-x-0 bottom-0 z-10 px-5 pb-8 sm:px-16">
+              <div className="mx-auto max-w-6xl">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#FC5101]">
+                  {platformOverview.eyebrow}
+                </p>
+                <h2 className="mt-2 text-2xl font-bold text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] sm:text-3xl">
+                  {platformOverview.title}
+                </h2>
+                <p className="mt-3 max-w-3xl text-sm leading-6 text-white/70">
+                  {platformOverview.intro}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white px-5 py-12 sm:px-16 sm:py-16">
+            <div className="mx-auto max-w-6xl">
+              <div className="grid gap-6 sm:grid-cols-2">
+                {/* End-to-End Capability */}
+                <AnimateIn className="h-full">
+                  <div className="h-full rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm">
+                    <h3 className="text-sm font-bold text-[#011935]">
+                      {platformOverview.endToEnd.title}
+                    </h3>
+                    <ul className="mt-4 space-y-3">
+                      {platformOverview.endToEnd.steps.map((s) => (
+                        <li key={s.verb} className="flex items-start gap-3 text-sm">
+                          <span className="mt-0.5 shrink-0 rounded-md bg-[#FFF2EB] px-2 py-0.5 text-xs font-bold uppercase tracking-wider text-[#FC5101]">
+                            {s.verb}
+                          </span>
+                          <span className="text-[#486586]">{s.body}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <p className="mt-4 text-xs italic text-[#486586]/70">
+                      {platformOverview.endToEnd.note}
+                    </p>
+                  </div>
+                </AnimateIn>
+
+                {/* Five Core Modules */}
+                <AnimateIn delay={0.1} className="h-full">
+                  <div className="h-full rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm">
+                    <h3 className="text-sm font-bold text-[#011935]">
+                      {platformOverview.modules.title}
+                    </h3>
+                    <ul className="mt-4 space-y-2">
+                      {platformOverview.modules.items.map((m) => (
+                        <li key={m.name} className="flex items-baseline gap-2 text-sm">
+                          <CheckCircle2 size={13} className="shrink-0 translate-y-0.5 text-[#FC5101]" />
+                          <span className="font-bold text-[#011935]">{m.name}</span>
+                          <span className="text-[#486586]">— {m.body}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <p className="mt-4 text-xs italic text-[#486586]/70">
+                      {platformOverview.modules.note}
+                    </p>
+                  </div>
+                </AnimateIn>
+
+                {/* Key Differentiation */}
+                <AnimateIn delay={0.2} className="h-full">
+                  <div className="h-full rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm">
+                    <h3 className="text-sm font-bold text-[#011935]">
+                      {platformOverview.differentiation.title}
+                    </h3>
+                    <ul className="mt-4 space-y-2">
+                      {platformOverview.differentiation.bullets.map((b) => (
+                        <li key={b} className="flex items-start gap-2 text-sm text-[#486586]">
+                          <CheckCircle2 size={13} className="mt-0.5 shrink-0 text-[#FC5101]/60" />
+                          {b}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </AnimateIn>
+
+                {/* Commercial Impact */}
+                <AnimateIn delay={0.3} className="h-full">
+                  <div className="h-full rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm">
+                    <h3 className="text-sm font-bold text-[#011935]">
+                      {platformOverview.commercialImpact.title}
+                    </h3>
+                    <ul className="mt-4 space-y-2">
+                      {platformOverview.commercialImpact.bullets.map((b) => (
+                        <li key={b} className="flex items-start gap-2 text-sm text-[#486586]">
+                          <CheckCircle2 size={13} className="mt-0.5 shrink-0 text-[#FC5101]/60" />
+                          {b}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </AnimateIn>
+              </div>
+
+              {/* Positioning Line */}
+              <AnimateIn delay={0.1}>
+                <div className="mt-8 rounded-xl bg-[#011935] p-6 sm:p-8">
+                  <p className="text-sm leading-7 text-white/85 sm:text-base">
+                    {platformOverview.positioningLine}
+                  </p>
+                </div>
+              </AnimateIn>
+            </div>
+          </div>
+        </section>
+
+        {/* ═══ SLIDE 3 — COVER / DELOITTE QUOTE ═══ */}
         <section
           id="cover"
           className="relative flex min-h-screen scroll-mt-0 items-center overflow-hidden bg-[#011935]"
@@ -81,39 +240,25 @@ export function BusinessPlanPresentation() {
 
           <div className="relative z-10 mx-auto max-w-5xl px-5 py-16 text-center sm:px-16 sm:py-24">
             <AnimateIn>
-              <div className="mx-auto mb-6 sm:mb-8">
-                <Image
-                  src="/logos/impactxp-logo-white.svg"
-                  alt="ImpactXP"
-                  width={696}
-                  height={132}
-                  priority
-                  unoptimized
-                  className="mx-auto h-14 w-auto object-contain sm:h-16"
-                />
-              </div>
-            </AnimateIn>
-
-            <AnimateIn delay={0.1}>
               <div className="mx-auto mb-6 h-px w-24 bg-[#FC5101]" />
             </AnimateIn>
 
-            <AnimateIn delay={0.2}>
+            <AnimateIn delay={0.1}>
               <QuoteBlock quote={coverQuote.headline} source={coverQuote.source} />
             </AnimateIn>
 
-            <AnimateIn delay={0.3}>
+            <AnimateIn delay={0.2}>
               <p className="mx-auto mt-6 max-w-3xl text-sm leading-7 text-white/75 sm:text-base">
                 {coverQuote.body}
               </p>
             </AnimateIn>
-            <AnimateIn delay={0.4}>
+            <AnimateIn delay={0.3}>
               <p className="mx-auto mt-4 max-w-3xl text-sm leading-7 text-white/60 sm:text-base">
                 {coverQuote.detail}
               </p>
             </AnimateIn>
 
-            <AnimateIn delay={0.5}>
+            <AnimateIn delay={0.4}>
               <div className="mt-10 sm:mt-12">
                 <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#FC5101]">
                   {coverQuote.attribution}
@@ -415,6 +560,9 @@ export function BusinessPlanPresentation() {
                 <h2 className="mt-2 text-2xl font-bold text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] sm:text-3xl">
                   Targeted Investment to Unlock Growth (£2–3m)
                 </h2>
+                <p className="mt-3 max-w-2xl text-sm leading-6 text-white/70">
+                  {investmentSubtitle}
+                </p>
               </div>
             </div>
           </div>
