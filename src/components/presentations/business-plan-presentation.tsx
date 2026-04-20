@@ -38,6 +38,7 @@ import {
   sections,
   marketContext,
   platformOverview,
+  trustedBy,
   performanceData,
   arrChartData,
   growthModelPillars,
@@ -300,10 +301,49 @@ export function BusinessPlanPresentation() {
           </div>
         </section>
 
+        {/* ═══ SLIDE 2.5 — TRUSTED BY ═══ */}
+        <section id="trusted-by" className="bg-[#011935]">
+          <div className="relative overflow-hidden px-5 py-16 sm:px-16 sm:py-20">
+            <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#FC5101] to-[#3566A0]" />
+            <div className="mx-auto max-w-6xl">
+              <AnimateIn>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#FC5101]">
+                  {trustedBy.eyebrow}
+                </p>
+                <h2 className="mt-2 text-2xl font-bold text-white sm:text-3xl">
+                  {trustedBy.title}
+                </h2>
+                <p className="mt-3 max-w-3xl text-sm leading-6 text-white/70 sm:text-base">
+                  {trustedBy.subtitle}
+                </p>
+              </AnimateIn>
+
+              <AnimateIn delay={0.15}>
+                <Image
+                  src="/images/logos.png"
+                  alt="Global CPG brands and retailers using ImpactXP"
+                  width={1024}
+                  height={569}
+                  unoptimized
+                  className="mt-10 h-auto w-full"
+                />
+              </AnimateIn>
+
+              <AnimateIn delay={0.3}>
+                <div className="mt-10 border-t border-white/10 pt-5">
+                  <p className="text-sm italic leading-6 text-white/60 sm:text-base">
+                    {trustedBy.footer}
+                  </p>
+                </div>
+              </AnimateIn>
+            </div>
+          </div>
+        </section>
+
         {/* ═══ SLIDE 3 — MARKET CONTEXT ═══ */}
         <section id="market-context">
           <div className="relative h-[280px] overflow-hidden sm:h-[340px]">
-            <ParallaxImage src="/images/cover-bg.jpg" />
+            <ParallaxImage src="/images/cover-bg.jpg" className="object-top" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#011935] via-[#011935]/40 to-black/20" />
             <div className="absolute inset-x-0 bottom-0 z-10 px-5 pb-8 sm:px-16">
               <div className="mx-auto max-w-6xl">

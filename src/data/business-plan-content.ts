@@ -1,6 +1,7 @@
 export const sections = [
   { id: "splash", label: "ImpactXP" },
   { id: "platform-overview", label: "Platform Overview" },
+  { id: "trusted-by", label: "Trusted By" },
   { id: "market-context", label: "Market Context" },
   { id: "performance", label: "Current Performance" },
   { id: "growth-model", label: "Growth Model" },
@@ -9,6 +10,15 @@ export const sections = [
   { id: "global-expansion", label: "Global Expansion" },
   { id: "why-now", label: "Why Now" },
 ] as const;
+
+export const trustedBy = {
+  eyebrow: "Customers",
+  title: "Trusted by Leading Global Brands",
+  subtitle:
+    "30+ global CPG brands and retailers using ImpactXP across multiple markets",
+  footer:
+    "Embedded within leading global organisations across categories and geographies",
+};
 
 export const platformOverview = {
   eyebrow: "Platform Overview",
