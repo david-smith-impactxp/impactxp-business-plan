@@ -138,7 +138,7 @@ export function BusinessPlanPresentation() {
 
         {/* ═══ SLIDE 2 — PLATFORM OVERVIEW ═══ */}
         <section id="platform-overview">
-          <div className="bg-white px-5 py-12 sm:px-16 sm:py-16">
+          <div className="bg-[#F7F7F7] px-5 py-12 sm:px-16 sm:py-16">
             <div className="mx-auto max-w-6xl">
               <AnimateIn>
                 <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#FC5101]">
@@ -304,7 +304,6 @@ export function BusinessPlanPresentation() {
         {/* ═══ SLIDE 2.5 — TRUSTED BY ═══ */}
         <section id="trusted-by" className="bg-[#011935]">
           <div className="relative overflow-hidden px-5 py-16 sm:px-16 sm:py-20">
-            <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#FC5101] to-[#3566A0]" />
             <div className="mx-auto max-w-6xl">
               <AnimateIn>
                 <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#FC5101]">
@@ -358,7 +357,7 @@ export function BusinessPlanPresentation() {
             </div>
           </div>
 
-          <div className="bg-white px-5 py-12 sm:px-16 sm:py-16">
+          <div className="bg-[#F7F7F7] px-5 py-12 sm:px-16 sm:py-16">
             <div className="mx-auto w-full max-w-6xl">
               <AnimateIn>
                 <blockquote className="max-w-3xl text-left">
@@ -418,7 +417,7 @@ export function BusinessPlanPresentation() {
             </div>
           </div>
 
-          <div className="bg-white px-5 py-12 sm:px-16 sm:py-16">
+          <div className="bg-[#F7F7F7] px-5 py-12 sm:px-16 sm:py-16">
             <div className="mx-auto max-w-6xl">
               <div className="grid gap-6 lg:grid-cols-3">
                 {/* Current Position */}
@@ -580,7 +579,7 @@ export function BusinessPlanPresentation() {
                   </div>
 
                   <div className="flex flex-col gap-6">
-                    <div className="flex-1 rounded-xl border border-[#e5e7eb] bg-[#FFF2EB] p-5">
+                    <div className="flex-1 rounded-xl bg-[#FFE1CC] p-5">
                       <p className="text-sm font-bold uppercase tracking-widest text-[#FC5101]">
                         Value Creation
                       </p>
@@ -599,7 +598,7 @@ export function BusinessPlanPresentation() {
                         ))}
                       </ul>
                     </div>
-                    <div className="flex-1 rounded-xl border border-[#e5e7eb] bg-[#EDF2F9] p-5">
+                    <div className="flex-1 rounded-xl bg-[#DCE8FA] p-5">
                       <p className="text-sm font-bold uppercase tracking-widest text-[#3566A0]">
                         Alignment
                       </p>
@@ -739,7 +738,7 @@ export function BusinessPlanPresentation() {
 
               {/* Summary — key point style */}
               <AnimateIn delay={0.2}>
-                <div className="mt-5 flex items-center gap-3 rounded-xl bg-[#FFF2EB] p-5">
+                <div className="mt-5 flex items-center gap-3 rounded-xl bg-[#FFE1CC] p-5">
                   <Zap size={20} className="shrink-0 text-[#FC5101]" />
                   <p className="text-sm text-[#011935]">
                     <span className="font-bold">In Summary:</span>{" "}
@@ -768,7 +767,7 @@ export function BusinessPlanPresentation() {
             </div>
           </div>
 
-          <div className="bg-white px-5 py-12 sm:px-16 sm:py-16">
+          <div className="bg-[#F7F7F7] px-5 py-12 sm:px-16 sm:py-16">
             <div className="mx-auto max-w-6xl">
               <div className="grid gap-6 sm:grid-cols-2">
                 {enterpriseFoundations.quadrants.map((q, i) => (
@@ -807,7 +806,7 @@ export function BusinessPlanPresentation() {
               {/* Positioning Statement */}
               <AnimateIn>
                 <div className="mt-8 rounded-xl bg-[#011935] p-6 sm:p-8">
-                  <p className="text-sm leading-7 text-white/85 sm:text-base">
+                  <p className="text-sm leading-7 text-white sm:text-base">
                     {enterpriseFoundations.positioning}
                   </p>
                 </div>
@@ -815,7 +814,7 @@ export function BusinessPlanPresentation() {
 
               {/* Key Point */}
               <AnimateIn delay={0.1}>
-                <div className="mt-5 flex items-center gap-3 rounded-xl bg-[#FFF2EB] p-5">
+                <div className="mt-5 flex items-center gap-3 rounded-xl bg-[#FFE1CC] p-5">
                   <Zap size={20} className="shrink-0 text-[#FC5101]" />
                   <p className="text-sm text-[#011935]">
                     <span className="font-bold">Key Point:</span>{" "}
@@ -899,7 +898,7 @@ export function BusinessPlanPresentation() {
               {/* Positioning Statement */}
               <AnimateIn>
                 <div className="mt-8 rounded-xl bg-[#011935] p-6 sm:p-8">
-                  <p className="text-sm leading-7 text-white/85 sm:text-base">
+                  <p className="text-sm leading-7 text-white sm:text-base">
                     {investmentSummary.keyPoint}
                   </p>
                 </div>
@@ -907,7 +906,7 @@ export function BusinessPlanPresentation() {
 
               {/* Key Point */}
               <AnimateIn delay={0.1}>
-                <div className="mt-5 flex items-center gap-3 rounded-xl bg-[#FFF2EB] p-5">
+                <div className="mt-5 flex items-center gap-3 rounded-xl bg-[#FFE1CC] p-5">
                   <Zap size={20} className="shrink-0 text-[#FC5101]" />
                   <p className="text-sm text-[#011935]">
                     <span className="font-bold">Key Point:</span>{" "}
@@ -936,7 +935,7 @@ export function BusinessPlanPresentation() {
             </div>
           </div>
 
-          <div className="bg-white px-5 py-12 sm:px-16 sm:py-16">
+          <div className="bg-[#F7F7F7] px-5 py-12 sm:px-16 sm:py-16">
             <div className="mx-auto max-w-6xl">
               <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                 {globalExpansionSteps.map((step, i) => {
@@ -984,7 +983,7 @@ export function BusinessPlanPresentation() {
               {/* Summary */}
               <AnimateIn>
                 <div className="mt-8 rounded-xl bg-[#011935] p-6 sm:p-8">
-                  <p className="text-left text-sm leading-7 text-white/85 sm:text-base">
+                  <p className="text-left text-sm leading-7 text-white sm:text-base">
                     {globalExpansionSummary}
                   </p>
                 </div>
