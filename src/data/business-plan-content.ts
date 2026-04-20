@@ -25,12 +25,25 @@ export const platformOverview = {
     note: "Moves clients from insight to action within a single connected environment",
   },
   coreArchitecture: {
-    title: "Core Platform Architecture",
-    bullets: [
-      "AssetXP underpins all modules",
-      "Cloud-based central asset and data environment",
-      "Enables consistent, scalable content, data and workflows across markets",
-      "Provides the foundation for global deployment and operational efficiency",
+    eyebrow: "Core Platform Architecture",
+    title: "AssetXP: The Shared Foundation",
+    pillars: [
+      {
+        label: "Unified",
+        body: "AssetXP underpins all five core modules",
+      },
+      {
+        label: "Cloud-Native",
+        body: "Central asset and data environment",
+      },
+      {
+        label: "Consistent",
+        body: "Scalable content, data, and workflows across markets",
+      },
+      {
+        label: "Global-Ready",
+        body: "Foundation for global deployment and operational efficiency",
+      },
     ],
   },
   modules: {
@@ -71,7 +84,7 @@ export const marketContext = {
   eyebrow: "Market Context",
   slideTitle: "The Market Is Shifting Toward Collaboration",
   subtitle:
-    "Retailers are gaining power in the value chain \u2014 and CPGs are finding success by moving from reporting to partnership.",
+    "Retailers are gaining power in the value chain, and CPGs are finding success by moving from reporting to partnership.",
   source: "Deloitte",
   headline:
     "Retailers Are Gaining Power in the Value Chain, but CPG's are Finding Success in Collaboration.",
@@ -129,7 +142,7 @@ export const arrChartData = [
 export const growthModelPillars = [
   {
     number: "1",
-    title: "Land \u2192 Expand Model",
+    title: "Land \u2192 Expand\nModel",
     bullets: [
       "Initial entry via pilot, market, or module",
       "Expansion across markets, categories, and use cases",
@@ -138,7 +151,7 @@ export const growthModelPillars = [
   },
   {
     number: "2",
-    title: "Multi-Market Rollout (Client-Led)",
+    title: "Multi-Market Rollout\n(Client\u2011Led)",
     bullets: [
       "Expansion follows global client footprint",
       "Europe, North America, AsiaPac, MENA",
@@ -147,7 +160,7 @@ export const growthModelPillars = [
   },
   {
     number: "3",
-    title: "Multi-Module Platform",
+    title: "Multi-Module\nPlatform",
     bullets: [
       "Five core modules deployed individually or together",
       "Higher ARR per client",
@@ -158,7 +171,7 @@ export const growthModelPillars = [
   },
   {
     number: "4",
-    title: "Customer Success-Led Expansion",
+    title: "Customer Success\u2011Led\nExpansion",
     bullets: [
       "Dedicated customer success teams drive ongoing client engagement",
       "Deep expertise in shopper behaviour, category strategy, and data & analytics",
@@ -169,7 +182,7 @@ export const growthModelPillars = [
   },
   {
     number: "5",
-    title: "AI-Led Acceleration",
+    title: "AI-Led\nAcceleration",
     bullets: [
       "Faster onboarding and deployment",
       "Reduced reliance on manual processes",
@@ -181,14 +194,32 @@ export const growthModelPillars = [
 ];
 
 export const growthModelDefensible = {
-  title: "Defensible Positioning — Why This Scales Sustainably",
-  bullets: [
-    "Embedded within global enterprise client workflows",
-    "Multi-module platform creates high switching costs",
-    "AssetXP provides a scalable, shared data and content foundation",
-    "Deep domain expertise in shopper, category, and retail execution",
-    "AI increasingly enhances speed, efficiency, and differentiation",
+  eyebrow: "Defensible Positioning",
+  title: "Why This Scales Sustainably",
+  pillars: [
+    {
+      label: "Embedded",
+      body: "Woven into global enterprise client workflows",
+    },
+    {
+      label: "Modular",
+      body: "Multi-module platform creates high switching costs",
+    },
+    {
+      label: "AssetXP",
+      body: "Scalable, shared data and content foundation",
+    },
+    {
+      label: "Expertise",
+      body: "Deep domain knowledge in shopper, category, and retail execution",
+    },
+    {
+      label: "AI",
+      body: "Increasingly enhances speed, efficiency, and differentiation",
+    },
   ],
+  closing:
+    "Creates a scalable, hard-to-replace platform within global client organisations.",
 };
 
 export const growthModelSummary =
@@ -234,7 +265,7 @@ export const enterpriseFoundations = {
     },
   ],
   positioning:
-    "We have built the foundations required to operate at enterprise scale \u2014 the next phase is to formalise and resource this infrastructure.",
+    "We have built the foundations required to operate at enterprise scale. The next phase is to formalise and resource this infrastructure.",
   keyPoint: "The constraint is execution capacity, not market demand",
 };
 

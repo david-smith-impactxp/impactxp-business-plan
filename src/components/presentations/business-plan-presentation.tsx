@@ -6,8 +6,10 @@ import {
   BarChart3,
   BrainCircuit,
   CheckCircle2,
+  Database,
   Globe,
   Layers,
+  Network,
   Rocket,
   Shield,
   Sparkles,
@@ -30,6 +32,7 @@ import { SideIndex } from "@/components/side-index";
 import { PresentationControls } from "@/components/presentation-controls";
 import QuoteBlock from "@/components/quote-block";
 import { AnimateIn } from "@/components/animate-in";
+import { ParallaxImage } from "@/components/parallax-image";
 import { useInView } from "motion/react";
 import {
   sections,
@@ -53,6 +56,8 @@ import {
 const growthIcons = [Target, Globe, Layers, Users, BrainCircuit];
 const expansionIcons = [TrendingUp, Users, Rocket, Globe, Shield, Sparkles];
 const whyNowIcons = [Shield, TrendingUp, Target, BrainCircuit, Zap, Rocket];
+const defensibleIcons = [Network, Layers, Database, BrainCircuit, Sparkles];
+const architectureIcons = [Layers, Database, Network, Globe];
 
 export function BusinessPlanPresentation() {
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -137,34 +142,47 @@ export function BusinessPlanPresentation() {
                 </p>
               </AnimateIn>
 
-              {/* Core Platform Architecture (AssetXP) — full width */}
+              {/* Core Platform Architecture (AssetXP) — full width, dark */}
               <AnimateIn className="mt-10">
-                <div className="rounded-xl border border-[#e5e7eb] bg-[#F7F7F7] p-6 shadow-sm sm:p-8">
+                <div className="relative overflow-hidden rounded-xl bg-[#011935] p-6 sm:p-10">
+                  <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#FC5101] to-[#3566A0]" />
+
                   <div className="flex items-center gap-3">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white shadow-sm">
-                      <Layers
-                        className="text-[#FC5101]"
-                        style={{ fontSize: 28, width: 28, height: 28 }}
-                      />
-                    </div>
-                    <h3 className="text-base font-bold text-[#011935] sm:text-lg">
-                      {platformOverview.coreArchitecture.title}
-                    </h3>
+                    <Layers
+                      className="text-[#FC5101]"
+                      style={{ fontSize: 22, width: 22, height: 22 }}
+                    />
+                    <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#FC5101] sm:text-sm">
+                      {platformOverview.coreArchitecture.eyebrow}
+                    </p>
                   </div>
-                  <ul className="mt-4 grid gap-2 sm:grid-cols-2">
-                    {platformOverview.coreArchitecture.bullets.map((b) => (
-                      <li
-                        key={b}
-                        className="flex items-start gap-2 text-sm text-[#486586]"
-                      >
-                        <CheckCircle2
-                          size={13}
-                          className="mt-0.5 shrink-0 text-[#FC5101]"
-                        />
-                        {b}
-                      </li>
-                    ))}
-                  </ul>
+                  <h3 className="mt-3 text-xl font-bold text-white sm:text-2xl">
+                    {platformOverview.coreArchitecture.title}
+                  </h3>
+
+                  <div className="mt-6 grid gap-x-8 gap-y-5 sm:grid-cols-2 lg:grid-cols-4">
+                    {platformOverview.coreArchitecture.pillars.map((p, i) => {
+                      const Icon = architectureIcons[i];
+                      return (
+                        <div key={p.label} className="flex items-start gap-3">
+                          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#FC5101]/15 ring-1 ring-[#FC5101]/30">
+                            <Icon
+                              className="text-[#FC5101]"
+                              style={{ fontSize: 22, width: 22, height: 22 }}
+                            />
+                          </div>
+                          <div className="min-w-0">
+                            <p className="text-sm font-bold text-white">
+                              {p.label}
+                            </p>
+                            <p className="mt-1 text-sm leading-6 text-white/70">
+                              {p.body}
+                            </p>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
               </AnimateIn>
 
@@ -211,9 +229,9 @@ export function BusinessPlanPresentation() {
                             className="shrink-0 translate-y-0.5 text-[#FC5101]"
                           />
                           <span className="font-bold text-[#011935]">
-                            {m.name}
+                            {m.name}:
                           </span>
-                          <span className="text-[#486586]">— {m.body}</span>
+                          <span className="text-[#486586]">{m.body}</span>
                         </li>
                       ))}
                     </ul>
@@ -285,12 +303,7 @@ export function BusinessPlanPresentation() {
         {/* ═══ SLIDE 3 — MARKET CONTEXT ═══ */}
         <section id="market-context">
           <div className="relative h-[280px] overflow-hidden sm:h-[340px]">
-            <img
-              src="/images/cover-bg.jpg"
-              alt=""
-              aria-hidden="true"
-              className="absolute inset-0 h-full w-full object-cover"
-            />
+            <ParallaxImage src="/images/cover-bg.jpg" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#011935] via-[#011935]/40 to-black/20" />
             <div className="absolute inset-x-0 bottom-0 z-10 px-5 pb-8 sm:px-16">
               <div className="mx-auto max-w-6xl">
@@ -345,12 +358,7 @@ export function BusinessPlanPresentation() {
         {/* ═══ SLIDE 2 — STRONG CURRENT PERFORMANCE ═══ */}
         <section id="performance">
           <div className="relative h-[280px] overflow-hidden sm:h-[340px]">
-            <img
-              src="/images/performance-hero.jpg"
-              alt=""
-              aria-hidden="true"
-              className="absolute inset-0 h-full w-full object-cover"
-            />
+            <ParallaxImage src="/images/performance-hero.jpg" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#011935] via-[#011935]/40 to-black/20" />
             <div className="absolute inset-x-0 bottom-0 z-10 px-5 pb-8 sm:px-16">
               <div className="mx-auto max-w-6xl">
@@ -574,12 +582,7 @@ export function BusinessPlanPresentation() {
         {/* ═══ SLIDE 3 — SCALABLE GROWTH MODEL ═══ */}
         <section id="growth-model">
           <div className="relative h-[280px] overflow-hidden sm:h-[340px]">
-            <img
-              src="/images/growth-model.jpg"
-              alt=""
-              aria-hidden="true"
-              className="absolute inset-0 h-full w-full object-cover"
-            />
+            <ParallaxImage src="/images/growth-model.jpg" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#011935] via-[#011935]/40 to-black/20" />
             <div className="absolute inset-x-0 bottom-0 z-10 px-5 pb-8 sm:px-16">
               <div className="mx-auto max-w-6xl">
@@ -609,74 +612,95 @@ export function BusinessPlanPresentation() {
                     >
                       <div className="h-full rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
                         <div className="flex items-center gap-3">
-                          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#FFF2EB]">
+                          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#FFF2EB]">
                             <Icon
                               className="text-[#FC5101]"
                               style={{ fontSize: 28, width: 28, height: 28 }}
                             />
                           </div>
-                          <p className="text-base font-bold text-[#011935] sm:text-lg">
+                          <p className="whitespace-pre-line text-base font-bold leading-[1.15] text-[#011935] sm:text-lg">
                             <span className="text-[#011935]">
                               {pillar.number}.{" "}
                             </span>
                             {pillar.title}
                           </p>
                         </div>
-                        <ul className="mt-4 space-y-2">
-                          {pillar.bullets.map((b) => (
+                        <ol className="mt-4 space-y-2">
+                          {pillar.bullets.map((b, bi) => (
                             <li
                               key={b}
                               className="flex items-start gap-2 text-sm text-[#486586]"
                             >
-                              <CheckCircle2
-                                size={13}
-                                className="mt-0.5 shrink-0 text-[#FC5101]/60"
-                              />
+                              <span className="mt-0.5 inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-[#FC5101]/15 text-[10px] font-bold text-[#FC5101]">
+                                {bi + 1}
+                              </span>
                               {b}
                             </li>
                           ))}
-                        </ul>
+                        </ol>
                       </div>
                     </AnimateIn>
                   );
                 })}
               </div>
 
-              {/* Defensible Positioning */}
+              {/* Defensible Positioning — the moat */}
               <AnimateIn delay={0.1}>
-                <div className="mt-8 rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm sm:p-8">
+                <div className="relative mt-10 overflow-hidden rounded-xl bg-[#011935] p-6 sm:p-10">
+                  <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#FC5101] to-[#3566A0]" />
+
                   <div className="flex items-center gap-3">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#FFF2EB]">
-                      <Shield
-                        className="text-[#FC5101]"
-                        style={{ fontSize: 28, width: 28, height: 28 }}
-                      />
-                    </div>
-                    <h3 className="text-base font-bold text-[#011935] sm:text-lg">
-                      {growthModelDefensible.title}
-                    </h3>
+                    <Shield
+                      className="text-[#FC5101]"
+                      style={{ fontSize: 22, width: 22, height: 22 }}
+                    />
+                    <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#FC5101] sm:text-sm">
+                      {growthModelDefensible.eyebrow}
+                    </p>
                   </div>
-                  <ul className="mt-4 grid gap-2 sm:grid-cols-2">
-                    {growthModelDefensible.bullets.map((b) => (
-                      <li
-                        key={b}
-                        className="flex items-start gap-2 text-sm text-[#486586]"
-                      >
-                        <CheckCircle2
-                          size={13}
-                          className="mt-0.5 shrink-0 text-[#FC5101]"
-                        />
-                        {b}
-                      </li>
-                    ))}
-                  </ul>
+                  <h3 className="mt-3 text-xl font-bold text-white sm:text-2xl">
+                    {growthModelDefensible.title}
+                  </h3>
+
+                  <div className="mt-6 grid gap-x-8 gap-y-5 sm:grid-cols-2 lg:grid-cols-3">
+                    {growthModelDefensible.pillars.map((p, i) => {
+                      const Icon = defensibleIcons[i];
+                      return (
+                        <div key={p.label} className="flex items-start gap-3">
+                          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#FC5101]/15 ring-1 ring-[#FC5101]/30">
+                            <Icon
+                              className="text-[#FC5101]"
+                              style={{ fontSize: 22, width: 22, height: 22 }}
+                            />
+                          </div>
+                          <div className="min-w-0">
+                            <p className="text-sm font-bold text-white">
+                              {p.label}
+                            </p>
+                            <p className="mt-1 text-sm leading-6 text-white/70">
+                              {p.body}
+                            </p>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  <div className="mt-6 border-t border-white/10 pt-4">
+                    <p className="text-sm italic leading-6 text-white/60 sm:text-base">
+                      {growthModelDefensible.closing}
+                    </p>
+                  </div>
                 </div>
               </AnimateIn>
 
               {/* Summary */}
               <AnimateIn delay={0.2}>
-                <div className="mt-5 rounded-xl bg-[#011935] p-6 sm:p-8">
-                  <p className="text-sm leading-7 text-white/85 sm:text-base">
+                <div className="mt-5 rounded-xl bg-[#011935] p-6 sm:p-10">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#FC5101] sm:text-xs">
+                    In Summary
+                  </p>
+                  <p className="mt-3 text-base font-medium leading-7 text-white sm:text-lg sm:leading-8">
                     {growthModelSummary}
                   </p>
                 </div>
@@ -688,12 +712,7 @@ export function BusinessPlanPresentation() {
         {/* ═══ SLIDE 4 — ENTERPRISE FOUNDATIONS ═══ */}
         <section id="enterprise-foundations">
           <div className="relative h-[280px] overflow-hidden sm:h-[340px]">
-            <img
-              src="/images/enterprise-foundations.jpg"
-              alt=""
-              aria-hidden="true"
-              className="absolute inset-0 h-full w-full object-cover"
-            />
+            <ParallaxImage src="/images/enterprise-foundations.jpg" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#011935] via-[#011935]/40 to-black/20" />
             <div className="absolute inset-x-0 bottom-0 z-10 px-5 pb-8 sm:px-16">
               <div className="mx-auto max-w-6xl">
@@ -768,12 +787,7 @@ export function BusinessPlanPresentation() {
         {/* ═══ SLIDE 5 — INVESTMENT ALLOCATION ═══ */}
         <section id="investment">
           <div className="relative h-[280px] overflow-hidden sm:h-[340px]">
-            <img
-              src="/images/investment-allocation.jpg"
-              alt=""
-              aria-hidden="true"
-              className="absolute inset-0 h-full w-full object-cover"
-            />
+            <ParallaxImage src="/images/investment-allocation.jpg" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#011935] via-[#011935]/40 to-black/20" />
             <div className="absolute inset-x-0 bottom-0 z-10 px-5 pb-8 sm:px-16">
               <div className="mx-auto max-w-6xl">
@@ -804,7 +818,7 @@ export function BusinessPlanPresentation() {
                     >
                       <div className="h-full rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm">
                         <div className="flex items-center gap-3">
-                          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#FFF2EB]">
+                          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#FFF2EB]">
                             <Icon
                               className="text-[#FC5101]"
                               style={{ fontSize: 28, width: 28, height: 28 }}
@@ -864,12 +878,7 @@ export function BusinessPlanPresentation() {
         {/* ═══ SLIDE 6 — GLOBAL EXPANSION ═══ */}
         <section id="global-expansion">
           <div className="relative h-[280px] overflow-hidden sm:h-[340px]">
-            <img
-              src="/images/global-expansion.jpg"
-              alt=""
-              aria-hidden="true"
-              className="absolute inset-0 h-full w-full object-cover"
-            />
+            <ParallaxImage src="/images/global-expansion.jpg" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#011935] via-[#011935]/40 to-black/20" />
             <div className="absolute inset-x-0 bottom-0 z-10 px-5 pb-8 sm:px-16">
               <div className="mx-auto max-w-6xl">
@@ -943,12 +952,7 @@ export function BusinessPlanPresentation() {
         {/* ═══ SLIDE 7 — WHY NOW / INVESTMENT SUMMARY ═══ */}
         <section id="why-now">
           <div className="relative h-[280px] overflow-hidden sm:h-[340px]">
-            <img
-              src="/images/why-now-closing.jpg"
-              alt=""
-              aria-hidden="true"
-              className="absolute inset-0 h-full w-full object-cover"
-            />
+            <ParallaxImage src="/images/why-now-closing.jpg" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#011935] via-[#011935]/40 to-black/20" />
             <div className="absolute inset-x-0 bottom-0 z-10 px-5 pb-8 sm:px-16">
               <div className="mx-auto max-w-6xl">
@@ -974,7 +978,7 @@ export function BusinessPlanPresentation() {
                       className="h-full"
                     >
                       <div className="h-full rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
-                        <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-[#FFF2EB]">
+                        <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-[#FFF2EB]">
                           <Icon
                             className="text-[#FC5101]"
                             style={{ fontSize: 28, width: 28, height: 28 }}
