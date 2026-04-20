@@ -30,7 +30,6 @@ import {
 } from "recharts";
 import { SideIndex } from "@/components/side-index";
 import { PresentationControls } from "@/components/presentation-controls";
-import QuoteBlock from "@/components/quote-block";
 import { AnimateIn } from "@/components/animate-in";
 import { ParallaxImage } from "@/components/parallax-image";
 import { useInView } from "motion/react";
@@ -85,7 +84,8 @@ export function BusinessPlanPresentation() {
           id="splash"
           className="relative flex min-h-screen scroll-mt-0 items-center justify-center overflow-hidden bg-[#011935]"
         >
-          <video
+          {/* Original splash video — keep for easy restoration */}
+          {/* <video
             src="/shop_zoom_v2.mp4"
             poster="/images/splash-bg.jpg"
             autoPlay
@@ -95,9 +95,18 @@ export function BusinessPlanPresentation() {
             preload="auto"
             aria-hidden="true"
             className="absolute inset-0 h-full w-full object-cover opacity-70"
+          /> */}
+          <Image
+            src="/images/splash.png"
+            alt=""
+            aria-hidden="true"
+            fill
+            priority
+            sizes="100vw"
+            className="absolute inset-0 h-full w-full object-cover opacity-70"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-[#011935]/55 via-[#011935]/25 to-[#FC5101]/10" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(1,25,53,0)_0%,_rgba(1,25,53,0.35)_70%,_rgba(1,25,53,0.65)_100%)]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#011935]/70 via-[#011935]/25 to-[#011935]/5" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(1,25,53,0)_0%,_rgba(1,25,53,0.15)_70%,_rgba(1,25,53,0.35)_100%)]" />
 
           <div className="relative z-10 mx-auto max-w-4xl px-5 text-center sm:px-16">
             <AnimateIn>
@@ -117,10 +126,10 @@ export function BusinessPlanPresentation() {
             </AnimateIn>
 
             <AnimateIn delay={0.3}>
-              <p className="mt-6 text-xs font-semibold uppercase tracking-[0.4em] text-white/80 sm:text-sm">
+              <p className="mt-6 text-sm font-semibold uppercase tracking-[0.4em] text-white sm:text-base">
                 Investment Overview
               </p>
-              <p className="mt-2 text-[10px] font-medium uppercase tracking-[0.3em] text-white/50 sm:text-xs">
+              <p className="mt-3 text-xs font-medium uppercase tracking-[0.3em] text-white sm:text-sm">
                 April 2026
               </p>
             </AnimateIn>
@@ -143,51 +152,7 @@ export function BusinessPlanPresentation() {
                 </p>
               </AnimateIn>
 
-              {/* Core Platform Architecture (AssetXP) — full width, dark */}
-              <AnimateIn className="mt-10">
-                <div className="relative overflow-hidden rounded-xl bg-[#011935] p-6 sm:p-10">
-                  <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#FC5101] to-[#3566A0]" />
-
-                  <div className="flex items-center gap-3">
-                    <Layers
-                      className="text-[#FC5101]"
-                      style={{ fontSize: 22, width: 22, height: 22 }}
-                    />
-                    <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#FC5101] sm:text-sm">
-                      {platformOverview.coreArchitecture.eyebrow}
-                    </p>
-                  </div>
-                  <h3 className="mt-3 text-xl font-bold text-white sm:text-2xl">
-                    {platformOverview.coreArchitecture.title}
-                  </h3>
-
-                  <div className="mt-6 grid gap-x-8 gap-y-5 sm:grid-cols-2 lg:grid-cols-4">
-                    {platformOverview.coreArchitecture.pillars.map((p, i) => {
-                      const Icon = architectureIcons[i];
-                      return (
-                        <div key={p.label} className="flex items-start gap-3">
-                          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#FC5101]/15 ring-1 ring-[#FC5101]/30">
-                            <Icon
-                              className="text-[#FC5101]"
-                              style={{ fontSize: 22, width: 22, height: 22 }}
-                            />
-                          </div>
-                          <div className="min-w-0">
-                            <p className="text-sm font-bold text-white">
-                              {p.label}
-                            </p>
-                            <p className="mt-1 text-sm leading-6 text-white/70">
-                              {p.body}
-                            </p>
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              </AnimateIn>
-
-              <div className="mt-6 grid gap-6 sm:grid-cols-2">
+              <div className="mt-10 grid gap-6 sm:grid-cols-2">
                 {/* End-to-End Capability */}
                 <AnimateIn className="h-full">
                   <div className="h-full rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm">
@@ -289,12 +254,47 @@ export function BusinessPlanPresentation() {
                 </AnimateIn>
               </div>
 
-              {/* Positioning Line */}
-              <AnimateIn delay={0.1}>
-                <div className="mt-8 rounded-xl bg-[#011935] p-6 sm:p-8">
-                  <p className="text-sm leading-7 text-white/85 sm:text-base">
-                    {platformOverview.positioningLine}
-                  </p>
+              {/* Core Platform Architecture (AssetXP) — full width, dark */}
+              <AnimateIn delay={0.1} className="mt-8">
+                <div className="relative overflow-hidden rounded-xl bg-[#011935] p-6 sm:p-10">
+                  <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#FC5101] to-[#3566A0]" />
+
+                  <div className="flex items-center gap-3">
+                    <Layers
+                      className="text-[#FC5101]"
+                      style={{ fontSize: 22, width: 22, height: 22 }}
+                    />
+                    <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#FC5101] sm:text-sm">
+                      {platformOverview.coreArchitecture.eyebrow}
+                    </p>
+                  </div>
+                  <h3 className="mt-3 text-xl font-bold text-white sm:text-2xl">
+                    {platformOverview.coreArchitecture.title}
+                  </h3>
+
+                  <div className="mt-6 grid gap-x-8 gap-y-5 sm:grid-cols-2 lg:grid-cols-4">
+                    {platformOverview.coreArchitecture.pillars.map((p, i) => {
+                      const Icon = architectureIcons[i];
+                      return (
+                        <div key={p.label} className="flex items-start gap-3">
+                          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white">
+                            <Icon
+                              className="text-[#FC5101]"
+                              style={{ fontSize: 22, width: 22, height: 22 }}
+                            />
+                          </div>
+                          <div className="min-w-0">
+                            <p className="text-base font-bold text-white">
+                              {p.label}
+                            </p>
+                            <p className="mt-1 text-sm leading-6 text-white">
+                              {p.body}
+                            </p>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
               </AnimateIn>
             </div>
@@ -320,21 +320,19 @@ export function BusinessPlanPresentation() {
 
               <AnimateIn delay={0.15}>
                 <Image
-                  src="/images/logos.png"
+                  src="/images/logos_v2.png"
                   alt="Global CPG brands and retailers using ImpactXP"
-                  width={1024}
-                  height={569}
+                  width={2401}
+                  height={1306}
                   unoptimized
                   className="mt-10 h-auto w-full max-w-5xl"
                 />
               </AnimateIn>
 
               <AnimateIn delay={0.3}>
-                <div className="mt-10 border-t border-white/10 pt-5">
-                  <p className="text-sm italic leading-6 text-white/60 sm:text-base">
-                    {trustedBy.footer}
-                  </p>
-                </div>
+                <p className="mt-10 text-sm italic leading-6 text-white/60 sm:text-base">
+                  {trustedBy.footer}
+                </p>
               </AnimateIn>
             </div>
           </div>
@@ -363,26 +361,34 @@ export function BusinessPlanPresentation() {
           <div className="bg-white px-5 py-12 sm:px-16 sm:py-16">
             <div className="mx-auto w-full max-w-6xl">
               <AnimateIn>
-                <div className="max-w-3xl">
-                  <QuoteBlock
-                    quote={marketContext.headline}
-                    source={marketContext.source}
-                    variant="light"
-                    align="left"
-                  />
-                </div>
-              </AnimateIn>
-
-              <AnimateIn delay={0.2}>
-                <p className="mt-8 max-w-3xl text-sm leading-7 text-[#011935] sm:text-base">
-                  {marketContext.body}
-                </p>
-              </AnimateIn>
-
-              <AnimateIn delay={0.3}>
-                <p className="mt-4 max-w-3xl text-sm leading-7 text-[#486586] sm:text-base">
-                  {marketContext.detail}
-                </p>
+                <blockquote className="max-w-3xl text-left">
+                  <span
+                    aria-hidden="true"
+                    className="block font-black leading-none text-[#011935]/40 text-[4rem] sm:text-[6rem]"
+                  >
+                    &ldquo;
+                  </span>
+                  <p className="-mt-6 text-xl font-black leading-[1.2] tracking-tight text-[#011935] sm:-mt-8 sm:text-3xl lg:text-[2rem]">
+                    {marketContext.headline}
+                  </p>
+                  <p className="mt-6 text-sm leading-7 text-[#011935] sm:text-base">
+                    {marketContext.body}
+                  </p>
+                  <p className="mt-4 text-sm leading-7 text-[#011935] sm:text-base">
+                    {marketContext.detail}
+                  </p>
+                  <span
+                    aria-hidden="true"
+                    className="-mt-4 block text-right font-black leading-none text-[#011935]/40 text-[4rem] sm:-mt-6 sm:text-[6rem]"
+                  >
+                    &rdquo;
+                  </span>
+                  <footer className="-mt-4 sm:-mt-6">
+                    <cite className="not-italic text-sm font-semibold uppercase tracking-[0.3em] text-[#FC5101] sm:text-base">
+                      &mdash; {marketContext.source}
+                    </cite>
+                  </footer>
+                </blockquote>
               </AnimateIn>
 
               <AnimateIn delay={0.4}>
@@ -418,7 +424,7 @@ export function BusinessPlanPresentation() {
                 {/* Current Position */}
                 <AnimateIn className="h-full">
                   <div className="h-full rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm">
-                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#486586]">
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#011935]">
                       {performanceData.current.title}
                     </p>
                     <div className="mt-4 flex gap-6">
@@ -442,7 +448,7 @@ export function BusinessPlanPresentation() {
                 {/* Near-Term */}
                 <AnimateIn delay={0.1} className="h-full">
                   <div className="h-full rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm">
-                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#486586]">
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#011935]">
                       {performanceData.nearTerm.title}
                     </p>
                     <p className="mt-4 text-3xl font-black text-[#FC5101]">
@@ -471,7 +477,7 @@ export function BusinessPlanPresentation() {
                 {/* Medium-Term */}
                 <AnimateIn delay={0.2} className="h-full">
                   <div className="h-full rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm">
-                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#486586]">
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#011935]">
                       {performanceData.mediumTerm.title}
                     </p>
                     <div className="mt-4 space-y-3">
@@ -503,9 +509,6 @@ export function BusinessPlanPresentation() {
                   className="grid gap-6 lg:grid-cols-[1fr_320px]"
                 >
                   <div className="rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm">
-                    <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#486586]">
-                      ARR Growth Trajectory (£m)
-                    </p>
                     <div className="h-64 w-full sm:h-72">
                       {mounted && (
                         <ResponsiveContainer
@@ -571,6 +574,9 @@ export function BusinessPlanPresentation() {
                         </ResponsiveContainer>
                       )}
                     </div>
+                    <p className="mt-4 text-center text-[10px] font-semibold uppercase tracking-[0.2em] text-[#486586]">
+                      ARR Growth Trajectory (£m)
+                    </p>
                   </div>
 
                   <div className="flex flex-col gap-6">
@@ -659,9 +665,6 @@ export function BusinessPlanPresentation() {
                             />
                           </div>
                           <p className="whitespace-pre-line text-base font-bold leading-[1.15] text-[#011935] sm:text-lg">
-                            <span className="text-[#011935]">
-                              {pillar.number}.{" "}
-                            </span>
                             {pillar.title}
                           </p>
                         </div>
@@ -707,17 +710,17 @@ export function BusinessPlanPresentation() {
                       const Icon = defensibleIcons[i];
                       return (
                         <div key={p.label} className="flex items-start gap-3">
-                          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#FC5101]/15 ring-1 ring-[#FC5101]/30">
+                          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white">
                             <Icon
                               className="text-[#FC5101]"
                               style={{ fontSize: 22, width: 22, height: 22 }}
                             />
                           </div>
                           <div className="min-w-0">
-                            <p className="text-sm font-bold text-white">
+                            <p className="text-base font-bold text-white">
                               {p.label}
                             </p>
-                            <p className="mt-1 text-sm leading-6 text-white/70">
+                            <p className="mt-1 text-sm leading-6 text-white">
                               {p.body}
                             </p>
                           </div>
@@ -734,13 +737,12 @@ export function BusinessPlanPresentation() {
                 </div>
               </AnimateIn>
 
-              {/* Summary */}
+              {/* Summary — key point style */}
               <AnimateIn delay={0.2}>
-                <div className="mt-5 rounded-xl bg-[#011935] p-6 sm:p-10">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#FC5101] sm:text-xs">
-                    In Summary
-                  </p>
-                  <p className="mt-3 text-base font-medium leading-7 text-white sm:text-lg sm:leading-8">
+                <div className="mt-5 flex items-center gap-3 rounded-xl bg-[#FFF2EB] p-5">
+                  <Zap size={20} className="shrink-0 text-[#FC5101]" />
+                  <p className="text-sm text-[#011935]">
+                    <span className="font-bold">In Summary:</span>{" "}
                     {growthModelSummary}
                   </p>
                 </div>
@@ -813,10 +815,11 @@ export function BusinessPlanPresentation() {
 
               {/* Key Point */}
               <AnimateIn delay={0.1}>
-                <div className="mt-5 flex items-center gap-3 rounded-xl border-2 border-[#FC5101]/30 bg-[#FFF2EB] p-5">
+                <div className="mt-5 flex items-center gap-3 rounded-xl bg-[#FFF2EB] p-5">
                   <Zap size={20} className="shrink-0 text-[#FC5101]" />
-                  <p className="text-sm font-bold text-[#011935]">
-                    Key Point: {enterpriseFoundations.keyPoint}
+                  <p className="text-sm text-[#011935]">
+                    <span className="font-bold">Key Point:</span>{" "}
+                    {enterpriseFoundations.keyPoint}
                   </p>
                 </div>
               </AnimateIn>
@@ -904,10 +907,11 @@ export function BusinessPlanPresentation() {
 
               {/* Key Point */}
               <AnimateIn delay={0.1}>
-                <div className="mt-5 flex items-center gap-3 rounded-xl border-2 border-[#FC5101]/30 bg-[#FFF2EB] p-5">
+                <div className="mt-5 flex items-center gap-3 rounded-xl bg-[#FFF2EB] p-5">
                   <Zap size={20} className="shrink-0 text-[#FC5101]" />
-                  <p className="text-sm font-bold text-[#011935]">
-                    Key Point: {investmentSummary.closing}
+                  <p className="text-sm text-[#011935]">
+                    <span className="font-bold">Key Point:</span>{" "}
+                    {investmentSummary.closing}
                   </p>
                 </div>
               </AnimateIn>
@@ -1018,16 +1022,18 @@ export function BusinessPlanPresentation() {
                       className="h-full"
                     >
                       <div className="h-full rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
-                        <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-[#FFF2EB]">
-                          <Icon
-                            className="text-[#FC5101]"
-                            style={{ fontSize: 28, width: 28, height: 28 }}
-                          />
+                        <div className="flex items-center gap-3">
+                          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#FFF2EB]">
+                            <Icon
+                              className="text-[#FC5101]"
+                              style={{ fontSize: 28, width: 28, height: 28 }}
+                            />
+                          </div>
+                          <h3 className="text-base font-bold leading-[1.15] text-[#011935] sm:text-lg">
+                            {pillar.title}
+                          </h3>
                         </div>
-                        <h3 className="text-base font-bold text-[#011935] sm:text-lg">
-                          {pillar.title}
-                        </h3>
-                        <p className="mt-2 text-sm leading-6 text-[#486586]">
+                        <p className="mt-4 text-sm leading-6 text-[#486586]">
                           {pillar.body}
                         </p>
                       </div>

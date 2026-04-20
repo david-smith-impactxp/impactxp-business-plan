@@ -1,8 +1,8 @@
 import { copyFileSync, existsSync, statSync } from "node:fs";
 import sharp from "sharp";
 
-const INPUT = "public/images/logos.png";
-const BACKUP = "public/images/logos.original.png";
+const INPUT = "public/images/logos_v2.png";
+const BACKUP = "public/images/logos_v2.original.png";
 const TARGET = { r: 1, g: 25, b: 53 };
 const TOLERANCE = 45;
 
