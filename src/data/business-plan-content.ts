@@ -285,7 +285,7 @@ export const investmentSubtitle =
 export const investmentAreas = [
   {
     title: "Commercial Acceleration",
-    amount: "≤£0.5m",
+    amount: "≤\u00a0£0.5m",
     bullets: [
       "Strengthen sales leadership",
       "Invest in a structured CRM system",
@@ -296,7 +296,7 @@ export const investmentAreas = [
   },
   {
     title: "Product & AI Development",
-    amount: "≤£0.5m",
+    amount: "≤\u00a0£0.5m",
     bullets: [
       "Focused investment in AI / workflow acceleration",
       "Rapid solution prototyping capability",
@@ -306,7 +306,7 @@ export const investmentAreas = [
   },
   {
     title: "Delivery & Customer Success",
-    amount: "≤£1.5m",
+    amount: "≤\u00a0£1.5m",
     bullets: [
       "Build a higher-calibre customer success function",
       "Recruit additional expertise in shopper behaviour, category strategy, and data & analytics",
@@ -318,7 +318,7 @@ export const investmentAreas = [
   },
   {
     title: "Infrastructure & Global Enablement",
-    amount: "≤£0.5m",
+    amount: "≤\u00a0£0.5m",
     bullets: [
       "Legal / contracts manager (MSA / SLA efficiency)",
       "ISO completion + SOC accreditation",

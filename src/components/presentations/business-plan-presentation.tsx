@@ -741,7 +741,7 @@ export function BusinessPlanPresentation() {
                 <div className="mt-5 flex items-center gap-3 rounded-xl bg-[#FFE1CC] p-5">
                   <Zap size={20} className="shrink-0 text-[#FC5101]" />
                   <p className="text-sm text-[#011935]">
-                    <span className="font-bold">In Summary:</span>{" "}
+                    <span className="font-bold">Key Point:</span>{" "}
                     {growthModelSummary}
                   </p>
                 </div>
