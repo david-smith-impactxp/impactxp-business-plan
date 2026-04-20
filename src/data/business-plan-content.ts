@@ -24,21 +24,32 @@ export const platformOverview = {
     ],
     note: "Moves clients from insight to action within a single connected environment",
   },
+  coreArchitecture: {
+    title: "Core Platform Architecture",
+    bullets: [
+      "AssetXP underpins all modules",
+      "Cloud-based central asset and data environment",
+      "Enables consistent, scalable content, data and workflows across markets",
+      "Provides the foundation for global deployment and operational efficiency",
+    ],
+  },
   modules: {
     title: "Five Core Modules",
     items: [
-      { name: "PlanogramXP", body: "Planogram creation and optimisation" },
-      { name: "RangeXP", body: "Range and assortment intelligence" },
-      { name: "ShopperXP", body: "In-store visualisation and experience" },
-      { name: "EngageXP", body: "Virtual retail environments and collaboration" },
-      { name: "ResearchXP", body: "Rapid validation with real shoppers" },
+      { name: "PlanogramXP", body: "planogram creation and optimisation" },
+      { name: "RangeXP", body: "range and assortment intelligence" },
+      { name: "ShopperXP", body: "in-store visualisation and experience" },
+      { name: "EngageXP", body: "virtual retail environments and collaboration" },
+      { name: "ResearchXP", body: "rapid validation with real shoppers" },
     ],
-    note: "Each module can operate independently or as part of a fully integrated system",
+    note: "Each module operates independently or as part of a fully integrated system",
   },
   differentiation: {
     title: "Key Differentiation",
     bullets: [
       "Single connected platform vs fragmented legacy tools",
+      "Enterprise-level capability and security",
+      "Available via cloud, desktop, or hybrid deployment",
       "Built from real-world shopper and retail experience",
       "Designed for global, multi-market deployment",
       "Increasingly enhanced by AI-driven workflows and automation",
@@ -139,17 +150,21 @@ export const growthModelPillars = [
     title: "Multi-Module Platform",
     bullets: [
       "Five core modules deployed individually or together",
-      "Increasing adoption drives higher ARR and deeper integration",
-      "Platform breadth increases revenue and switching costs",
+      "Higher ARR per client",
+      "Deeper integration",
+      "Increased switching costs",
+      "Platform breadth increases revenue and retention",
     ],
   },
   {
     number: "4",
-    title: "Strong Client Retention & Expansion",
+    title: "Customer Success-Led Expansion",
     bullets: [
-      "Embedded within client workflows",
-      "High repeat usage across teams and markets",
-      "Revenue compounds within existing accounts",
+      "Dedicated customer success teams drive ongoing client engagement",
+      "Deep expertise in shopper behaviour, category strategy, and data & analytics",
+      "AI-led, rapid, insight-led solutions to client challenges",
+      "Close collaboration with development for QA and productisation",
+      "Drives faster expansion, higher retention, and increased ARR per client",
     ],
   },
   {
@@ -157,12 +172,27 @@ export const growthModelPillars = [
     title: "AI-Led Acceleration",
     bullets: [
       "Faster onboarding and deployment",
-      "Reduced friction and increased scalability",
-      "New revenue layers (apps / workflows)",
+      "Reduced reliance on manual processes",
+      "Rapid solution generation and iteration",
+      "Creation of additional revenue layers (apps / workflows)",
       "Improves speed, scalability, and monetisation",
     ],
   },
 ];
+
+export const growthModelDefensible = {
+  title: "Defensible Positioning — Why This Scales Sustainably",
+  bullets: [
+    "Embedded within global enterprise client workflows",
+    "Multi-module platform creates high switching costs",
+    "AssetXP provides a scalable, shared data and content foundation",
+    "Deep domain expertise in shopper, category, and retail execution",
+    "AI increasingly enhances speed, efficiency, and differentiation",
+  ],
+};
+
+export const growthModelSummary =
+  "Growth is driven by expanding depth and geography within a high-quality global client base, supported by a modular platform and increasing operational leverage.";
 
 export const enterpriseFoundations = {
   quadrants: [

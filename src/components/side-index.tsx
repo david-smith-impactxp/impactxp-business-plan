@@ -55,7 +55,7 @@ export function SideIndex({ items }: { items: readonly Section[] }) {
           className="h-6 w-auto max-w-[120px] object-contain object-left sm:h-7 sm:max-w-[132px]"
         />
         <p className="mt-1.5 text-[9px] font-medium uppercase tracking-[0.2em] text-[#486586]">
-          Business Plan
+          Investment Overview
         </p>
       </div>
 

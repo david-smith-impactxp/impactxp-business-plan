@@ -12,7 +12,7 @@ export default function QuoteBlock({
   align = "center",
 }: QuoteBlockProps) {
   const isLight = variant === "light";
-  const markColor = isLight ? "text-[#011935]/15" : "text-white/70";
+  const markColor = isLight ? "text-[#011935]/40" : "text-white/70";
   const textColor = isLight ? "text-[#011935]" : "text-white";
   const textShadow = isLight ? "" : "drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)]";
 
@@ -21,16 +21,22 @@ export default function QuoteBlock({
       <blockquote className="text-left">
         <span
           aria-hidden="true"
-          className={`block font-black leading-none ${markColor} text-[3.5rem] sm:text-[5rem]`}
+          className={`block font-black leading-none ${markColor} text-[4rem] sm:text-[6rem]`}
         >
           &ldquo;
         </span>
         <p
-          className={`-mt-4 text-xl font-black leading-[1.2] tracking-tight ${textColor} ${textShadow} sm:-mt-5 sm:text-3xl lg:text-[2rem]`}
+          className={`-mt-6 text-xl font-black leading-[1.2] tracking-tight ${textColor} ${textShadow} sm:-mt-8 sm:text-3xl lg:text-[2rem]`}
         >
           {quote}
         </p>
-        <footer className="mt-4 sm:mt-6">
+        <span
+          aria-hidden="true"
+          className={`-mt-4 block text-right font-black leading-none ${markColor} text-[4rem] sm:-mt-6 sm:text-[6rem]`}
+        >
+          &rdquo;
+        </span>
+        <footer className="-mt-4 sm:-mt-6">
           <cite className="not-italic text-sm font-semibold uppercase tracking-[0.3em] text-[#FC5101] sm:text-base">
             &mdash; {source}
           </cite>

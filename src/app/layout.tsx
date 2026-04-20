@@ -5,7 +5,7 @@ import "./globals.css";
 const roboto = Roboto({ variable: "--font-roboto", subsets: ["latin"], weight: ["400", "500", "700", "900"] });
 
 export const metadata: Metadata = {
-  title: "ImpactXP — Business Plan",
+  title: "ImpactXP — Investment Overview",
   description: "Investment proposal and growth strategy for ImpactXP.",
 };
 

@@ -38,6 +38,8 @@ import {
   performanceData,
   arrChartData,
   growthModelPillars,
+  growthModelDefensible,
+  growthModelSummary,
   enterpriseFoundations,
   investmentAreas,
   investmentSubtitle,
@@ -78,17 +80,18 @@ export function BusinessPlanPresentation() {
           className="relative flex min-h-screen scroll-mt-0 items-center justify-center overflow-hidden bg-[#011935]"
         >
           <video
-            src="/shop_zoom.mp4"
+            src="/shop_zoom_v2.mp4"
             poster="/images/splash-bg.jpg"
             autoPlay
+            loop
             muted
             playsInline
             preload="auto"
             aria-hidden="true"
             className="absolute inset-0 h-full w-full object-cover opacity-70"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-[#011935]/85 via-[#011935]/55 to-[#FC5101]/10" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(1,25,53,0)_0%,_rgba(1,25,53,0.6)_70%,_rgba(1,25,53,0.9)_100%)]" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#011935]/55 via-[#011935]/25 to-[#FC5101]/10" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(1,25,53,0)_0%,_rgba(1,25,53,0.35)_70%,_rgba(1,25,53,0.65)_100%)]" />
 
           <div className="relative z-10 mx-auto max-w-4xl px-5 text-center sm:px-16">
             <AnimateIn>
@@ -108,8 +111,11 @@ export function BusinessPlanPresentation() {
             </AnimateIn>
 
             <AnimateIn delay={0.3}>
-              <p className="mt-6 text-[10px] font-semibold uppercase tracking-[0.4em] text-white/60 sm:text-xs">
-                Business Plan · April 2026
+              <p className="mt-6 text-xs font-semibold uppercase tracking-[0.4em] text-white/80 sm:text-sm">
+                Investment Overview
+              </p>
+              <p className="mt-2 text-[10px] font-medium uppercase tracking-[0.3em] text-white/50 sm:text-xs">
+                April 2026
               </p>
             </AnimateIn>
           </div>
@@ -131,16 +137,50 @@ export function BusinessPlanPresentation() {
                 </p>
               </AnimateIn>
 
-              <div className="mt-10 grid gap-6 sm:grid-cols-2">
+              {/* Core Platform Architecture (AssetXP) — full width */}
+              <AnimateIn className="mt-10">
+                <div className="rounded-xl border border-[#e5e7eb] bg-[#F7F7F7] p-6 shadow-sm sm:p-8">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white shadow-sm">
+                      <Layers
+                        className="text-[#FC5101]"
+                        style={{ fontSize: 28, width: 28, height: 28 }}
+                      />
+                    </div>
+                    <h3 className="text-base font-bold text-[#011935] sm:text-lg">
+                      {platformOverview.coreArchitecture.title}
+                    </h3>
+                  </div>
+                  <ul className="mt-4 grid gap-2 sm:grid-cols-2">
+                    {platformOverview.coreArchitecture.bullets.map((b) => (
+                      <li
+                        key={b}
+                        className="flex items-start gap-2 text-sm text-[#486586]"
+                      >
+                        <CheckCircle2
+                          size={13}
+                          className="mt-0.5 shrink-0 text-[#FC5101]"
+                        />
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </AnimateIn>
+
+              <div className="mt-6 grid gap-6 sm:grid-cols-2">
                 {/* End-to-End Capability */}
                 <AnimateIn className="h-full">
                   <div className="h-full rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm">
-                    <h3 className="text-sm font-bold text-[#011935]">
+                    <h3 className="text-base font-bold text-[#011935] sm:text-lg">
                       {platformOverview.endToEnd.title}
                     </h3>
                     <ul className="mt-4 space-y-3">
                       {platformOverview.endToEnd.steps.map((s) => (
-                        <li key={s.verb} className="flex items-start gap-3 text-sm">
+                        <li
+                          key={s.verb}
+                          className="flex items-start gap-3 text-sm"
+                        >
                           <span className="mt-0.5 shrink-0 rounded-md bg-[#FFF2EB] px-2 py-0.5 text-xs font-bold uppercase tracking-wider text-[#FC5101]">
                             {s.verb}
                           </span>
@@ -157,14 +197,22 @@ export function BusinessPlanPresentation() {
                 {/* Five Core Modules */}
                 <AnimateIn delay={0.1} className="h-full">
                   <div className="h-full rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm">
-                    <h3 className="text-sm font-bold text-[#011935]">
+                    <h3 className="text-base font-bold text-[#011935] sm:text-lg">
                       {platformOverview.modules.title}
                     </h3>
                     <ul className="mt-4 space-y-2">
                       {platformOverview.modules.items.map((m) => (
-                        <li key={m.name} className="flex items-baseline gap-2 text-sm">
-                          <CheckCircle2 size={13} className="shrink-0 translate-y-0.5 text-[#FC5101]" />
-                          <span className="font-bold text-[#011935]">{m.name}</span>
+                        <li
+                          key={m.name}
+                          className="flex items-baseline gap-2 text-sm"
+                        >
+                          <CheckCircle2
+                            size={13}
+                            className="shrink-0 translate-y-0.5 text-[#FC5101]"
+                          />
+                          <span className="font-bold text-[#011935]">
+                            {m.name}
+                          </span>
                           <span className="text-[#486586]">— {m.body}</span>
                         </li>
                       ))}
@@ -178,13 +226,19 @@ export function BusinessPlanPresentation() {
                 {/* Key Differentiation */}
                 <AnimateIn delay={0.2} className="h-full">
                   <div className="h-full rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm">
-                    <h3 className="text-sm font-bold text-[#011935]">
+                    <h3 className="text-base font-bold text-[#011935] sm:text-lg">
                       {platformOverview.differentiation.title}
                     </h3>
                     <ul className="mt-4 space-y-2">
                       {platformOverview.differentiation.bullets.map((b) => (
-                        <li key={b} className="flex items-start gap-2 text-sm text-[#486586]">
-                          <CheckCircle2 size={13} className="mt-0.5 shrink-0 text-[#FC5101]/60" />
+                        <li
+                          key={b}
+                          className="flex items-start gap-2 text-sm text-[#486586]"
+                        >
+                          <CheckCircle2
+                            size={13}
+                            className="mt-0.5 shrink-0 text-[#FC5101]/60"
+                          />
                           {b}
                         </li>
                       ))}
@@ -195,13 +249,19 @@ export function BusinessPlanPresentation() {
                 {/* Commercial Impact */}
                 <AnimateIn delay={0.3} className="h-full">
                   <div className="h-full rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm">
-                    <h3 className="text-sm font-bold text-[#011935]">
+                    <h3 className="text-base font-bold text-[#011935] sm:text-lg">
                       {platformOverview.commercialImpact.title}
                     </h3>
                     <ul className="mt-4 space-y-2">
                       {platformOverview.commercialImpact.bullets.map((b) => (
-                        <li key={b} className="flex items-start gap-2 text-sm text-[#486586]">
-                          <CheckCircle2 size={13} className="mt-0.5 shrink-0 text-[#FC5101]/60" />
+                        <li
+                          key={b}
+                          className="flex items-start gap-2 text-sm text-[#486586]"
+                        >
+                          <CheckCircle2
+                            size={13}
+                            className="mt-0.5 shrink-0 text-[#FC5101]/60"
+                          />
                           {b}
                         </li>
                       ))}
@@ -247,37 +307,35 @@ export function BusinessPlanPresentation() {
             </div>
           </div>
 
-          <div className="flex min-h-screen flex-col bg-white px-5 py-12 sm:px-16 sm:py-16">
-            <div className="mx-auto flex w-full max-w-6xl flex-1 flex-col justify-between gap-12">
-              <div>
-                <AnimateIn>
-                  <div className="max-w-3xl">
-                    <QuoteBlock
-                      quote={marketContext.headline}
-                      source={marketContext.source}
-                      variant="light"
-                      align="left"
-                    />
-                  </div>
-                </AnimateIn>
+          <div className="bg-white px-5 py-12 sm:px-16 sm:py-16">
+            <div className="mx-auto w-full max-w-6xl">
+              <AnimateIn>
+                <div className="max-w-3xl">
+                  <QuoteBlock
+                    quote={marketContext.headline}
+                    source={marketContext.source}
+                    variant="light"
+                    align="left"
+                  />
+                </div>
+              </AnimateIn>
 
-                <AnimateIn delay={0.2}>
-                  <p className="mt-10 max-w-3xl text-sm leading-7 text-[#011935] sm:text-base">
-                    {marketContext.body}
-                  </p>
-                </AnimateIn>
+              <AnimateIn delay={0.2}>
+                <p className="mt-8 max-w-3xl text-sm leading-7 text-[#011935] sm:text-base">
+                  {marketContext.body}
+                </p>
+              </AnimateIn>
 
-                <AnimateIn delay={0.3}>
-                  <p className="mt-4 max-w-3xl text-sm leading-7 text-[#486586] sm:text-base">
-                    {marketContext.detail}
-                  </p>
-                </AnimateIn>
-              </div>
+              <AnimateIn delay={0.3}>
+                <p className="mt-4 max-w-3xl text-sm leading-7 text-[#486586] sm:text-base">
+                  {marketContext.detail}
+                </p>
+              </AnimateIn>
 
               <AnimateIn delay={0.4}>
-                <div className="h-px w-16 bg-[#FC5101]/50" />
-                <p className="mt-4 text-xs font-semibold uppercase tracking-[0.3em] text-[#FC5101]">
-                  {marketContext.attribution}
+                <div className="mt-16 h-px w-16 bg-[#FC5101]/50 sm:mt-20" />
+                <p className="mt-4 text-sm font-semibold text-[#FC5101]">
+                  Shared with ImpactXP by Kraft Heinz
                 </p>
               </AnimateIn>
             </div>
@@ -287,7 +345,12 @@ export function BusinessPlanPresentation() {
         {/* ═══ SLIDE 2 — STRONG CURRENT PERFORMANCE ═══ */}
         <section id="performance">
           <div className="relative h-[280px] overflow-hidden sm:h-[340px]">
-            <img src="/images/performance-hero.jpg" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover" />
+            <img
+              src="/images/performance-hero.jpg"
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-[#011935] via-[#011935]/40 to-black/20" />
             <div className="absolute inset-x-0 bottom-0 z-10 px-5 pb-8 sm:px-16">
               <div className="mx-auto max-w-6xl">
@@ -303,149 +366,207 @@ export function BusinessPlanPresentation() {
 
           <div className="bg-white px-5 py-12 sm:px-16 sm:py-16">
             <div className="mx-auto max-w-6xl">
-            <div className="grid gap-6 lg:grid-cols-3">
-              {/* Current Position */}
-              <AnimateIn className="h-full">
-                <div className="h-full rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#486586]">
-                    {performanceData.current.title}
-                  </p>
-                  <div className="mt-4 flex gap-6">
-                    {performanceData.current.stats.map((s) => (
-                      <div key={s.label}>
-                        <p className="text-3xl font-black text-[#FC5101]">{s.value}</p>
-                        <p className="mt-1 text-xs text-[#486586]">{s.label}</p>
-                      </div>
-                    ))}
-                  </div>
-                  <p className="mt-4 text-sm leading-6 text-[#486586]">
-                    {performanceData.current.note}
-                  </p>
-                </div>
-              </AnimateIn>
-
-              {/* Near-Term */}
-              <AnimateIn delay={0.1} className="h-full">
-                <div className="h-full rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#486586]">
-                    {performanceData.nearTerm.title}
-                  </p>
-                  <p className="mt-4 text-3xl font-black text-[#FC5101]">
-                    {performanceData.nearTerm.target}
-                  </p>
-                  <ul className="mt-4 space-y-2">
-                    {performanceData.nearTerm.bullets.map((b) => (
-                      <li key={b} className="flex items-start gap-2 text-sm text-[#486586]">
-                        <CheckCircle2 size={14} className="mt-0.5 shrink-0 text-[#FC5101]" />
-                        {b}
-                      </li>
-                    ))}
-                  </ul>
-                  <p className="mt-4 text-xs italic text-[#486586]/70">
-                    {performanceData.nearTerm.note}
-                  </p>
-                </div>
-              </AnimateIn>
-
-              {/* Medium-Term */}
-              <AnimateIn delay={0.2} className="h-full">
-                <div className="h-full rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#486586]">
-                    {performanceData.mediumTerm.title}
-                  </p>
-                  <div className="mt-4 space-y-3">
-                    {performanceData.mediumTerm.milestones.map((m) => (
-                      <div key={m.year} className="flex items-baseline justify-between">
-                        <span className="text-sm font-medium text-[#011935]">{m.year}</span>
-                        <span className="text-xl font-black text-[#FC5101]">{m.arr}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <p className="mt-4 text-xs italic text-[#486586]/70">
-                    {performanceData.mediumTerm.note}
-                  </p>
-                </div>
-              </AnimateIn>
-            </div>
-
-            {/* ARR Growth Chart + Value Creation & Alignment */}
-            <AnimateIn className="mt-10">
-              <div ref={chartRef} className="grid gap-6 lg:grid-cols-[1fr_320px]">
-                <div className="rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm">
-                  <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#486586]">
-                    ARR Growth Trajectory (£m)
-                  </p>
-                  <div className="h-64 w-full sm:h-72">
-                    {mounted && <ResponsiveContainer key={chartKey} width="100%" height="100%">
-                      <BarChart data={arrChartData} margin={{ top: 8, right: 16, bottom: 0, left: 0 }}>
-                        <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" vertical={false} />
-                        <XAxis
-                          dataKey="year"
-                          tick={{ fill: "#486586", fontSize: 12 }}
-                          axisLine={{ stroke: "#e5e7eb" }}
-                          tickLine={false}
-                        />
-                        <YAxis
-                          tick={{ fill: "#486586", fontSize: 12 }}
-                          axisLine={false}
-                          tickLine={false}
-                          tickFormatter={(v: number) => `£${v}m`}
-                        />
-                        <Tooltip
-                          formatter={(value) => [`£${value}m`, "ARR"]}
-                          contentStyle={{
-                            background: "#011935",
-                            border: "none",
-                            borderRadius: 8,
-                            color: "#fff",
-                            fontSize: 13,
-                          }}
-                          itemStyle={{ color: "#fff" }}
-                          labelStyle={{ color: "rgba(255,255,255,0.7)", fontSize: 11 }}
-                        />
-                        <Bar dataKey="arr" radius={[6, 6, 0, 0]} maxBarSize={64} isAnimationActive={chartInView} animationDuration={800}>
-                          {arrChartData.map((_, i) => (
-                            <Cell
-                              key={i}
-                              fill={i === arrChartData.length - 1 ? "#FC5101" : "#3566A0"}
-                            />
-                          ))}
-                        </Bar>
-                      </BarChart>
-                    </ResponsiveContainer>}
-                  </div>
-                </div>
-
-                <div className="flex flex-col gap-6">
-                  <div className="flex-1 rounded-xl border border-[#e5e7eb] bg-[#FFF2EB] p-5">
-                    <p className="text-xs font-bold uppercase tracking-widest text-[#FC5101]">
-                      Value Creation
+              <div className="grid gap-6 lg:grid-cols-3">
+                {/* Current Position */}
+                <AnimateIn className="h-full">
+                  <div className="h-full rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm">
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#486586]">
+                      {performanceData.current.title}
                     </p>
-                    <ul className="mt-3 space-y-2">
-                      {performanceData.valueCreation.map((v) => (
-                        <li key={v} className="flex items-start gap-2 text-sm text-[#011935]">
-                          <CheckCircle2 size={14} className="mt-0.5 shrink-0 text-[#FC5101]" />
-                          {v}
+                    <div className="mt-4 flex gap-6">
+                      {performanceData.current.stats.map((s) => (
+                        <div key={s.label}>
+                          <p className="text-3xl font-black text-[#FC5101]">
+                            {s.value}
+                          </p>
+                          <p className="mt-1 text-xs text-[#486586]">
+                            {s.label}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                    <p className="mt-4 text-sm leading-6 text-[#486586]">
+                      {performanceData.current.note}
+                    </p>
+                  </div>
+                </AnimateIn>
+
+                {/* Near-Term */}
+                <AnimateIn delay={0.1} className="h-full">
+                  <div className="h-full rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm">
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#486586]">
+                      {performanceData.nearTerm.title}
+                    </p>
+                    <p className="mt-4 text-3xl font-black text-[#FC5101]">
+                      {performanceData.nearTerm.target}
+                    </p>
+                    <ul className="mt-4 space-y-2">
+                      {performanceData.nearTerm.bullets.map((b) => (
+                        <li
+                          key={b}
+                          className="flex items-start gap-2 text-sm text-[#486586]"
+                        >
+                          <CheckCircle2
+                            size={14}
+                            className="mt-0.5 shrink-0 text-[#FC5101]"
+                          />
+                          {b}
                         </li>
                       ))}
                     </ul>
-                  </div>
-                  <div className="flex-1 rounded-xl border border-[#e5e7eb] bg-[#EDF2F9] p-5">
-                    <p className="text-xs font-bold uppercase tracking-widest text-[#3566A0]">
-                      Alignment
+                    <p className="mt-4 text-xs italic text-[#486586]/70">
+                      {performanceData.nearTerm.note}
                     </p>
-                    <ul className="mt-3 space-y-2">
-                      {performanceData.alignment.map((a) => (
-                        <li key={a} className="flex items-start gap-2 text-sm text-[#011935]">
-                          <CheckCircle2 size={14} className="mt-0.5 shrink-0 text-[#3566A0]" />
-                          {a}
-                        </li>
-                      ))}
-                    </ul>
                   </div>
-                </div>
+                </AnimateIn>
+
+                {/* Medium-Term */}
+                <AnimateIn delay={0.2} className="h-full">
+                  <div className="h-full rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm">
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#486586]">
+                      {performanceData.mediumTerm.title}
+                    </p>
+                    <div className="mt-4 space-y-3">
+                      {performanceData.mediumTerm.milestones.map((m) => (
+                        <div
+                          key={m.year}
+                          className="flex items-baseline justify-between"
+                        >
+                          <span className="text-sm font-medium text-[#011935]">
+                            {m.year}
+                          </span>
+                          <span className="text-xl font-black text-[#FC5101]">
+                            {m.arr}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                    <p className="mt-4 text-xs italic text-[#486586]/70">
+                      {performanceData.mediumTerm.note}
+                    </p>
+                  </div>
+                </AnimateIn>
               </div>
-            </AnimateIn>
+
+              {/* ARR Growth Chart + Value Creation & Alignment */}
+              <AnimateIn className="mt-10">
+                <div
+                  ref={chartRef}
+                  className="grid gap-6 lg:grid-cols-[1fr_320px]"
+                >
+                  <div className="rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm">
+                    <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#486586]">
+                      ARR Growth Trajectory (£m)
+                    </p>
+                    <div className="h-64 w-full sm:h-72">
+                      {mounted && (
+                        <ResponsiveContainer
+                          key={chartKey}
+                          width="100%"
+                          height="100%"
+                        >
+                          <BarChart
+                            data={arrChartData}
+                            margin={{ top: 8, right: 16, bottom: 0, left: 0 }}
+                          >
+                            <CartesianGrid
+                              strokeDasharray="3 3"
+                              stroke="#e5e7eb"
+                              vertical={false}
+                            />
+                            <XAxis
+                              dataKey="year"
+                              tick={{ fill: "#486586", fontSize: 12 }}
+                              axisLine={{ stroke: "#e5e7eb" }}
+                              tickLine={false}
+                            />
+                            <YAxis
+                              tick={{ fill: "#486586", fontSize: 12 }}
+                              axisLine={false}
+                              tickLine={false}
+                              tickFormatter={(v: number) => `£${v}m`}
+                            />
+                            <Tooltip
+                              formatter={(value) => [`£${value}m`, "ARR"]}
+                              contentStyle={{
+                                background: "#011935",
+                                border: "none",
+                                borderRadius: 8,
+                                color: "#fff",
+                                fontSize: 13,
+                              }}
+                              itemStyle={{ color: "#fff" }}
+                              labelStyle={{
+                                color: "rgba(255,255,255,0.7)",
+                                fontSize: 11,
+                              }}
+                            />
+                            <Bar
+                              dataKey="arr"
+                              radius={[6, 6, 0, 0]}
+                              maxBarSize={64}
+                              isAnimationActive={chartInView}
+                              animationDuration={800}
+                            >
+                              {arrChartData.map((_, i) => (
+                                <Cell
+                                  key={i}
+                                  fill={
+                                    i === arrChartData.length - 1
+                                      ? "#FC5101"
+                                      : "#3566A0"
+                                  }
+                                />
+                              ))}
+                            </Bar>
+                          </BarChart>
+                        </ResponsiveContainer>
+                      )}
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col gap-6">
+                    <div className="flex-1 rounded-xl border border-[#e5e7eb] bg-[#FFF2EB] p-5">
+                      <p className="text-sm font-bold uppercase tracking-widest text-[#FC5101]">
+                        Value Creation
+                      </p>
+                      <ul className="mt-3 space-y-2">
+                        {performanceData.valueCreation.map((v) => (
+                          <li
+                            key={v}
+                            className="flex items-start gap-2 text-sm text-[#011935]"
+                          >
+                            <CheckCircle2
+                              size={14}
+                              className="mt-0.5 shrink-0 text-[#FC5101]"
+                            />
+                            {v}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="flex-1 rounded-xl border border-[#e5e7eb] bg-[#EDF2F9] p-5">
+                      <p className="text-sm font-bold uppercase tracking-widest text-[#3566A0]">
+                        Alignment
+                      </p>
+                      <ul className="mt-3 space-y-2">
+                        {performanceData.alignment.map((a) => (
+                          <li
+                            key={a}
+                            className="flex items-start gap-2 text-sm text-[#011935]"
+                          >
+                            <CheckCircle2
+                              size={14}
+                              className="mt-0.5 shrink-0 text-[#3566A0]"
+                            />
+                            {a}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </AnimateIn>
             </div>
           </div>
         </section>
@@ -453,7 +574,12 @@ export function BusinessPlanPresentation() {
         {/* ═══ SLIDE 3 — SCALABLE GROWTH MODEL ═══ */}
         <section id="growth-model">
           <div className="relative h-[280px] overflow-hidden sm:h-[340px]">
-            <img src="/images/growth-model.jpg" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover" />
+            <img
+              src="/images/growth-model.jpg"
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-[#011935] via-[#011935]/40 to-black/20" />
             <div className="absolute inset-x-0 bottom-0 z-10 px-5 pb-8 sm:px-16">
               <div className="mx-auto max-w-6xl">
@@ -471,43 +597,103 @@ export function BusinessPlanPresentation() {
           </div>
 
           <div className="bg-[#F7F7F7] px-5 py-12 sm:px-16 sm:py-16">
-          <div className="mx-auto max-w-6xl">
-            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {growthModelPillars.map((pillar, i) => {
-                const Icon = growthIcons[i];
-                return (
-                  <AnimateIn key={pillar.number} delay={i * 0.1} className="h-full">
-                    <div className="h-full rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
-                      <div className="flex items-center gap-3">
-                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#FFF2EB]">
-                          <Icon className="text-[#FC5101]" style={{ fontSize: 28, width: 28, height: 28 }} />
+            <div className="mx-auto max-w-6xl">
+              <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                {growthModelPillars.map((pillar, i) => {
+                  const Icon = growthIcons[i];
+                  return (
+                    <AnimateIn
+                      key={pillar.number}
+                      delay={i * 0.1}
+                      className="h-full"
+                    >
+                      <div className="h-full rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
+                        <div className="flex items-center gap-3">
+                          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#FFF2EB]">
+                            <Icon
+                              className="text-[#FC5101]"
+                              style={{ fontSize: 28, width: 28, height: 28 }}
+                            />
+                          </div>
+                          <p className="text-base font-bold text-[#011935] sm:text-lg">
+                            <span className="text-[#011935]">
+                              {pillar.number}.{" "}
+                            </span>
+                            {pillar.title}
+                          </p>
                         </div>
-                        <p className="text-sm font-bold text-[#011935]">
-                          <span className="text-[#011935]">{pillar.number}. </span>
-                          {pillar.title}
-                        </p>
+                        <ul className="mt-4 space-y-2">
+                          {pillar.bullets.map((b) => (
+                            <li
+                              key={b}
+                              className="flex items-start gap-2 text-sm text-[#486586]"
+                            >
+                              <CheckCircle2
+                                size={13}
+                                className="mt-0.5 shrink-0 text-[#FC5101]/60"
+                              />
+                              {b}
+                            </li>
+                          ))}
+                        </ul>
                       </div>
-                      <ul className="mt-4 space-y-2">
-                        {pillar.bullets.map((b) => (
-                          <li key={b} className="flex items-start gap-2 text-sm text-[#486586]">
-                            <CheckCircle2 size={13} className="mt-0.5 shrink-0 text-[#FC5101]/60" />
-                            {b}
-                          </li>
-                        ))}
-                      </ul>
+                    </AnimateIn>
+                  );
+                })}
+              </div>
+
+              {/* Defensible Positioning */}
+              <AnimateIn delay={0.1}>
+                <div className="mt-8 rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm sm:p-8">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#FFF2EB]">
+                      <Shield
+                        className="text-[#FC5101]"
+                        style={{ fontSize: 28, width: 28, height: 28 }}
+                      />
                     </div>
-                  </AnimateIn>
-                );
-              })}
+                    <h3 className="text-base font-bold text-[#011935] sm:text-lg">
+                      {growthModelDefensible.title}
+                    </h3>
+                  </div>
+                  <ul className="mt-4 grid gap-2 sm:grid-cols-2">
+                    {growthModelDefensible.bullets.map((b) => (
+                      <li
+                        key={b}
+                        className="flex items-start gap-2 text-sm text-[#486586]"
+                      >
+                        <CheckCircle2
+                          size={13}
+                          className="mt-0.5 shrink-0 text-[#FC5101]"
+                        />
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </AnimateIn>
+
+              {/* Summary */}
+              <AnimateIn delay={0.2}>
+                <div className="mt-5 rounded-xl bg-[#011935] p-6 sm:p-8">
+                  <p className="text-sm leading-7 text-white/85 sm:text-base">
+                    {growthModelSummary}
+                  </p>
+                </div>
+              </AnimateIn>
             </div>
-          </div>
           </div>
         </section>
 
         {/* ═══ SLIDE 4 — ENTERPRISE FOUNDATIONS ═══ */}
         <section id="enterprise-foundations">
           <div className="relative h-[280px] overflow-hidden sm:h-[340px]">
-            <img src="/images/enterprise-foundations.jpg" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover" />
+            <img
+              src="/images/enterprise-foundations.jpg"
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-[#011935] via-[#011935]/40 to-black/20" />
             <div className="absolute inset-x-0 bottom-0 z-10 px-5 pb-8 sm:px-16">
               <div className="mx-auto max-w-6xl">
@@ -522,51 +708,72 @@ export function BusinessPlanPresentation() {
           </div>
 
           <div className="bg-white px-5 py-12 sm:px-16 sm:py-16">
-          <div className="mx-auto max-w-6xl">
-            <div className="grid gap-6 sm:grid-cols-2">
-              {enterpriseFoundations.quadrants.map((q, i) => (
-                <AnimateIn key={q.title} delay={i * 0.1} className="h-full">
-                  <div className="h-full rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm">
-                    <h3 className="text-sm font-bold text-[#011935]">{i + 1}. {q.title}</h3>
-                    <ul className="mt-3 space-y-2">
-                      {q.bullets.map((b) => (
-                        <li key={b} className="flex items-start gap-2 text-sm text-[#486586]">
-                          <CheckCircle2 size={13} className="mt-0.5 shrink-0 text-[#FC5101]" />
-                          {b}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </AnimateIn>
-              ))}
+            <div className="mx-auto max-w-6xl">
+              <div className="grid gap-6 sm:grid-cols-2">
+                {enterpriseFoundations.quadrants.map((q, i) => (
+                  <AnimateIn key={q.title} delay={i * 0.1} className="h-full">
+                    <div className="h-full rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
+                      <div className="flex items-center gap-3">
+                        <div
+                          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#011935] font-black text-white"
+                          style={{ fontSize: 18 }}
+                        >
+                          {i + 1}
+                        </div>
+                        <h3 className="text-base font-bold leading-tight text-[#011935] sm:text-lg">
+                          {q.title}
+                        </h3>
+                      </div>
+                      <ul className="mt-4 space-y-2">
+                        {q.bullets.map((b) => (
+                          <li
+                            key={b}
+                            className="flex items-start gap-2 text-sm text-[#486586]"
+                          >
+                            <CheckCircle2
+                              size={13}
+                              className="mt-0.5 shrink-0 text-[#FC5101]"
+                            />
+                            {b}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </AnimateIn>
+                ))}
+              </div>
+
+              {/* Positioning Statement */}
+              <AnimateIn>
+                <div className="mt-8 rounded-xl bg-[#011935] p-6 sm:p-8">
+                  <p className="text-sm leading-7 text-white/85 sm:text-base">
+                    {enterpriseFoundations.positioning}
+                  </p>
+                </div>
+              </AnimateIn>
+
+              {/* Key Point */}
+              <AnimateIn delay={0.1}>
+                <div className="mt-5 flex items-center gap-3 rounded-xl border-2 border-[#FC5101]/30 bg-[#FFF2EB] p-5">
+                  <Zap size={20} className="shrink-0 text-[#FC5101]" />
+                  <p className="text-sm font-bold text-[#011935]">
+                    Key Point: {enterpriseFoundations.keyPoint}
+                  </p>
+                </div>
+              </AnimateIn>
             </div>
-
-            {/* Positioning Statement */}
-            <AnimateIn>
-              <div className="mt-8 rounded-xl bg-[#011935] p-6 sm:p-8">
-                <p className="text-sm leading-7 text-white/85 sm:text-base">
-                  {enterpriseFoundations.positioning}
-                </p>
-              </div>
-            </AnimateIn>
-
-            {/* Key Point */}
-            <AnimateIn delay={0.1}>
-              <div className="mt-5 flex items-center gap-3 rounded-xl border-2 border-[#FC5101]/30 bg-[#FFF2EB] p-5">
-                <Zap size={20} className="shrink-0 text-[#FC5101]" />
-                <p className="text-sm font-bold text-[#011935]">
-                  Key Point: {enterpriseFoundations.keyPoint}
-                </p>
-              </div>
-            </AnimateIn>
-          </div>
           </div>
         </section>
 
         {/* ═══ SLIDE 5 — INVESTMENT ALLOCATION ═══ */}
         <section id="investment">
           <div className="relative h-[280px] overflow-hidden sm:h-[340px]">
-            <img src="/images/investment-allocation.jpg" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover" />
+            <img
+              src="/images/investment-allocation.jpg"
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-[#011935] via-[#011935]/40 to-black/20" />
             <div className="absolute inset-x-0 bottom-0 z-10 px-5 pb-8 sm:px-16">
               <div className="mx-auto max-w-6xl">
@@ -584,65 +791,85 @@ export function BusinessPlanPresentation() {
           </div>
 
           <div className="bg-[#F7F7F7] px-5 py-12 sm:px-16 sm:py-16">
-          <div className="mx-auto max-w-6xl">
-            <div className="grid gap-6 sm:grid-cols-2">
-              {investmentAreas.map((area, i) => {
-                const icons = [Rocket, BrainCircuit, Users, Globe];
-                const Icon = icons[i];
-                return (
-                  <AnimateIn key={area.title} delay={i * 0.1} className="h-full">
-                    <div className="h-full rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm">
-                      <div className="flex items-center gap-3">
-                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#FFF2EB]">
-                          <Icon className="text-[#FC5101]" style={{ fontSize: 28, width: 28, height: 28 }} />
+            <div className="mx-auto max-w-6xl">
+              <div className="grid gap-6 sm:grid-cols-2">
+                {investmentAreas.map((area, i) => {
+                  const icons = [Rocket, BrainCircuit, Users, Globe];
+                  const Icon = icons[i];
+                  return (
+                    <AnimateIn
+                      key={area.title}
+                      delay={i * 0.1}
+                      className="h-full"
+                    >
+                      <div className="h-full rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm">
+                        <div className="flex items-center gap-3">
+                          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#FFF2EB]">
+                            <Icon
+                              className="text-[#FC5101]"
+                              style={{ fontSize: 28, width: 28, height: 28 }}
+                            />
+                          </div>
+                          <div className="flex-1">
+                            <h3 className="text-base font-bold text-[#011935] sm:text-lg">
+                              {area.title}
+                            </h3>
+                          </div>
+                          <span className="shrink-0 text-xl font-black text-[#FC5101]">
+                            {area.amount}
+                          </span>
                         </div>
-                        <div className="flex-1">
-                          <h3 className="text-sm font-bold text-[#011935]">{area.title}</h3>
-                        </div>
-                        <span className="shrink-0 text-xl font-black text-[#FC5101]">
-                          {area.amount}
-                        </span>
+                        <ul className="mt-4 space-y-2">
+                          {area.bullets.map((b) => (
+                            <li
+                              key={b}
+                              className="flex items-start gap-2 text-sm text-[#486586]"
+                            >
+                              <CheckCircle2
+                                size={13}
+                                className="mt-0.5 shrink-0 text-[#FC5101]/60"
+                              />
+                              {b}
+                            </li>
+                          ))}
+                        </ul>
                       </div>
-                      <ul className="mt-4 space-y-2">
-                        {area.bullets.map((b) => (
-                          <li key={b} className="flex items-start gap-2 text-sm text-[#486586]">
-                            <CheckCircle2 size={13} className="mt-0.5 shrink-0 text-[#FC5101]/60" />
-                            {b}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </AnimateIn>
-                );
-              })}
+                    </AnimateIn>
+                  );
+                })}
+              </div>
+
+              {/* Positioning Statement */}
+              <AnimateIn>
+                <div className="mt-8 rounded-xl bg-[#011935] p-6 sm:p-8">
+                  <p className="text-sm leading-7 text-white/85 sm:text-base">
+                    {investmentSummary.keyPoint}
+                  </p>
+                </div>
+              </AnimateIn>
+
+              {/* Key Point */}
+              <AnimateIn delay={0.1}>
+                <div className="mt-5 flex items-center gap-3 rounded-xl border-2 border-[#FC5101]/30 bg-[#FFF2EB] p-5">
+                  <Zap size={20} className="shrink-0 text-[#FC5101]" />
+                  <p className="text-sm font-bold text-[#011935]">
+                    Key Point: {investmentSummary.closing}
+                  </p>
+                </div>
+              </AnimateIn>
             </div>
-
-            {/* Positioning Statement */}
-            <AnimateIn>
-              <div className="mt-8 rounded-xl bg-[#011935] p-6 sm:p-8">
-                <p className="text-sm leading-7 text-white/85 sm:text-base">
-                  {investmentSummary.keyPoint}
-                </p>
-              </div>
-            </AnimateIn>
-
-            {/* Key Point */}
-            <AnimateIn delay={0.1}>
-              <div className="mt-5 flex items-center gap-3 rounded-xl border-2 border-[#FC5101]/30 bg-[#FFF2EB] p-5">
-                <Zap size={20} className="shrink-0 text-[#FC5101]" />
-                <p className="text-sm font-bold text-[#011935]">
-                  Key Point: {investmentSummary.closing}
-                </p>
-              </div>
-            </AnimateIn>
-          </div>
           </div>
         </section>
 
         {/* ═══ SLIDE 6 — GLOBAL EXPANSION ═══ */}
         <section id="global-expansion">
           <div className="relative h-[280px] overflow-hidden sm:h-[340px]">
-            <img src="/images/global-expansion.jpg" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover" />
+            <img
+              src="/images/global-expansion.jpg"
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-[#011935] via-[#011935]/40 to-black/20" />
             <div className="absolute inset-x-0 bottom-0 z-10 px-5 pb-8 sm:px-16">
               <div className="mx-auto max-w-6xl">
@@ -657,53 +884,71 @@ export function BusinessPlanPresentation() {
           </div>
 
           <div className="bg-white px-5 py-12 sm:px-16 sm:py-16">
-          <div className="mx-auto max-w-6xl">
-            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {globalExpansionSteps.map((step, i) => {
-                const Icon = expansionIcons[i];
-                return (
-                  <AnimateIn key={step.number} delay={i * 0.1} className="h-full">
-                    <div className="h-full rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
-                      <div className="flex items-center gap-3">
-                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#011935] font-black text-white" style={{ fontSize: 18 }}>
-                          {step.number}
+            <div className="mx-auto max-w-6xl">
+              <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                {globalExpansionSteps.map((step, i) => {
+                  const Icon = expansionIcons[i];
+                  return (
+                    <AnimateIn
+                      key={step.number}
+                      delay={i * 0.1}
+                      className="h-full"
+                    >
+                      <div className="h-full rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
+                        <div className="flex items-center gap-3">
+                          <div
+                            className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#011935] font-black text-white"
+                            style={{ fontSize: 18 }}
+                          >
+                            {step.number}
+                          </div>
+                          <div className="min-w-0">
+                            <p className="text-base font-bold leading-tight text-[#011935] sm:text-lg">
+                              {step.title}
+                            </p>
+                          </div>
                         </div>
-                        <div className="min-w-0">
-                          <p className="text-sm font-bold leading-tight text-[#011935]">
-                            {step.title}
-                          </p>
-                        </div>
+                        <ul className="mt-4 space-y-2">
+                          {step.bullets.map((b) => (
+                            <li
+                              key={b}
+                              className="flex items-start gap-2 text-sm text-[#486586]"
+                            >
+                              <Icon
+                                size={13}
+                                className="mt-0.5 shrink-0 text-[#FC5101]/60"
+                              />
+                              {b}
+                            </li>
+                          ))}
+                        </ul>
                       </div>
-                      <ul className="mt-4 space-y-2">
-                        {step.bullets.map((b) => (
-                          <li key={b} className="flex items-start gap-2 text-sm text-[#486586]">
-                            <Icon size={13} className="mt-0.5 shrink-0 text-[#FC5101]/60" />
-                            {b}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </AnimateIn>
-                );
-              })}
-            </div>
-
-            {/* Summary */}
-            <AnimateIn>
-              <div className="mt-8 rounded-xl bg-[#011935] p-6 sm:p-8">
-                <p className="text-left text-sm leading-7 text-white/85 sm:text-base">
-                  {globalExpansionSummary}
-                </p>
+                    </AnimateIn>
+                  );
+                })}
               </div>
-            </AnimateIn>
-          </div>
+
+              {/* Summary */}
+              <AnimateIn>
+                <div className="mt-8 rounded-xl bg-[#011935] p-6 sm:p-8">
+                  <p className="text-left text-sm leading-7 text-white/85 sm:text-base">
+                    {globalExpansionSummary}
+                  </p>
+                </div>
+              </AnimateIn>
+            </div>
           </div>
         </section>
 
         {/* ═══ SLIDE 7 — WHY NOW / INVESTMENT SUMMARY ═══ */}
         <section id="why-now">
           <div className="relative h-[280px] overflow-hidden sm:h-[340px]">
-            <img src="/images/why-now-closing.jpg" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover" />
+            <img
+              src="/images/why-now-closing.jpg"
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-[#011935] via-[#011935]/40 to-black/20" />
             <div className="absolute inset-x-0 bottom-0 z-10 px-5 pb-8 sm:px-16">
               <div className="mx-auto max-w-6xl">
@@ -718,42 +963,58 @@ export function BusinessPlanPresentation() {
           </div>
 
           <div className="bg-[#F7F7F7] px-5 py-12 sm:px-16 sm:py-16">
-          <div className="mx-auto max-w-6xl">
-            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {whyNowPillars.map((pillar, i) => {
-                const Icon = whyNowIcons[i];
-                return (
-                  <AnimateIn key={pillar.title} delay={i * 0.1} className="h-full">
-                    <div className="h-full rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
-                      <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-[#FFF2EB]">
-                        <Icon className="text-[#FC5101]" style={{ fontSize: 28, width: 28, height: 28 }} />
+            <div className="mx-auto max-w-6xl">
+              <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                {whyNowPillars.map((pillar, i) => {
+                  const Icon = whyNowIcons[i];
+                  return (
+                    <AnimateIn
+                      key={pillar.title}
+                      delay={i * 0.1}
+                      className="h-full"
+                    >
+                      <div className="h-full rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
+                        <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-[#FFF2EB]">
+                          <Icon
+                            className="text-[#FC5101]"
+                            style={{ fontSize: 28, width: 28, height: 28 }}
+                          />
+                        </div>
+                        <h3 className="text-base font-bold text-[#011935] sm:text-lg">
+                          {pillar.title}
+                        </h3>
+                        <p className="mt-2 text-sm leading-6 text-[#486586]">
+                          {pillar.body}
+                        </p>
                       </div>
-                      <h3 className="text-sm font-bold text-[#011935]">{pillar.title}</h3>
-                      <p className="mt-2 text-sm leading-6 text-[#486586]">{pillar.body}</p>
-                    </div>
-                  </AnimateIn>
-                );
-              })}
-            </div>
-
-            {/* Closing Statement */}
-            <AnimateIn>
-            <div className="relative mt-10 overflow-hidden rounded-xl bg-[#011935]">
-              <img src="/images/why-now-closing.jpg" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover opacity-40" />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#011935]/80 to-[#011935]/60" />
-              <div className="relative h-1 bg-gradient-to-r from-[#FC5101] to-[#3566A0]" />
-              <div className="relative p-6 sm:p-10">
-                <p className="text-center text-base leading-8 text-white/90 sm:text-lg">
-                  {closingStatement}
-                </p>
-                <div className="mx-auto mt-6 h-px w-16 bg-[#FC5101]/50" />
-                <p className="mt-4 text-center text-[10px] font-medium uppercase tracking-[0.3em] text-white/40">
-                  ImpactXP · April 2026
-                </p>
+                    </AnimateIn>
+                  );
+                })}
               </div>
+
+              {/* Closing Statement */}
+              <AnimateIn>
+                <div className="relative mt-10 overflow-hidden rounded-xl bg-[#011935]">
+                  <img
+                    src="/images/why-now-closing.jpg"
+                    alt=""
+                    aria-hidden="true"
+                    className="absolute inset-0 h-full w-full object-cover opacity-40"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#011935]/80 to-[#011935]/60" />
+                  <div className="relative h-1 bg-gradient-to-r from-[#FC5101] to-[#3566A0]" />
+                  <div className="relative p-6 sm:p-10">
+                    <p className="text-center text-base leading-8 text-white/90 sm:text-lg">
+                      {closingStatement}
+                    </p>
+                    <div className="mx-auto mt-6 h-px w-16 bg-[#FC5101]/50" />
+                    <p className="mt-4 text-center text-[10px] font-medium uppercase tracking-[0.3em] text-white/40">
+                      <span className="normal-case">ImpactXP</span> · April 2026
+                    </p>
+                  </div>
+                </div>
+              </AnimateIn>
             </div>
-            </AnimateIn>
-          </div>
           </div>
         </section>
       </main>
