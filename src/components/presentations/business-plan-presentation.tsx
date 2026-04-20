@@ -325,7 +325,7 @@ export function BusinessPlanPresentation() {
                   width={1024}
                   height={569}
                   unoptimized
-                  className="mt-10 h-auto w-full"
+                  className="mt-10 h-auto w-full max-w-5xl"
                 />
               </AnimateIn>
 
