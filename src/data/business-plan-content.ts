@@ -115,6 +115,8 @@ export const marketContext = {
 };
 
 export const performanceData = {
+  subtitle:
+    "Current traction, near-term visibility, and a clear path to scale, backed by qualified pipeline and expansion within existing clients.",
   current: {
     title: "Current Position (FY25/26 Run Rate)",
     stats: [

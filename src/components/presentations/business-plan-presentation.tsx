@@ -435,6 +435,9 @@ export function BusinessPlanPresentation() {
                 <h2 className="mt-2 text-2xl font-bold text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] sm:text-3xl">
                   Strong Current Performance with Clear Growth Trajectory
                 </h2>
+                <p className="mt-3 max-w-3xl text-sm leading-6 text-white sm:text-base sm:leading-7">
+                  {performanceData.subtitle}
+                </p>
               </div>
             </div>
           </div>
@@ -716,6 +719,9 @@ export function BusinessPlanPresentation() {
                 <h2 className="mt-2 text-2xl font-bold text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] sm:text-3xl">
                   {enterpriseReadiness.title}
                 </h2>
+                <p className="mt-3 max-w-3xl text-sm leading-6 text-white sm:text-base sm:leading-7">
+                  {enterpriseReadiness.bridge}
+                </p>
               </div>
             </div>
           </div>
@@ -764,12 +770,6 @@ export function BusinessPlanPresentation() {
                   },
                 )}
               </div>
-
-              <AnimateIn delay={0.2}>
-                <p className="mt-8 text-center text-sm leading-6 text-[#486586] sm:text-base">
-                  {enterpriseReadiness.bridge}
-                </p>
-              </AnimateIn>
             </div>
           </div>
         </section>
@@ -788,7 +788,7 @@ export function BusinessPlanPresentation() {
                 <h2 className="mt-2 text-2xl font-bold text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] sm:text-3xl">
                   Targeted Investment to Unlock Growth (£2–3m)
                 </h2>
-                <p className="mt-3 max-w-2xl text-sm leading-6 text-white">
+                <p className="mt-3 max-w-3xl text-sm leading-6 text-white sm:text-base sm:leading-7">
                   {investmentSubtitle}
                 </p>
               </div>
@@ -871,7 +871,7 @@ export function BusinessPlanPresentation() {
                 <h2 className="mt-2 text-2xl font-bold text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] sm:text-3xl">
                   {globalExpansion.title}
                 </h2>
-                <p className="mt-3 max-w-2xl text-sm leading-6 text-white/70">
+                <p className="mt-3 max-w-3xl text-sm leading-6 text-white sm:text-base sm:leading-7">
                   {globalExpansion.subtitle}
                 </p>
               </div>
