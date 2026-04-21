@@ -80,11 +80,11 @@ export const platformOverview = {
       },
       {
         label: "Consistent",
-        body: "Enables consistent content, data, and workflows across markets",
+        body: "Consistent content and workflows across markets",
       },
       {
         label: "Scalable",
-        body: "Provides the foundation for scalable, multi-market deployment",
+        body: "Foundation for multi-market deployment",
       },
     ],
   },
