@@ -7,12 +7,15 @@ import {
   BrainCircuit,
   CheckCircle2,
   Database,
+  FlaskConical,
   Globe,
   Layers,
+  LayoutGrid,
   Network,
   Rocket,
   Shield,
   Sparkles,
+  Store,
   Target,
   TrendingUp,
   Users,
@@ -36,6 +39,7 @@ import { useInView } from "motion/react";
 import {
   sections,
   marketContext,
+  ourMission,
   platformOverview,
   trustedBy,
   performanceData,
@@ -58,6 +62,7 @@ const expansionIcons = [TrendingUp, Users, Rocket, Globe, Shield, Sparkles];
 const whyNowIcons = [Shield, TrendingUp, Target, BrainCircuit, Zap, Rocket];
 const defensibleIcons = [Network, Layers, Database, BrainCircuit, Sparkles];
 const architectureIcons = [Layers, Database, Network, Globe];
+const missionIcons = [LayoutGrid, Store, FlaskConical, Users];
 
 export function BusinessPlanPresentation() {
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -136,23 +141,101 @@ export function BusinessPlanPresentation() {
           </div>
         </section>
 
-        {/* ═══ SLIDE 2 — PLATFORM OVERVIEW ═══ */}
-        <section id="platform-overview">
+        {/* ═══ SLIDE 1.5 — OUR MISSION ═══ */}
+        <section id="our-mission">
           <div className="bg-[#F7F7F7] px-5 py-12 sm:px-16 sm:py-16">
             <div className="mx-auto max-w-6xl">
-              <AnimateIn>
+              <div className="grid gap-8 sm:grid-cols-2 sm:items-start">
+                <AnimateIn>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#FC5101]">
+                    {ourMission.eyebrow}
+                  </p>
+                  <h2 className="mt-2 text-2xl font-bold text-[#011935] sm:text-3xl">
+                    {ourMission.titleLead}
+                    <br />
+                    <span className="text-[#FC5101]">
+                      {ourMission.titleHighlight}
+                    </span>
+                  </h2>
+                </AnimateIn>
+                <AnimateIn delay={0.1}>
+                  <p className="text-sm leading-6 text-[#486586] sm:text-base sm:mt-8">
+                    {ourMission.intro}
+                  </p>
+                </AnimateIn>
+              </div>
+
+              <AnimateIn delay={0.15}>
+                <div className="mt-10 flex items-center gap-4">
+                  <div className="h-px flex-1 bg-[#e5e7eb]" />
+                  <span className="inline-flex rounded-full border border-[#e5e7eb] bg-white px-4 py-1 text-[10px] font-semibold uppercase tracking-[0.3em] text-[#486586]">
+                    {ourMission.howToLabel}
+                  </span>
+                  <div className="h-px flex-1 bg-[#e5e7eb]" />
+                </div>
+              </AnimateIn>
+
+              <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                {ourMission.challenges.map((c, i) => {
+                  const Icon = missionIcons[i];
+                  return (
+                    <AnimateIn
+                      key={c.number}
+                      delay={0.2 + i * 0.1}
+                      className="h-full"
+                    >
+                      <div className="h-full rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm">
+                        <div className="flex items-start justify-between">
+                          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#FFF2EB]">
+                            <Icon
+                              className="text-[#FC5101]"
+                              style={{ fontSize: 18, width: 18, height: 18 }}
+                            />
+                          </div>
+                          <span className="text-2xl font-bold text-[#FC5101]/30">
+                            {c.number}
+                          </span>
+                        </div>
+                        <h3 className="mt-6 text-base font-bold text-[#011935]">
+                          {c.title}
+                        </h3>
+                        <p className="mt-3 text-sm leading-6 text-[#486586]">
+                          {c.body}
+                        </p>
+                      </div>
+                    </AnimateIn>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ═══ SLIDE 2 — PLATFORM OVERVIEW ═══ */}
+        <section id="platform-overview">
+          <div className="relative h-[280px] overflow-hidden sm:h-[340px]">
+            <ParallaxImage
+              src="/images/platform_overview_v2.png"
+              className="object-top"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#011935] via-[#011935]/40 to-black/20" />
+            <div className="absolute inset-x-0 bottom-0 z-10 px-5 pb-8 sm:px-16">
+              <div className="mx-auto max-w-6xl">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#FC5101]">
                   {platformOverview.eyebrow}
                 </p>
-                <h2 className="mt-2 text-2xl font-bold text-[#011935] sm:text-3xl">
+                <h2 className="mt-2 text-2xl font-bold text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] sm:text-3xl">
                   {platformOverview.title}
                 </h2>
-                <p className="mt-3 max-w-3xl text-sm leading-6 text-[#486586] sm:text-base">
+                <p className="mt-3 max-w-3xl text-sm leading-6 text-white/70">
                   {platformOverview.intro}
                 </p>
-              </AnimateIn>
-
-              <div className="mt-10 grid gap-6 sm:grid-cols-2">
+              </div>
+            </div>
+          </div>
+          <div className="bg-[#F7F7F7] px-5 py-12 sm:px-16 sm:py-16">
+            <div className="mx-auto max-w-6xl">
+              <div className="grid gap-6 sm:grid-cols-2">
                 {/* End-to-End Capability */}
                 <AnimateIn className="h-full">
                   <div className="h-full rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm">
@@ -253,6 +336,32 @@ export function BusinessPlanPresentation() {
                   </div>
                 </AnimateIn>
               </div>
+
+              {/* How the Platform Delivers Value — full width, light */}
+              <AnimateIn delay={0.1} className="mt-8">
+                <div className="rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm sm:p-8">
+                  <h3 className="text-base font-bold text-[#011935] sm:text-lg">
+                    {platformOverview.valueDelivery.title}
+                  </h3>
+                  <ul className="mt-4 grid gap-x-8 gap-y-2 sm:grid-cols-2">
+                    {platformOverview.valueDelivery.bullets.map((b) => (
+                      <li
+                        key={b}
+                        className="flex items-start gap-2 text-sm text-[#486586]"
+                      >
+                        <CheckCircle2
+                          size={13}
+                          className="mt-0.5 shrink-0 text-[#FC5101]/60"
+                        />
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="mt-4 text-xs italic text-[#486586]/70">
+                    {platformOverview.valueDelivery.note}
+                  </p>
+                </div>
+              </AnimateIn>
 
               {/* Core Platform Architecture (AssetXP) — full width, dark */}
               <AnimateIn delay={0.1} className="mt-8">

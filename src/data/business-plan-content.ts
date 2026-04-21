@@ -1,5 +1,6 @@
 export const sections = [
   { id: "splash", label: "ImpactXP" },
+  { id: "our-mission", label: "Our Mission" },
   { id: "platform-overview", label: "Platform Overview" },
   { id: "trusted-by", label: "Trusted By" },
   { id: "market-context", label: "Market Context" },
@@ -10,6 +11,37 @@ export const sections = [
   { id: "global-expansion", label: "Global Expansion" },
   { id: "why-now", label: "Why Now" },
 ] as const;
+
+export const ourMission = {
+  eyebrow: "Our Mission",
+  titleLead: "Four big industry challenges.",
+  titleHighlight: "One platform to solve them.",
+  intro:
+    "Retail category management is stuck between fragmented tools, one-size-fits-all planograms, and slow test-and-learn cycles. ImpactXP was built around four questions, and answers each with a unified, AI-powered workflow.",
+  howToLabel: "How to…",
+  challenges: [
+    {
+      number: "01",
+      title: "Optimize Space & Assortment",
+      body: "Solve category challenges quickly with AI-driven space and assortment optimization that surfaces incrementality, cannibalization, and size of prize in real time.",
+    },
+    {
+      number: "02",
+      title: "Automate Store-Specific Plans",
+      body: "Replace one-size-fits-all cluster planograms with dynamic, store-specific plans generated automatically, saving weeks of manual effort.",
+    },
+    {
+      number: "03",
+      title: "Test & Learn at Retail",
+      body: "Understand what really works at the shelf. An iterative test-and-learn approach, powered by virtual research, drives demand and validates execution.",
+    },
+    {
+      number: "04",
+      title: "Better, Faster, Together",
+      body: "Enable brand and retail teams to do their jobs better and faster on one connected AI platform, replacing siloed tools with shared data and workflow.",
+    },
+  ],
+};
 
 export const trustedBy = {
   eyebrow: "Customers",
@@ -22,9 +54,9 @@ export const trustedBy = {
 
 export const platformOverview = {
   eyebrow: "Platform Overview",
-  title: "A Connected Platform Driving Better Retail Decisions",
+  title: "A Connected Platform Delivering Retail Execution at Scale",
   intro:
-    "ImpactXP is a modular SaaS platform designed to help CPG brands and retailers plan, visualise and validate better commercial decisions.",
+    "ImpactXP is a modular SaaS platform enabling CPG brands and retailers to optimise, automate, understand, and execute retail decisions across global markets.",
   endToEnd: {
     title: "End-to-End Capability",
     steps: [
@@ -32,7 +64,7 @@ export const platformOverview = {
       { verb: "Visualise", body: "In-store execution and shopper experience" },
       { verb: "Validate", body: "Real-world testing and optimisation" },
     ],
-    note: "Moves clients from insight to action within a single connected environment",
+    note: "Connects strategy, execution, and validation within a single platform",
   },
   coreArchitecture: {
     eyebrow: "Core Platform Architecture",
@@ -40,19 +72,19 @@ export const platformOverview = {
     pillars: [
       {
         label: "Unified",
-        body: "AssetXP underpins all five core modules",
+        body: "AssetXP underpins all modules",
       },
       {
-        label: "Cloud-Native",
+        label: "Cloud-Based",
         body: "Central asset and data environment",
       },
       {
         label: "Consistent",
-        body: "Scalable content, data, and workflows across markets",
+        body: "Enables consistent content, data, and workflows across markets",
       },
       {
-        label: "Global-Ready",
-        body: "Foundation for global deployment and operational efficiency",
+        label: "Scalable",
+        body: "Provides the foundation for scalable, multi-market deployment",
       },
     ],
   },
@@ -65,29 +97,39 @@ export const platformOverview = {
       { name: "EngageXP", body: "virtual retail environments and collaboration" },
       { name: "ResearchXP", body: "rapid validation with real shoppers" },
     ],
-    note: "Each module operates independently or as part of a fully integrated system",
+    note: "Modules operate independently or as a fully integrated system",
+  },
+  valueDelivery: {
+    title: "How the Platform Delivers Value",
+    bullets: [
+      "Optimises space and assortment through integrated planning and simulation",
+      "Automates store-specific execution across markets and formats",
+      "Enables continuous test-and-learn to understand what drives demand",
+      "Connects teams through agentic workflows and shared environments",
+    ],
+    note: "Transforms insight into scalable, real-world execution",
   },
   differentiation: {
     title: "Key Differentiation",
     bullets: [
       "Single connected platform vs fragmented legacy tools",
       "Enterprise-level capability and security",
-      "Available via cloud, desktop, or hybrid deployment",
+      "Cloud, desktop, and hybrid deployment options",
       "Built from real-world shopper and retail experience",
       "Designed for global, multi-market deployment",
-      "Increasingly enhanced by AI-driven workflows and automation",
     ],
   },
   commercialImpact: {
     title: "Commercial Impact",
     bullets: [
-      "Faster, better-informed decision making",
+      "Faster, more consistent decision making",
+      "Reduced time and cost of execution",
       "Improved collaboration between brands and retailers",
-      "Focus on total category growth, not just brand performance",
+      "Focus on total category growth",
     ],
   },
   positioningLine:
-    "Enabling CPGs to move from reporting past performance to shaping future category growth through data, collaboration, and execution.",
+    "A connected platform enabling brands to optimise, automate, understand, and execute retail decisions at global scale",
 };
 
 export const marketContext = {
