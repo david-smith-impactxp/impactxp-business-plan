@@ -147,6 +147,8 @@ export const marketContext = {
 };
 
 export const performanceData = {
+  subtitle:
+    "Current traction, near-term visibility, and a clear path to scale, backed by qualified pipeline and expansion within existing clients.",
   current: {
     title: "Current Position (FY25/26 Run Rate)",
     stats: [
@@ -322,7 +324,7 @@ export const enterpriseFoundations = {
 };
 
 export const investmentSubtitle =
-  "Focused Investment to Convert Demand and Scale Client Value";
+  "Investment is focused on converting demand and accelerating expansion within existing clients, where the greatest value creation opportunity exists";
 
 export const investmentAreas = [
   {
@@ -372,8 +374,6 @@ export const investmentAreas = [
 ];
 
 export const investmentSummary = {
-  keyPoint:
-    "Investment is focused on converting demand and accelerating expansion within existing clients, where the greatest value creation opportunity exists",
   closing:
     "This is targeted investment to accelerate a proven model, not to fund early-stage growth.",
 };

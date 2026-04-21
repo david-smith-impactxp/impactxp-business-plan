@@ -494,6 +494,9 @@ export function BusinessPlanPresentation() {
                 <h2 className="mt-2 text-2xl font-bold text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] sm:text-3xl">
                   Strong Current Performance with Clear Growth Trajectory
                 </h2>
+                <p className="mt-3 max-w-3xl text-sm leading-6 text-white sm:text-base sm:leading-7">
+                  {performanceData.subtitle}
+                </p>
               </div>
             </div>
           </div>
@@ -846,6 +849,9 @@ export function BusinessPlanPresentation() {
                 <h2 className="mt-2 text-2xl font-bold text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] sm:text-3xl">
                   Strong Enterprise Foundations with Clear Path to Scale
                 </h2>
+                <p className="mt-3 max-w-3xl text-sm leading-6 text-white sm:text-base sm:leading-7">
+                  {enterpriseFoundations.positioning}
+                </p>
               </div>
             </div>
           </div>
@@ -886,15 +892,6 @@ export function BusinessPlanPresentation() {
                 ))}
               </div>
 
-              {/* Positioning Statement */}
-              <AnimateIn>
-                <div className="mt-8 rounded-xl bg-[#011935] p-6 sm:p-8">
-                  <p className="text-sm leading-7 text-white sm:text-base">
-                    {enterpriseFoundations.positioning}
-                  </p>
-                </div>
-              </AnimateIn>
-
               {/* Key Point */}
               <AnimateIn delay={0.1}>
                 <div className="mt-5 flex items-center gap-3 rounded-xl bg-[#FFE1CC] p-5">
@@ -923,7 +920,7 @@ export function BusinessPlanPresentation() {
                 <h2 className="mt-2 text-2xl font-bold text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] sm:text-3xl">
                   Targeted Investment to Unlock Growth (£2–3m)
                 </h2>
-                <p className="mt-3 max-w-2xl text-sm leading-6 text-white">
+                <p className="mt-3 max-w-3xl text-sm leading-6 text-white sm:text-base sm:leading-7">
                   {investmentSubtitle}
                 </p>
               </div>
@@ -979,15 +976,6 @@ export function BusinessPlanPresentation() {
                 })}
               </div>
 
-              {/* Positioning Statement */}
-              <AnimateIn>
-                <div className="mt-8 rounded-xl bg-[#011935] p-6 sm:p-8">
-                  <p className="text-sm leading-7 text-white sm:text-base">
-                    {investmentSummary.keyPoint}
-                  </p>
-                </div>
-              </AnimateIn>
-
               {/* Key Point */}
               <AnimateIn delay={0.1}>
                 <div className="mt-5 flex items-center gap-3 rounded-xl bg-[#FFE1CC] p-5">
@@ -1016,6 +1004,9 @@ export function BusinessPlanPresentation() {
                 <h2 className="mt-2 text-2xl font-bold text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] sm:text-3xl">
                   Client-Led Global Expansion with Scalable Delivery
                 </h2>
+                <p className="mt-3 max-w-3xl text-sm leading-6 text-white sm:text-base sm:leading-7">
+                  {globalExpansionSummary}
+                </p>
               </div>
             </div>
           </div>
@@ -1064,15 +1055,6 @@ export function BusinessPlanPresentation() {
                   );
                 })}
               </div>
-
-              {/* Summary */}
-              <AnimateIn>
-                <div className="mt-8 rounded-xl bg-[#011935] p-6 sm:p-8">
-                  <p className="text-left text-sm leading-7 text-white sm:text-base">
-                    {globalExpansionSummary}
-                  </p>
-                </div>
-              </AnimateIn>
             </div>
           </div>
         </section>
