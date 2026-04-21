@@ -83,11 +83,11 @@ export function BusinessPlanPresentation() {
     <div className="flex min-h-screen">
       {!hideSidebar && <SideIndex items={sections} />}
 
-      <main className={`min-w-0 flex-1 ${!hideSidebar ? "xl:ml-[220px]" : ""}`}>
+      <main className={`min-w-0 flex-1 ${!hideSidebar ? "lg:landscape:ml-[220px]" : ""}`}>
         {/* ═══ SLIDE 1 — SPLASH ═══ */}
         <section
           id="splash"
-          className="relative flex min-h-screen scroll-mt-0 items-center justify-center overflow-hidden bg-[#011935]"
+          className="relative flex min-h-[100svh] scroll-mt-0 items-center justify-center overflow-hidden bg-[#011935]"
         >
           {/* Original splash video — keep for easy restoration */}
           {/* <video
@@ -108,7 +108,7 @@ export function BusinessPlanPresentation() {
             fill
             priority
             sizes="100vw"
-            className="absolute inset-0 h-full w-full object-cover opacity-70"
+            className="absolute inset-0 h-full w-full object-cover object-right opacity-70"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#011935]/70 via-[#011935]/25 to-[#011935]/5" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(1,25,53,0)_0%,_rgba(1,25,53,0.15)_70%,_rgba(1,25,53,0.35)_100%)]" />
@@ -175,7 +175,7 @@ export function BusinessPlanPresentation() {
                 </div>
               </AnimateIn>
 
-              <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              <div className="mt-8 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
                 {ourMission.challenges.map((c, i) => {
                   const Icon = missionIcons[i];
                   return (
@@ -381,7 +381,7 @@ export function BusinessPlanPresentation() {
                     {platformOverview.coreArchitecture.title}
                   </h3>
 
-                  <div className="mt-6 grid gap-x-8 gap-y-5 sm:grid-cols-2 lg:grid-cols-4">
+                  <div className="mt-6 grid gap-x-8 gap-y-5 sm:grid-cols-2 xl:grid-cols-4">
                     {platformOverview.coreArchitecture.pillars.map((p, i) => {
                       const Icon = architectureIcons[i];
                       return (
@@ -528,7 +528,7 @@ export function BusinessPlanPresentation() {
 
           <div className="bg-[#F7F7F7] px-5 py-12 sm:px-16 sm:py-16">
             <div className="mx-auto max-w-6xl">
-              <div className="grid gap-6 lg:grid-cols-3">
+              <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
                 {/* Current Position */}
                 <AnimateIn className="h-full">
                   <div className="h-full rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm">
@@ -755,7 +755,7 @@ export function BusinessPlanPresentation() {
 
           <div className="bg-[#F7F7F7] px-5 py-12 sm:px-16 sm:py-16">
             <div className="mx-auto max-w-6xl">
-              <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
                 {growthModelPillars.map((pillar, i) => {
                   const Icon = growthIcons[i];
                   return (
@@ -813,7 +813,7 @@ export function BusinessPlanPresentation() {
                     {growthModelDefensible.title}
                   </h3>
 
-                  <div className="mt-6 grid gap-x-8 gap-y-5 sm:grid-cols-2 lg:grid-cols-3">
+                  <div className="mt-6 grid gap-x-8 gap-y-5 sm:grid-cols-2 xl:grid-cols-3">
                     {growthModelDefensible.pillars.map((p, i) => {
                       const Icon = defensibleIcons[i];
                       return (
@@ -1046,7 +1046,7 @@ export function BusinessPlanPresentation() {
 
           <div className="bg-[#F7F7F7] px-5 py-12 sm:px-16 sm:py-16">
             <div className="mx-auto max-w-6xl">
-              <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
                 {globalExpansionSteps.map((step, i) => {
                   const Icon = expansionIcons[i];
                   return (
@@ -1120,7 +1120,7 @@ export function BusinessPlanPresentation() {
 
           <div className="bg-[#F7F7F7] px-5 py-12 sm:px-16 sm:py-16">
             <div className="mx-auto max-w-6xl">
-              <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
                 {whyNowPillars.map((pillar, i) => {
                   const Icon = whyNowIcons[i];
                   return (

@@ -59,12 +59,12 @@ export function SideIndex({ items }: { items: readonly Section[] }) {
         </p>
       </div>
 
-      <div className="flex-1 space-y-0.5 overflow-y-auto px-3">
+      <div className="flex-1 space-y-0.5 overflow-y-auto px-4">
         {items.map((item) => (
           <button
             key={item.id}
             onClick={() => handleNav(item.id)}
-            className={`block w-full rounded-lg px-3 py-2 text-left text-[13px] transition-all ${
+            className={`block w-full rounded-lg px-2 py-2 text-left text-[13px] transition-all ${
               active === item.id
                 ? "bg-[#FC5101] font-semibold text-white"
                 : "text-[#486586] hover:bg-[#F7F7F7] hover:text-[#011935]"
@@ -87,13 +87,13 @@ export function SideIndex({ items }: { items: readonly Section[] }) {
 
   return (
     <>
-      <nav className="fixed left-0 top-0 z-40 hidden h-screen w-[220px] flex-col border-r border-t border-gray-100 bg-white pb-8 xl:flex">
+      <nav className="fixed left-0 top-0 z-40 hidden h-screen w-[220px] flex-col border-r border-t border-gray-100 bg-white pb-8 lg:landscape:flex">
         {navContent}
       </nav>
 
       <button
         onClick={() => setOpen(true)}
-        className="fixed left-4 top-4 z-50 flex h-11 w-11 items-center justify-center rounded-xl bg-[#011935]/90 text-white shadow-lg backdrop-blur-sm xl:hidden"
+        className="fixed left-4 top-4 z-50 flex h-11 w-11 items-center justify-center rounded-xl bg-[#011935]/90 text-white shadow-lg backdrop-blur-sm lg:landscape:hidden"
         type="button"
         aria-label="Open menu"
       >
@@ -101,7 +101,7 @@ export function SideIndex({ items }: { items: readonly Section[] }) {
       </button>
 
       {open && (
-        <div className="fixed inset-0 z-50 xl:hidden">
+        <div className="fixed inset-0 z-50 lg:landscape:hidden">
           <div
             className="absolute inset-0 bg-black/40 backdrop-blur-sm"
             onClick={() => setOpen(false)}
