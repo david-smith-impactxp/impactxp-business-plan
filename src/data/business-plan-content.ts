@@ -90,7 +90,7 @@ export const platformOverview = {
       },
       {
         label: "Consistent",
-        body: "Consistent content, data, and workflows across markets",
+        body: "Consistent content and workflows across markets",
       },
       {
         label: "Scalable",

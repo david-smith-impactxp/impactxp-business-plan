@@ -205,7 +205,8 @@ export function BusinessPlanPresentation() {
               src="/images/platform_overview_v2.png"
               className="object-top"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#011935] via-[#011935]/40 to-black/20" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-[#011935] from-0% via-[#011935]/75 via-45% to-transparent to-80%" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#011935]/40 via-transparent to-transparent" />
             <div className="absolute inset-x-0 bottom-0 z-10 px-5 pb-8 sm:px-16">
               <div className="mx-auto max-w-6xl">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#FC5101]">
@@ -214,7 +215,7 @@ export function BusinessPlanPresentation() {
                 <h2 className="mt-2 text-2xl font-bold text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] sm:text-3xl">
                   {platformOverview.title}
                 </h2>
-                <p className="mt-3 max-w-3xl text-sm leading-6 text-white/70">
+                <p className="mt-3 max-w-3xl text-sm leading-6 text-white">
                   {platformOverview.intro}
                 </p>
               </div>
@@ -229,19 +230,16 @@ export function BusinessPlanPresentation() {
                     <h3 className="text-base font-bold text-[#011935] sm:text-lg">
                       {platformOverview.endToEnd.title}
                     </h3>
-                    <ul className="mt-4 space-y-3">
+                    <dl className="mt-4 grid grid-cols-[auto_1fr] gap-x-3 gap-y-3 text-sm">
                       {platformOverview.endToEnd.steps.map((s) => (
-                        <li
-                          key={s.verb}
-                          className="flex items-start gap-3 text-sm"
-                        >
-                          <span className="mt-0.5 shrink-0 rounded-md bg-[#FFF2EB] px-2 py-0.5 text-xs font-bold uppercase tracking-wider text-[#FC5101]">
+                        <div key={s.verb} className="contents">
+                          <dt className="mt-0.5 self-start justify-self-start rounded-md bg-[#FFF2EB] px-2 py-0.5 text-xs font-bold uppercase tracking-wider text-[#FC5101]">
                             {s.verb}
-                          </span>
-                          <span className="text-[#486586]">{s.body}</span>
-                        </li>
+                          </dt>
+                          <dd className="text-[#486586]">{s.body}</dd>
+                        </div>
                       ))}
-                    </ul>
+                    </dl>
                     <p className="mt-4 text-xs italic text-[#486586]/70">
                       {platformOverview.endToEnd.note}
                     </p>
@@ -254,23 +252,21 @@ export function BusinessPlanPresentation() {
                     <h3 className="text-base font-bold text-[#011935] sm:text-lg">
                       {platformOverview.modules.title}
                     </h3>
-                    <ul className="mt-4 space-y-2">
+                    <dl className="mt-4 grid grid-cols-[auto_1fr] gap-x-2 gap-y-2 text-sm">
                       {platformOverview.modules.items.map((m) => (
-                        <li
-                          key={m.name}
-                          className="flex items-baseline gap-2 text-sm"
-                        >
-                          <CheckCircle2
-                            size={13}
-                            className="shrink-0 translate-y-0.5 text-[#FC5101]"
-                          />
-                          <span className="font-bold text-[#011935]">
-                            {m.name}:
-                          </span>
-                          <span className="text-[#486586]">{m.body}</span>
-                        </li>
+                        <div key={m.name} className="contents">
+                          <dt className="inline-flex items-baseline gap-2 font-bold text-[#011935]">
+                            <CheckCircle2
+                              size={13}
+                              aria-hidden="true"
+                              className="shrink-0 translate-y-0.5 text-[#FC5101]"
+                            />
+                            <span>{m.name}</span>
+                          </dt>
+                          <dd className="text-[#486586]">{m.body}</dd>
+                        </div>
                       ))}
-                    </ul>
+                    </dl>
                     <p className="mt-4 text-xs italic text-[#486586]/70">
                       {platformOverview.modules.note}
                     </p>
@@ -296,25 +292,25 @@ export function BusinessPlanPresentation() {
                     {platformOverview.coreArchitecture.title}
                   </h3>
 
-                  <div className="mt-6 grid gap-x-8 gap-y-5 sm:grid-cols-2 xl:grid-cols-4">
+                  <div className="mt-6 grid gap-x-8 gap-y-6 sm:grid-cols-2">
                     {platformOverview.coreArchitecture.pillars.map((p, i) => {
                       const Icon = architectureIcons[i];
                       return (
-                        <div key={p.label} className="flex items-start gap-3">
-                          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white">
-                            <Icon
-                              className="text-[#FC5101]"
-                              style={{ fontSize: 22, width: 22, height: 22 }}
-                            />
-                          </div>
-                          <div className="min-w-0">
+                        <div key={p.label}>
+                          <div className="flex items-center gap-3">
+                            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white">
+                              <Icon
+                                className="text-[#FC5101]"
+                                style={{ fontSize: 22, width: 22, height: 22 }}
+                              />
+                            </div>
                             <p className="text-base font-bold text-white">
                               {p.label}
                             </p>
-                            <p className="mt-1 text-sm leading-6 text-white">
-                              {p.body}
-                            </p>
                           </div>
+                          <p className="mt-2 text-sm leading-6 text-white">
+                            {p.body}
+                          </p>
                         </div>
                       );
                     })}
@@ -336,7 +332,7 @@ export function BusinessPlanPresentation() {
                 <h2 className="mt-2 text-2xl font-bold text-white sm:text-3xl">
                   {trustedBy.title}
                 </h2>
-                <p className="mt-3 max-w-3xl text-sm leading-6 text-white/70 sm:text-base">
+                <p className="mt-3 max-w-3xl text-sm leading-6 text-white sm:text-base">
                   {trustedBy.subtitle}
                 </p>
               </AnimateIn>
@@ -365,7 +361,8 @@ export function BusinessPlanPresentation() {
         <section id="market-context">
           <div className="relative h-[280px] overflow-hidden sm:h-[340px]">
             <ParallaxImage src="/images/cover-bg.jpg" className="object-top" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#011935] via-[#011935]/40 to-black/20" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-[#011935] from-0% via-[#011935]/75 via-45% to-transparent to-80%" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#011935]/40 via-transparent to-transparent" />
             <div className="absolute inset-x-0 bottom-0 z-10 px-5 pb-8 sm:px-16">
               <div className="mx-auto max-w-6xl">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#FC5101]">
@@ -374,7 +371,7 @@ export function BusinessPlanPresentation() {
                 <h2 className="mt-2 text-2xl font-bold text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] sm:text-3xl">
                   {marketContext.slideTitle}
                 </h2>
-                <p className="mt-3 max-w-3xl text-sm leading-6 text-white/70">
+                <p className="mt-3 max-w-3xl text-sm leading-6 text-white">
                   {marketContext.subtitle}
                 </p>
               </div>
@@ -428,7 +425,8 @@ export function BusinessPlanPresentation() {
         <section id="performance">
           <div className="relative h-[280px] overflow-hidden sm:h-[340px]">
             <ParallaxImage src="/images/performance-hero.jpg" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#011935] via-[#011935]/40 to-black/20" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-[#011935] from-0% via-[#011935]/75 via-45% to-transparent to-80%" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#011935]/40 via-transparent to-transparent" />
             <div className="absolute inset-x-0 bottom-0 z-10 px-5 pb-8 sm:px-16">
               <div className="mx-auto max-w-6xl">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#FC5101]">
@@ -592,7 +590,8 @@ export function BusinessPlanPresentation() {
         <section id="how-we-grow">
           <div className="relative h-[280px] overflow-hidden sm:h-[340px]">
             <ParallaxImage src="/images/growth-model.jpg" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#011935] via-[#011935]/40 to-black/20" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-[#011935] from-0% via-[#011935]/75 via-45% to-transparent to-80%" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#011935]/40 via-transparent to-transparent" />
             <div className="absolute inset-x-0 bottom-0 z-10 px-5 pb-8 sm:px-16">
               <div className="mx-auto max-w-6xl">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#FC5101]">
@@ -601,7 +600,7 @@ export function BusinessPlanPresentation() {
                 <h2 className="mt-2 text-2xl font-bold text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] sm:text-3xl">
                   {howWeGrow.title}
                 </h2>
-                <p className="mt-3 max-w-2xl text-sm leading-6 text-white/70">
+                <p className="mt-3 max-w-2xl text-sm leading-6 text-white">
                   {howWeGrow.subtitle}
                 </p>
               </div>
@@ -668,25 +667,25 @@ export function BusinessPlanPresentation() {
                     {howWeGrow.defensible.title}
                   </h3>
 
-                  <div className="mt-6 grid gap-x-8 gap-y-5 sm:grid-cols-3">
+                  <div className="mt-6 grid gap-x-8 gap-y-6 sm:grid-cols-2">
                     {howWeGrow.defensible.pillars.map((p, i) => {
                       const Icon = defensibleIcons[i];
                       return (
-                        <div key={p.label} className="flex items-start gap-3">
-                          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white">
-                            <Icon
-                              className="text-[#FC5101]"
-                              style={{ fontSize: 22, width: 22, height: 22 }}
-                            />
-                          </div>
-                          <div className="min-w-0">
+                        <div key={p.label}>
+                          <div className="flex items-center gap-3">
+                            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white">
+                              <Icon
+                                className="text-[#FC5101]"
+                                style={{ fontSize: 22, width: 22, height: 22 }}
+                              />
+                            </div>
                             <p className="text-base font-bold text-white">
                               {p.label}
                             </p>
-                            <p className="mt-1 text-sm leading-6 text-white">
-                              {p.body}
-                            </p>
                           </div>
+                          <p className="mt-2 text-sm leading-6 text-white">
+                            {p.body}
+                          </p>
                         </div>
                       );
                     })}
@@ -707,7 +706,8 @@ export function BusinessPlanPresentation() {
         <section id="enterprise-readiness">
           <div className="relative h-[280px] overflow-hidden sm:h-[340px]">
             <ParallaxImage src="/images/enterprise-foundations.jpg" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#011935] via-[#011935]/40 to-black/20" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-[#011935] from-0% via-[#011935]/75 via-45% to-transparent to-80%" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#011935]/40 via-transparent to-transparent" />
             <div className="absolute inset-x-0 bottom-0 z-10 px-5 pb-8 sm:px-16">
               <div className="mx-auto max-w-6xl">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#FC5101]">
@@ -778,7 +778,8 @@ export function BusinessPlanPresentation() {
         <section id="investment">
           <div className="relative h-[280px] overflow-hidden sm:h-[340px]">
             <ParallaxImage src="/images/investment-allocation.jpg" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#011935] via-[#011935]/40 to-black/20" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-[#011935] from-0% via-[#011935]/75 via-45% to-transparent to-80%" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#011935]/40 via-transparent to-transparent" />
             <div className="absolute inset-x-0 bottom-0 z-10 px-5 pb-8 sm:px-16">
               <div className="mx-auto max-w-6xl">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#FC5101]">
@@ -787,7 +788,7 @@ export function BusinessPlanPresentation() {
                 <h2 className="mt-2 text-2xl font-bold text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] sm:text-3xl">
                   Targeted Investment to Unlock Growth (£2–3m)
                 </h2>
-                <p className="mt-3 max-w-2xl text-sm leading-6 text-white/70">
+                <p className="mt-3 max-w-2xl text-sm leading-6 text-white">
                   {investmentSubtitle}
                 </p>
               </div>
@@ -860,7 +861,8 @@ export function BusinessPlanPresentation() {
         <section id="global-expansion">
           <div className="relative h-[280px] overflow-hidden sm:h-[340px]">
             <ParallaxImage src="/images/global-expansion.jpg" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#011935] via-[#011935]/40 to-black/20" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-[#011935] from-0% via-[#011935]/75 via-45% to-transparent to-80%" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#011935]/40 via-transparent to-transparent" />
             <div className="absolute inset-x-0 bottom-0 z-10 px-5 pb-8 sm:px-16">
               <div className="mx-auto max-w-6xl">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#FC5101]">
@@ -928,7 +930,8 @@ export function BusinessPlanPresentation() {
         <section id="why-now">
           <div className="relative h-[280px] overflow-hidden sm:h-[340px]">
             <ParallaxImage src="/images/why-now-closing.jpg" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#011935] via-[#011935]/40 to-black/20" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-[#011935] from-0% via-[#011935]/75 via-45% to-transparent to-80%" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#011935]/40 via-transparent to-transparent" />
             <div className="absolute inset-x-0 bottom-0 z-10 px-5 pb-8 sm:px-16">
               <div className="mx-auto max-w-6xl">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#FC5101]">
@@ -937,6 +940,9 @@ export function BusinessPlanPresentation() {
                 <h2 className="mt-2 text-2xl font-bold text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] sm:text-3xl">
                   Why Now
                 </h2>
+                <p className="mt-3 max-w-3xl text-sm leading-6 text-white sm:text-base sm:leading-7">
+                  {closingStatement}
+                </p>
               </div>
             </div>
           </div>
@@ -973,25 +979,13 @@ export function BusinessPlanPresentation() {
                 })}
               </div>
 
-              {/* Closing Statement */}
-              <AnimateIn>
-                <div className="relative mt-10 overflow-hidden rounded-xl bg-[#011935]">
-                  <img
-                    src="/images/why-now-closing.jpg"
-                    alt=""
-                    aria-hidden="true"
-                    className="absolute inset-0 h-full w-full object-cover opacity-40"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#011935]/80 to-[#011935]/60" />
-                  <div className="relative p-6 sm:p-10">
-                    <p className="text-center text-base leading-8 text-white/90 sm:text-lg">
-                      {closingStatement}
-                    </p>
-                    <div className="mx-auto mt-6 h-px w-16 bg-[#FC5101]/50" />
-                    <p className="mt-4 text-center text-[10px] font-medium uppercase tracking-[0.3em] text-white/40">
-                      <span className="normal-case">ImpactXP</span> · April 2026
-                    </p>
-                  </div>
+              {/* Byline */}
+              <AnimateIn delay={0.3}>
+                <div className="mt-16 text-center">
+                  <div className="mx-auto h-px w-16 bg-[#FC5101]/40" />
+                  <p className="mt-5 text-[10px] font-medium uppercase tracking-[0.3em] text-[#486586]/60">
+                    <span className="normal-case">ImpactXP</span> · April 2026
+                  </p>
                 </div>
               </AnimateIn>
             </div>
