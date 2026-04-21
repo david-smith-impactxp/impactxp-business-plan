@@ -3,7 +3,6 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import {
-  BarChart3,
   BrainCircuit,
   CheckCircle2,
   Database,
@@ -44,25 +43,23 @@ import {
   trustedBy,
   performanceData,
   arrChartData,
-  growthModelPillars,
-  growthModelDefensible,
-  growthModelSummary,
-  enterpriseFoundations,
+  howWeGrow,
+  enterpriseReadiness,
   investmentAreas,
   investmentSubtitle,
-  investmentSummary,
-  globalExpansionSteps,
-  globalExpansionSummary,
+  investmentClosing,
+  globalExpansion,
   whyNowPillars,
   closingStatement,
 } from "@/data/business-plan-content";
 
 const growthIcons = [Target, Globe, Layers, Users, BrainCircuit];
-const expansionIcons = [TrendingUp, Users, Rocket, Globe, Shield, Sparkles];
-const whyNowIcons = [Shield, TrendingUp, Target, BrainCircuit, Zap, Rocket];
-const defensibleIcons = [Network, Layers, Database, BrainCircuit, Sparkles];
+const whyNowIcons = [Shield, TrendingUp, Rocket];
+const defensibleIcons = [Network, Layers, BrainCircuit];
 const architectureIcons = [Layers, Database, Network, Globe];
 const missionIcons = [LayoutGrid, Store, FlaskConical, Users];
+const investmentIcons = [Rocket, BrainCircuit, Users, Globe];
+const enterpriseIcons = [Shield, Sparkles];
 
 export function BusinessPlanPresentation() {
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -165,17 +162,7 @@ export function BusinessPlanPresentation() {
                 </AnimateIn>
               </div>
 
-              <AnimateIn delay={0.15}>
-                <div className="mt-10 flex items-center gap-4">
-                  <div className="h-px flex-1 bg-[#e5e7eb]" />
-                  <span className="inline-flex rounded-full border border-[#e5e7eb] bg-white px-4 py-1 text-[10px] font-semibold uppercase tracking-[0.3em] text-[#486586]">
-                    {ourMission.howToLabel}
-                  </span>
-                  <div className="h-px flex-1 bg-[#e5e7eb]" />
-                </div>
-              </AnimateIn>
-
-              <div className="mt-8 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+              <div className="mt-10 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
                 {ourMission.challenges.map((c, i) => {
                   const Icon = missionIcons[i];
                   return (
@@ -289,79 +276,7 @@ export function BusinessPlanPresentation() {
                     </p>
                   </div>
                 </AnimateIn>
-
-                {/* Key Differentiation */}
-                <AnimateIn delay={0.2} className="h-full">
-                  <div className="h-full rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm">
-                    <h3 className="text-base font-bold text-[#011935] sm:text-lg">
-                      {platformOverview.differentiation.title}
-                    </h3>
-                    <ul className="mt-4 space-y-2">
-                      {platformOverview.differentiation.bullets.map((b) => (
-                        <li
-                          key={b}
-                          className="flex items-start gap-2 text-sm text-[#486586]"
-                        >
-                          <CheckCircle2
-                            size={13}
-                            className="mt-0.5 shrink-0 text-[#FC5101]/60"
-                          />
-                          {b}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </AnimateIn>
-
-                {/* Commercial Impact */}
-                <AnimateIn delay={0.3} className="h-full">
-                  <div className="h-full rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm">
-                    <h3 className="text-base font-bold text-[#011935] sm:text-lg">
-                      {platformOverview.commercialImpact.title}
-                    </h3>
-                    <ul className="mt-4 space-y-2">
-                      {platformOverview.commercialImpact.bullets.map((b) => (
-                        <li
-                          key={b}
-                          className="flex items-start gap-2 text-sm text-[#486586]"
-                        >
-                          <CheckCircle2
-                            size={13}
-                            className="mt-0.5 shrink-0 text-[#FC5101]/60"
-                          />
-                          {b}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </AnimateIn>
               </div>
-
-              {/* How the Platform Delivers Value — full width, light */}
-              <AnimateIn delay={0.1} className="mt-8">
-                <div className="rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm sm:p-8">
-                  <h3 className="text-base font-bold text-[#011935] sm:text-lg">
-                    {platformOverview.valueDelivery.title}
-                  </h3>
-                  <ul className="mt-4 grid gap-x-8 gap-y-2 sm:grid-cols-2">
-                    {platformOverview.valueDelivery.bullets.map((b) => (
-                      <li
-                        key={b}
-                        className="flex items-start gap-2 text-sm text-[#486586]"
-                      >
-                        <CheckCircle2
-                          size={13}
-                          className="mt-0.5 shrink-0 text-[#FC5101]/60"
-                        />
-                        {b}
-                      </li>
-                    ))}
-                  </ul>
-                  <p className="mt-4 text-xs italic text-[#486586]/70">
-                    {platformOverview.valueDelivery.note}
-                  </p>
-                </div>
-              </AnimateIn>
 
               {/* Core Platform Architecture (AssetXP) — full width, dark */}
               <AnimateIn delay={0.1} className="mt-8">
@@ -502,14 +417,14 @@ export function BusinessPlanPresentation() {
               <AnimateIn delay={0.4}>
                 <div className="mt-16 h-px w-16 bg-[#FC5101]/50 sm:mt-20" />
                 <p className="mt-4 text-sm font-semibold text-[#FC5101]">
-                  Shared with ImpactXP by Kraft Heinz
+                  {marketContext.attribution}
                 </p>
               </AnimateIn>
             </div>
           </div>
         </section>
 
-        {/* ═══ SLIDE 2 — STRONG CURRENT PERFORMANCE ═══ */}
+        {/* ═══ SLIDE 4 — STRONG CURRENT PERFORMANCE ═══ */}
         <section id="performance">
           <div className="relative h-[280px] overflow-hidden sm:h-[340px]">
             <ParallaxImage src="/images/performance-hero.jpg" />
@@ -528,7 +443,7 @@ export function BusinessPlanPresentation() {
 
           <div className="bg-[#F7F7F7] px-5 py-12 sm:px-16 sm:py-16">
             <div className="mx-auto max-w-6xl">
-              <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {/* Current Position */}
                 <AnimateIn className="h-full">
                   <div className="h-full rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm">
@@ -582,172 +497,112 @@ export function BusinessPlanPresentation() {
                   </div>
                 </AnimateIn>
 
-                {/* Medium-Term */}
-                <AnimateIn delay={0.2} className="h-full">
-                  <div className="h-full rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm">
+                {/* ARR Growth Chart */}
+                <AnimateIn delay={0.2} className="h-full sm:col-span-2 lg:col-span-1">
+                  <div
+                    ref={chartRef}
+                    className="flex h-full flex-col rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm"
+                  >
                     <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#011935]">
-                      {performanceData.mediumTerm.title}
+                      ARR Growth Trajectory
                     </p>
-                    <div className="mt-4 space-y-3">
-                      {performanceData.mediumTerm.milestones.map((m) => (
-                        <div
-                          key={m.year}
-                          className="flex items-baseline justify-between"
+                    <div className="mt-4 h-56 w-full flex-1 sm:h-64">
+                    {mounted && (
+                      <ResponsiveContainer
+                        key={chartKey}
+                        width="100%"
+                        height="100%"
+                      >
+                        <BarChart
+                          data={arrChartData}
+                          margin={{ top: 8, right: 16, bottom: 0, left: 0 }}
                         >
-                          <span className="text-sm font-medium text-[#011935]">
-                            {m.year}
-                          </span>
-                          <span className="text-xl font-black text-[#FC5101]">
-                            {m.arr}
-                          </span>
-                        </div>
-                      ))}
+                          <CartesianGrid
+                            strokeDasharray="3 3"
+                            stroke="#e5e7eb"
+                            vertical={false}
+                          />
+                          <XAxis
+                            dataKey="year"
+                            tick={{ fill: "#486586", fontSize: 12 }}
+                            axisLine={{ stroke: "#e5e7eb" }}
+                            tickLine={false}
+                          />
+                          <YAxis
+                            tick={{ fill: "#486586", fontSize: 12 }}
+                            axisLine={false}
+                            tickLine={false}
+                            tickFormatter={(v: number) => `£${v}m`}
+                          />
+                          <Tooltip
+                            formatter={(value) => [`£${value}m`, "ARR"]}
+                            contentStyle={{
+                              background: "#011935",
+                              border: "none",
+                              borderRadius: 8,
+                              color: "#fff",
+                              fontSize: 13,
+                            }}
+                            itemStyle={{ color: "#fff" }}
+                            labelStyle={{
+                              color: "rgba(255,255,255,0.7)",
+                              fontSize: 11,
+                            }}
+                          />
+                          <Bar
+                            dataKey="arr"
+                            radius={[6, 6, 0, 0]}
+                            maxBarSize={64}
+                            isAnimationActive={chartInView}
+                            animationDuration={800}
+                          >
+                            {arrChartData.map((_, i) => (
+                              <Cell
+                                key={i}
+                                fill={
+                                  i === arrChartData.length - 1
+                                    ? "#FC5101"
+                                    : "#3566A0"
+                                }
+                              />
+                            ))}
+                          </Bar>
+                        </BarChart>
+                      </ResponsiveContainer>
+                    )}
                     </div>
-                    <p className="mt-4 text-xs italic text-[#486586]/70">
-                      {performanceData.mediumTerm.note}
-                    </p>
                   </div>
                 </AnimateIn>
               </div>
 
-              {/* ARR Growth Chart + Value Creation & Alignment */}
-              <AnimateIn className="mt-10">
-                <div
-                  ref={chartRef}
-                  className="grid gap-6 lg:grid-cols-[1fr_320px]"
-                >
-                  <div className="rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm">
-                    <div className="h-64 w-full sm:h-72">
-                      {mounted && (
-                        <ResponsiveContainer
-                          key={chartKey}
-                          width="100%"
-                          height="100%"
-                        >
-                          <BarChart
-                            data={arrChartData}
-                            margin={{ top: 8, right: 16, bottom: 0, left: 0 }}
-                          >
-                            <CartesianGrid
-                              strokeDasharray="3 3"
-                              stroke="#e5e7eb"
-                              vertical={false}
-                            />
-                            <XAxis
-                              dataKey="year"
-                              tick={{ fill: "#486586", fontSize: 12 }}
-                              axisLine={{ stroke: "#e5e7eb" }}
-                              tickLine={false}
-                            />
-                            <YAxis
-                              tick={{ fill: "#486586", fontSize: 12 }}
-                              axisLine={false}
-                              tickLine={false}
-                              tickFormatter={(v: number) => `£${v}m`}
-                            />
-                            <Tooltip
-                              formatter={(value) => [`£${value}m`, "ARR"]}
-                              contentStyle={{
-                                background: "#011935",
-                                border: "none",
-                                borderRadius: 8,
-                                color: "#fff",
-                                fontSize: 13,
-                              }}
-                              itemStyle={{ color: "#fff" }}
-                              labelStyle={{
-                                color: "rgba(255,255,255,0.7)",
-                                fontSize: 11,
-                              }}
-                            />
-                            <Bar
-                              dataKey="arr"
-                              radius={[6, 6, 0, 0]}
-                              maxBarSize={64}
-                              isAnimationActive={chartInView}
-                              animationDuration={800}
-                            >
-                              {arrChartData.map((_, i) => (
-                                <Cell
-                                  key={i}
-                                  fill={
-                                    i === arrChartData.length - 1
-                                      ? "#FC5101"
-                                      : "#3566A0"
-                                  }
-                                />
-                              ))}
-                            </Bar>
-                          </BarChart>
-                        </ResponsiveContainer>
-                      )}
-                    </div>
-                    <p className="mt-4 text-center text-[10px] font-semibold uppercase tracking-[0.2em] text-[#486586]">
-                      ARR Growth Trajectory (£m)
-                    </p>
-                  </div>
-
-                  <div className="flex flex-col gap-6">
-                    <div className="flex-1 rounded-xl bg-[#FFE1CC] p-5">
-                      <p className="text-sm font-bold uppercase tracking-widest text-[#FC5101]">
-                        Value Creation
-                      </p>
-                      <ul className="mt-3 space-y-2">
-                        {performanceData.valueCreation.map((v) => (
-                          <li
-                            key={v}
-                            className="flex items-start gap-2 text-sm text-[#011935]"
-                          >
-                            <CheckCircle2
-                              size={14}
-                              className="mt-0.5 shrink-0 text-[#FC5101]"
-                            />
-                            {v}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div className="flex-1 rounded-xl bg-[#DCE8FA] p-5">
-                      <p className="text-sm font-bold uppercase tracking-widest text-[#3566A0]">
-                        Alignment
-                      </p>
-                      <ul className="mt-3 space-y-2">
-                        {performanceData.alignment.map((a) => (
-                          <li
-                            key={a}
-                            className="flex items-start gap-2 text-sm text-[#011935]"
-                          >
-                            <CheckCircle2
-                              size={14}
-                              className="mt-0.5 shrink-0 text-[#3566A0]"
-                            />
-                            {a}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
+              {/* Value Creation + Alignment — condensed lines under the grid */}
+              <AnimateIn delay={0.3}>
+                <p className="mt-8 text-center text-sm leading-6 text-[#486586] sm:text-base">
+                  {performanceData.valueCreationLine}
+                </p>
+                <p className="mt-2 text-center text-xs italic text-[#486586]/80 sm:text-sm">
+                  {performanceData.alignmentNote}
+                </p>
               </AnimateIn>
             </div>
           </div>
         </section>
 
-        {/* ═══ SLIDE 3 — SCALABLE GROWTH MODEL ═══ */}
-        <section id="growth-model">
+        {/* ═══ SLIDE 5 — HOW WE GROW ═══ */}
+        <section id="how-we-grow">
           <div className="relative h-[280px] overflow-hidden sm:h-[340px]">
             <ParallaxImage src="/images/growth-model.jpg" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#011935] via-[#011935]/40 to-black/20" />
             <div className="absolute inset-x-0 bottom-0 z-10 px-5 pb-8 sm:px-16">
               <div className="mx-auto max-w-6xl">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#FC5101]">
-                  Growth Strategy
+                  {howWeGrow.eyebrow}
                 </p>
                 <h2 className="mt-2 text-2xl font-bold text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] sm:text-3xl">
-                  A Structured, Scalable Growth Model
+                  {howWeGrow.title}
                 </h2>
                 <p className="mt-3 max-w-2xl text-sm leading-6 text-white/70">
-                  Growth is driven by expansion within global enterprise clients
+                  {howWeGrow.subtitle}
                 </p>
               </div>
             </div>
@@ -756,7 +611,7 @@ export function BusinessPlanPresentation() {
           <div className="bg-[#F7F7F7] px-5 py-12 sm:px-16 sm:py-16">
             <div className="mx-auto max-w-6xl">
               <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
-                {growthModelPillars.map((pillar, i) => {
+                {howWeGrow.pillars.map((pillar, i) => {
                   const Icon = growthIcons[i];
                   return (
                     <AnimateIn
@@ -772,7 +627,7 @@ export function BusinessPlanPresentation() {
                               style={{ fontSize: 28, width: 28, height: 28 }}
                             />
                           </div>
-                          <p className="whitespace-pre-line text-base font-bold leading-[1.15] text-[#011935] sm:text-lg">
+                          <p className="text-base font-bold leading-[1.15] text-[#011935] sm:text-lg">
                             {pillar.title}
                           </p>
                         </div>
@@ -806,15 +661,15 @@ export function BusinessPlanPresentation() {
                       style={{ fontSize: 22, width: 22, height: 22 }}
                     />
                     <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#FC5101] sm:text-sm">
-                      {growthModelDefensible.eyebrow}
+                      {howWeGrow.defensible.eyebrow}
                     </p>
                   </div>
                   <h3 className="mt-3 text-xl font-bold text-white sm:text-2xl">
-                    {growthModelDefensible.title}
+                    {howWeGrow.defensible.title}
                   </h3>
 
-                  <div className="mt-6 grid gap-x-8 gap-y-5 sm:grid-cols-2 xl:grid-cols-3">
-                    {growthModelDefensible.pillars.map((p, i) => {
+                  <div className="mt-6 grid gap-x-8 gap-y-5 sm:grid-cols-3">
+                    {howWeGrow.defensible.pillars.map((p, i) => {
                       const Icon = defensibleIcons[i];
                       return (
                         <div key={p.label} className="flex items-start gap-3">
@@ -839,38 +694,27 @@ export function BusinessPlanPresentation() {
 
                   <div className="mt-6 border-t border-white/10 pt-4">
                     <p className="text-sm italic leading-6 text-white/60 sm:text-base">
-                      {growthModelDefensible.closing}
+                      {howWeGrow.defensible.closing}
                     </p>
                   </div>
-                </div>
-              </AnimateIn>
-
-              {/* Summary — key point style */}
-              <AnimateIn delay={0.2}>
-                <div className="mt-5 flex items-center gap-3 rounded-xl bg-[#FFE1CC] p-5">
-                  <Zap size={20} className="shrink-0 text-[#FC5101]" />
-                  <p className="text-sm text-[#011935]">
-                    <span className="font-bold">Key Point:</span>{" "}
-                    {growthModelSummary}
-                  </p>
                 </div>
               </AnimateIn>
             </div>
           </div>
         </section>
 
-        {/* ═══ SLIDE 4 — ENTERPRISE FOUNDATIONS ═══ */}
-        <section id="enterprise-foundations">
+        {/* ═══ SLIDE 6 — ENTERPRISE READINESS ═══ */}
+        <section id="enterprise-readiness">
           <div className="relative h-[280px] overflow-hidden sm:h-[340px]">
             <ParallaxImage src="/images/enterprise-foundations.jpg" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#011935] via-[#011935]/40 to-black/20" />
             <div className="absolute inset-x-0 bottom-0 z-10 px-5 pb-8 sm:px-16">
               <div className="mx-auto max-w-6xl">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#FC5101]">
-                  Enterprise Readiness
+                  {enterpriseReadiness.eyebrow}
                 </p>
                 <h2 className="mt-2 text-2xl font-bold text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] sm:text-3xl">
-                  Strong Enterprise Foundations with Clear Path to Scale
+                  {enterpriseReadiness.title}
                 </h2>
               </div>
             </div>
@@ -879,63 +723,58 @@ export function BusinessPlanPresentation() {
           <div className="bg-[#F7F7F7] px-5 py-12 sm:px-16 sm:py-16">
             <div className="mx-auto max-w-6xl">
               <div className="grid gap-6 sm:grid-cols-2">
-                {enterpriseFoundations.quadrants.map((q, i) => (
-                  <AnimateIn key={q.title} delay={i * 0.1} className="h-full">
-                    <div className="h-full rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
-                      <div className="flex items-center gap-3">
-                        <div
-                          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#011935] font-black text-white"
-                          style={{ fontSize: 18 }}
-                        >
-                          {i + 1}
+                {[enterpriseReadiness.atScale, enterpriseReadiness.constraint].map(
+                  (block, i) => {
+                    const Icon = enterpriseIcons[i];
+                    return (
+                      <AnimateIn
+                        key={block.title}
+                        delay={i * 0.1}
+                        className="h-full"
+                      >
+                        <div className="h-full rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
+                          <div className="flex items-center gap-3">
+                            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#FFF2EB]">
+                              <Icon
+                                className="text-[#FC5101]"
+                                style={{ fontSize: 22, width: 22, height: 22 }}
+                              />
+                            </div>
+                            <h3 className="text-base font-bold leading-tight text-[#011935] sm:text-lg">
+                              {block.title}
+                            </h3>
+                          </div>
+                          <ul className="mt-4 space-y-2">
+                            {block.bullets.map((b) => (
+                              <li
+                                key={b}
+                                className="flex items-start gap-2 text-sm text-[#486586]"
+                              >
+                                <CheckCircle2
+                                  size={13}
+                                  className="mt-0.5 shrink-0 text-[#FC5101]"
+                                />
+                                {b}
+                              </li>
+                            ))}
+                          </ul>
                         </div>
-                        <h3 className="text-base font-bold leading-tight text-[#011935] sm:text-lg">
-                          {q.title}
-                        </h3>
-                      </div>
-                      <ul className="mt-4 space-y-2">
-                        {q.bullets.map((b) => (
-                          <li
-                            key={b}
-                            className="flex items-start gap-2 text-sm text-[#486586]"
-                          >
-                            <CheckCircle2
-                              size={13}
-                              className="mt-0.5 shrink-0 text-[#FC5101]"
-                            />
-                            {b}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </AnimateIn>
-                ))}
+                      </AnimateIn>
+                    );
+                  },
+                )}
               </div>
 
-              {/* Positioning Statement */}
-              <AnimateIn>
-                <div className="mt-8 rounded-xl bg-[#011935] p-6 sm:p-8">
-                  <p className="text-sm leading-7 text-white sm:text-base">
-                    {enterpriseFoundations.positioning}
-                  </p>
-                </div>
-              </AnimateIn>
-
-              {/* Key Point */}
-              <AnimateIn delay={0.1}>
-                <div className="mt-5 flex items-center gap-3 rounded-xl bg-[#FFE1CC] p-5">
-                  <Zap size={20} className="shrink-0 text-[#FC5101]" />
-                  <p className="text-sm text-[#011935]">
-                    <span className="font-bold">Key Point:</span>{" "}
-                    {enterpriseFoundations.keyPoint}
-                  </p>
-                </div>
+              <AnimateIn delay={0.2}>
+                <p className="mt-8 text-center text-sm leading-6 text-[#486586] sm:text-base">
+                  {enterpriseReadiness.bridge}
+                </p>
               </AnimateIn>
             </div>
           </div>
         </section>
 
-        {/* ═══ SLIDE 5 — INVESTMENT ALLOCATION ═══ */}
+        {/* ═══ SLIDE 7 — INVESTMENT ALLOCATION ═══ */}
         <section id="investment">
           <div className="relative h-[280px] overflow-hidden sm:h-[340px]">
             <ParallaxImage src="/images/investment-allocation.jpg" />
@@ -959,8 +798,7 @@ export function BusinessPlanPresentation() {
             <div className="mx-auto max-w-6xl">
               <div className="grid gap-6 sm:grid-cols-2">
                 {investmentAreas.map((area, i) => {
-                  const icons = [Rocket, BrainCircuit, Users, Globe];
-                  const Icon = icons[i];
+                  const Icon = investmentIcons[i];
                   return (
                     <AnimateIn
                       key={area.title}
@@ -1004,22 +842,13 @@ export function BusinessPlanPresentation() {
                 })}
               </div>
 
-              {/* Positioning Statement */}
-              <AnimateIn>
-                <div className="mt-8 rounded-xl bg-[#011935] p-6 sm:p-8">
-                  <p className="text-sm leading-7 text-white sm:text-base">
-                    {investmentSummary.keyPoint}
-                  </p>
-                </div>
-              </AnimateIn>
-
-              {/* Key Point */}
+              {/* Single closing Key Point */}
               <AnimateIn delay={0.1}>
-                <div className="mt-5 flex items-center gap-3 rounded-xl bg-[#FFE1CC] p-5">
+                <div className="mt-8 flex items-center gap-3 rounded-xl bg-[#FFE1CC] p-5">
                   <Zap size={20} className="shrink-0 text-[#FC5101]" />
-                  <p className="text-sm text-[#011935]">
+                  <p className="text-sm text-[#011935] sm:text-base">
                     <span className="font-bold">Key Point:</span>{" "}
-                    {investmentSummary.closing}
+                    {investmentClosing}
                   </p>
                 </div>
               </AnimateIn>
@@ -1027,7 +856,7 @@ export function BusinessPlanPresentation() {
           </div>
         </section>
 
-        {/* ═══ SLIDE 6 — GLOBAL EXPANSION ═══ */}
+        {/* ═══ SLIDE 8 — GLOBAL EXPANSION ═══ */}
         <section id="global-expansion">
           <div className="relative h-[280px] overflow-hidden sm:h-[340px]">
             <ParallaxImage src="/images/global-expansion.jpg" />
@@ -1035,73 +864,67 @@ export function BusinessPlanPresentation() {
             <div className="absolute inset-x-0 bottom-0 z-10 px-5 pb-8 sm:px-16">
               <div className="mx-auto max-w-6xl">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#FC5101]">
-                  Go-to-Market
+                  {globalExpansion.eyebrow}
                 </p>
                 <h2 className="mt-2 text-2xl font-bold text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] sm:text-3xl">
-                  Client-Led Global Expansion with Scalable Delivery
+                  {globalExpansion.title}
                 </h2>
+                <p className="mt-3 max-w-2xl text-sm leading-6 text-white/70">
+                  {globalExpansion.subtitle}
+                </p>
               </div>
             </div>
           </div>
 
           <div className="bg-[#F7F7F7] px-5 py-12 sm:px-16 sm:py-16">
             <div className="mx-auto max-w-6xl">
-              <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
-                {globalExpansionSteps.map((step, i) => {
-                  const Icon = expansionIcons[i];
-                  return (
-                    <AnimateIn
-                      key={step.number}
-                      delay={i * 0.1}
-                      className="h-full"
-                    >
-                      <div className="h-full rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
-                        <div className="flex items-center gap-3">
-                          <div
-                            className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#011935] font-black text-white"
-                            style={{ fontSize: 18 }}
-                          >
-                            {step.number}
-                          </div>
-                          <div className="min-w-0">
-                            <p className="text-base font-bold leading-tight text-[#011935] sm:text-lg">
-                              {step.title}
-                            </p>
-                          </div>
+              <div className="relative grid gap-5 sm:grid-cols-3">
+                {/* Horizontal connector line behind the phase circles */}
+                <div
+                  aria-hidden="true"
+                  className="pointer-events-none absolute left-6 right-6 top-[34px] hidden h-px bg-[#FC5101]/20 sm:block"
+                />
+                {globalExpansion.phases.map((phase, i) => (
+                  <AnimateIn
+                    key={phase.number}
+                    delay={i * 0.1}
+                    className="h-full"
+                  >
+                    <div className="relative h-full rounded-xl border border-[#e5e7eb] bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
+                      <div className="flex items-center gap-3">
+                        <div
+                          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#011935] font-black text-white"
+                          style={{ fontSize: 18 }}
+                        >
+                          {phase.number}
                         </div>
-                        <ul className="mt-4 space-y-2">
-                          {step.bullets.map((b) => (
-                            <li
-                              key={b}
-                              className="flex items-start gap-2 text-sm text-[#486586]"
-                            >
-                              <Icon
-                                size={13}
-                                className="mt-0.5 shrink-0 text-[#FC5101]/60"
-                              />
-                              {b}
-                            </li>
-                          ))}
-                        </ul>
+                        <div className="min-w-0">
+                          <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#FC5101]">
+                            {phase.horizon}
+                          </p>
+                          <p className="text-base font-bold leading-tight text-[#011935] sm:text-lg">
+                            {phase.title}
+                          </p>
+                        </div>
                       </div>
-                    </AnimateIn>
-                  );
-                })}
+                      <p className="mt-4 text-sm leading-6 text-[#486586]">
+                        {phase.body}
+                      </p>
+                    </div>
+                  </AnimateIn>
+                ))}
               </div>
 
-              {/* Summary */}
-              <AnimateIn>
-                <div className="mt-8 rounded-xl bg-[#011935] p-6 sm:p-8">
-                  <p className="text-left text-sm leading-7 text-white sm:text-base">
-                    {globalExpansionSummary}
-                  </p>
-                </div>
+              <AnimateIn delay={0.3}>
+                <p className="mt-8 text-center text-sm leading-6 text-[#486586] sm:text-base">
+                  {globalExpansion.summary}
+                </p>
               </AnimateIn>
             </div>
           </div>
         </section>
 
-        {/* ═══ SLIDE 7 — WHY NOW / INVESTMENT SUMMARY ═══ */}
+        {/* ═══ SLIDE 9 — WHY NOW / INVESTMENT SUMMARY ═══ */}
         <section id="why-now">
           <div className="relative h-[280px] overflow-hidden sm:h-[340px]">
             <ParallaxImage src="/images/why-now-closing.jpg" />
@@ -1112,7 +935,7 @@ export function BusinessPlanPresentation() {
                   Investment Thesis
                 </p>
                 <h2 className="mt-2 text-2xl font-bold text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] sm:text-3xl">
-                  Investment Summary / Why Now
+                  Why Now
                 </h2>
               </div>
             </div>
@@ -1120,7 +943,7 @@ export function BusinessPlanPresentation() {
 
           <div className="bg-[#F7F7F7] px-5 py-12 sm:px-16 sm:py-16">
             <div className="mx-auto max-w-6xl">
-              <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+              <div className="grid gap-5 sm:grid-cols-3">
                 {whyNowPillars.map((pillar, i) => {
                   const Icon = whyNowIcons[i];
                   return (
@@ -1160,7 +983,6 @@ export function BusinessPlanPresentation() {
                     className="absolute inset-0 h-full w-full object-cover opacity-40"
                   />
                   <div className="absolute inset-0 bg-gradient-to-r from-[#011935]/80 to-[#011935]/60" />
-                  <div className="relative h-1 bg-gradient-to-r from-[#FC5101] to-[#3566A0]" />
                   <div className="relative p-6 sm:p-10">
                     <p className="text-center text-base leading-8 text-white/90 sm:text-lg">
                       {closingStatement}

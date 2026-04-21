@@ -5,8 +5,8 @@ export const sections = [
   { id: "trusted-by", label: "Trusted By" },
   { id: "market-context", label: "Market Context" },
   { id: "performance", label: "Current Performance" },
-  { id: "growth-model", label: "Growth Model" },
-  { id: "enterprise-foundations", label: "Enterprise Foundations" },
+  { id: "how-we-grow", label: "How We Grow" },
+  { id: "enterprise-readiness", label: "Enterprise Readiness" },
   { id: "investment", label: "Investment (£2–3m)" },
   { id: "global-expansion", label: "Global Expansion" },
   { id: "why-now", label: "Why Now" },
@@ -14,31 +14,30 @@ export const sections = [
 
 export const ourMission = {
   eyebrow: "Our Mission",
-  titleLead: "Four big industry challenges.",
+  titleLead: "Four industry challenges.",
   titleHighlight: "One platform to solve them.",
   intro:
-    "Retail category management is stuck between fragmented tools, one-size-fits-all planograms, and slow test-and-learn cycles. ImpactXP was built around four questions, and answers each with a unified, AI-powered workflow.",
-  howToLabel: "How to…",
+    "Retail category management is stuck between fragmented tools, generic planograms, and slow test-and-learn cycles. ImpactXP replaces all of it with a single AI-powered workflow.",
   challenges: [
     {
       number: "01",
       title: "Optimize Space & Assortment",
-      body: "Solve category challenges quickly with AI-driven space and assortment optimization that surfaces incrementality, cannibalization, and size of prize in real time.",
+      body: "AI-driven space and assortment that surfaces incrementality, cannibalization, and size of prize in real time.",
     },
     {
       number: "02",
       title: "Automate Store-Specific Plans",
-      body: "Replace one-size-fits-all cluster planograms with dynamic, store-specific plans generated automatically, saving weeks of manual effort.",
+      body: "Replace generic cluster planograms with dynamic, store-specific plans generated automatically — saving weeks of manual work.",
     },
     {
       number: "03",
       title: "Test & Learn at Retail",
-      body: "Understand what really works at the shelf. An iterative test-and-learn approach, powered by virtual research, drives demand and validates execution.",
+      body: "Understand what really works at the shelf through virtual research that validates execution and drives demand.",
     },
     {
       number: "04",
       title: "Better, Faster, Together",
-      body: "Enable brand and retail teams to do their jobs better and faster on one connected AI platform, replacing siloed tools with shared data and workflow.",
+      body: "Brand and retail teams work on one connected AI platform, replacing siloed tools with shared data and workflow.",
     },
   ],
 };
@@ -64,7 +63,18 @@ export const platformOverview = {
       { verb: "Visualise", body: "In-store execution and shopper experience" },
       { verb: "Validate", body: "Real-world testing and optimisation" },
     ],
-    note: "Connects strategy, execution, and validation within a single platform",
+    note: "Built from real-world shopper and retail experience. Cloud, desktop, and hybrid deployment.",
+  },
+  modules: {
+    title: "Five Core Modules",
+    items: [
+      { name: "PlanogramXP", body: "planogram creation and optimisation" },
+      { name: "RangeXP", body: "range and assortment intelligence" },
+      { name: "ShopperXP", body: "in-store visualisation and experience" },
+      { name: "EngageXP", body: "virtual retail environments and collaboration" },
+      { name: "ResearchXP", body: "rapid validation with real shoppers" },
+    ],
+    note: "Modules operate independently or as a fully integrated system",
   },
   coreArchitecture: {
     eyebrow: "Core Platform Architecture",
@@ -80,56 +90,14 @@ export const platformOverview = {
       },
       {
         label: "Consistent",
-        body: "Enables consistent content, data, and workflows across markets",
+        body: "Consistent content, data, and workflows across markets",
       },
       {
         label: "Scalable",
-        body: "Provides the foundation for scalable, multi-market deployment",
+        body: "Foundation for multi-market deployment",
       },
     ],
   },
-  modules: {
-    title: "Five Core Modules",
-    items: [
-      { name: "PlanogramXP", body: "planogram creation and optimisation" },
-      { name: "RangeXP", body: "range and assortment intelligence" },
-      { name: "ShopperXP", body: "in-store visualisation and experience" },
-      { name: "EngageXP", body: "virtual retail environments and collaboration" },
-      { name: "ResearchXP", body: "rapid validation with real shoppers" },
-    ],
-    note: "Modules operate independently or as a fully integrated system",
-  },
-  valueDelivery: {
-    title: "How the Platform Delivers Value",
-    bullets: [
-      "Optimises space and assortment through integrated planning and simulation",
-      "Automates store-specific execution across markets and formats",
-      "Enables continuous test-and-learn to understand what drives demand",
-      "Connects teams through agentic workflows and shared environments",
-    ],
-    note: "Transforms insight into scalable, real-world execution",
-  },
-  differentiation: {
-    title: "Key Differentiation",
-    bullets: [
-      "Single connected platform vs fragmented legacy tools",
-      "Enterprise-level capability and security",
-      "Cloud, desktop, and hybrid deployment options",
-      "Built from real-world shopper and retail experience",
-      "Designed for global, multi-market deployment",
-    ],
-  },
-  commercialImpact: {
-    title: "Commercial Impact",
-    bullets: [
-      "Faster, more consistent decision making",
-      "Reduced time and cost of execution",
-      "Improved collaboration between brands and retailers",
-      "Focus on total category growth",
-    ],
-  },
-  positioningLine:
-    "A connected platform enabling brands to optimise, automate, understand, and execute retail decisions at global scale",
 };
 
 export const marketContext = {
@@ -143,7 +111,7 @@ export const marketContext = {
   body: "By integrating advanced predictive analytics and real-time data, brands can transition from \u201Creporting the news\u201D of past performance to offering forward-looking solutions that drive total category growth rather than just brand-specific gains.",
   detail:
     "This approach, characterised by transparency, executive-level commitment, and a focus on omnichannel strategies, positions CPGs as indispensable consultants who help retailers solve complex challenges, ultimately securing more favourable placement and long-term commitment in an increasingly competitive market.",
-  attribution: "Shared with ImpactXP by Kraft Heinz.",
+  attribution: "Shared with ImpactXP by Kraft Heinz",
 };
 
 export const performanceData = {
@@ -163,25 +131,12 @@ export const performanceData = {
       "Expansion within existing clients",
       "Strong ongoing inbound demand",
     ],
-    note: "High-confidence view of near-term growth based on current client activity and qualified opportunities.",
+    note: "High-confidence view based on current client activity and qualified opportunities.",
   },
-  mediumTerm: {
-    title: "Medium-Term Growth Trajectory",
-    milestones: [
-      { year: "FY26/27", arr: "£6.3m" },
-      { year: "FY27/28", arr: "£22m" },
-      { year: "FY29/30", arr: "£60m+" },
-    ],
-    note: "Achievable with targeted commercial, operational, and product investment.",
-  },
-  valueCreation: [
-    "Significant upside through scaling a proven SaaS platform",
-    "Strong operating leverage as ARR increases",
-  ],
-  alignment: [
-    "Founding team retaining ~40% equity",
-    "Clear alignment with investment partner",
-  ],
+  valueCreationLine:
+    "Significant upside through scaling a proven SaaS platform — with strong operating leverage as ARR increases.",
+  alignmentNote:
+    "Founding team retaining ~40% equity — clear alignment with investment partner.",
 };
 
 export const arrChartData = [
@@ -191,138 +146,108 @@ export const arrChartData = [
   { year: "FY29/30", arr: 60 },
 ];
 
-export const growthModelPillars = [
-  {
-    number: "1",
-    title: "Land & Expand\nModel",
-    bullets: [
-      "Initial entry via pilot, market, or module",
-      "Expansion across markets, categories, and use cases",
-      "Each client represents a multi-year, expanding ARR opportunity",
-    ],
-  },
-  {
-    number: "2",
-    title: "Multi-Market Rollout\n(Client\u2011Led)",
-    bullets: [
-      "Expansion follows global client footprint",
-      "Europe, North America, AsiaPac, MENA",
-      "Growth driven by client expansion, not market-by-market selling",
-    ],
-  },
-  {
-    number: "3",
-    title: "Multi-Module\nPlatform",
-    bullets: [
-      "Five core modules deployed individually or together",
-      "Higher ARR per client",
-      "Deeper integration",
-      "Increased switching costs",
-      "Platform breadth increases revenue and retention",
-    ],
-  },
-  {
-    number: "4",
-    title: "Customer Success\u2011Led\nExpansion",
-    bullets: [
-      "Dedicated customer success teams drive ongoing client engagement",
-      "Deep expertise in shopper behaviour, category strategy, and data & analytics",
-      "AI-led, rapid, insight-led solutions to client challenges",
-      "Close collaboration with development for QA and productisation",
-      "Drives faster expansion, higher retention, and increased ARR per client",
-    ],
-  },
-  {
-    number: "5",
-    title: "AI-Led\nAcceleration",
-    bullets: [
-      "Faster onboarding and deployment",
-      "Reduced reliance on manual processes",
-      "Rapid solution generation and iteration",
-      "Creation of additional revenue layers (apps / workflows)",
-      "Improves speed, scalability, and monetisation",
-    ],
-  },
-];
-
-export const growthModelDefensible = {
-  eyebrow: "Defensible Positioning",
-  title: "Why This Scales Sustainably",
+export const howWeGrow = {
+  eyebrow: "Growth Strategy",
+  title: "How We Grow",
+  subtitle:
+    "One engine: expanding depth and geography within a high-quality global client base.",
   pillars: [
     {
-      label: "Embedded",
-      body: "Woven into global enterprise client workflows",
+      number: "1",
+      title: "Land & Expand",
+      bullets: [
+        "Enter via pilot, market, or single module",
+        "Convert ~£5m qualified pipeline in existing accounts",
+        "Each client = a multi-year, expanding ARR opportunity",
+      ],
     },
     {
-      label: "Modular",
-      body: "Multi-module platform creates high switching costs",
+      number: "2",
+      title: "Client-Led Rollout",
+      bullets: [
+        "Growth follows client footprint — not market-by-market selling",
+        "Zero-CAC expansion into new markets and categories",
+        "Each account scales without new commercial spend",
+      ],
     },
     {
-      label: "AssetXP",
-      body: "Scalable, shared data and content foundation",
+      number: "3",
+      title: "Multi-Module Platform Compounds ARR",
+      bullets: [
+        "Five modules: deployed individually or together",
+        "Higher ARR per client and deeper integration",
+        "Increased switching costs",
+      ],
     },
     {
-      label: "Expertise",
-      body: "Deep domain knowledge in shopper, category, and retail execution",
+      number: "4",
+      title: "Customer Success-Led Expansion",
+      bullets: [
+        "Dedicated CS teams embedded in client accounts",
+        "Deep expertise in shopper, category, and analytics",
+        "Drives retention, faster expansion, and higher ARR per client",
+      ],
     },
     {
-      label: "AI",
-      body: "Increasingly enhances speed, efficiency, and differentiation",
+      number: "5",
+      title: "AI-Led Acceleration",
+      bullets: [
+        "Faster onboarding and reduced manual work",
+        "Rapid solution generation and iteration",
+        "New revenue layers via AI apps and workflows",
+      ],
     },
   ],
-  closing:
-    "Creates a scalable, hard-to-replace platform within global client organisations.",
+  defensible: {
+    eyebrow: "Defensible Positioning",
+    title: "Why This Scales Sustainably",
+    pillars: [
+      {
+        label: "Embedded",
+        body: "Woven into global enterprise client workflows",
+      },
+      {
+        label: "Modular",
+        body: "Multi-module platform creates high switching costs",
+      },
+      {
+        label: "Expertise",
+        body: "Deep domain knowledge in shopper, category, and retail execution",
+      },
+    ],
+    closing:
+      "A scalable, hard-to-replace platform inside global client organisations.",
+  },
 };
 
-export const growthModelSummary =
-  "Growth is driven by expanding depth and geography within a high-quality global client base, supported by a modular platform and increasing operational leverage.";
-
-export const enterpriseFoundations = {
-  quadrants: [
-    {
-      title: "Enterprise Capability (Proven at Scale)",
-      bullets: [
-        "30+ global CPG brands onboarded",
-        "Complex procurement, legal, and IT environments navigated",
-        "Platform embedded within client workflows",
-        "We operate at enterprise level today",
-      ],
-    },
-    {
-      title: "Significant Investment Already Made",
-      bullets: [
-        "Extensive onboarding and delivery investment",
-        "ISO 9001 accreditation (near completion)",
-        "SOC compliance preparation for US expansion",
-        "Foundational work largely complete",
-      ],
-    },
-    {
-      title: "Operating in a Global Client Environment",
-      bullets: [
-        "Clients require support across: North America, Europe, AsiaPac / MENA",
-        "Expansion driven by client footprint",
-        "We already operate as a global business",
-      ],
-    },
-    {
-      title: "Current Scaling Constraints",
-      bullets: [
-        "Commercial bandwidth (sales and onboarding)",
-        "Contracting complexity (MSA / SLA)",
-        "Delivery and customer success capacity",
-        "Product development pace (AI and apps)",
-        "Lack of structured global operating model",
-      ],
-    },
-  ],
-  positioning:
-    "We have built the foundations required to operate at enterprise scale. The next phase is to formalise and resource this infrastructure.",
-  keyPoint: "The constraint is execution capacity, not market demand",
+export const enterpriseReadiness = {
+  eyebrow: "Enterprise Readiness",
+  title: "Built for Enterprise. The Constraint Is Capacity, Not Demand.",
+  atScale: {
+    title: "We Already Operate at Enterprise Scale",
+    bullets: [
+      "30+ global CPG brands onboarded",
+      "Complex procurement, legal, and IT environments navigated",
+      "ISO 9001 near complete; SOC preparation underway for US expansion",
+      "Clients supported across North America, Europe, AsiaPac and MENA",
+    ],
+  },
+  constraint: {
+    title: "Current Scaling Constraints",
+    bullets: [
+      "Commercial bandwidth (sales and onboarding)",
+      "Contracting complexity (MSA / SLA)",
+      "Delivery and customer success capacity",
+      "Product development pace (AI and apps)",
+      "Lack of structured global operating model",
+    ],
+  },
+  bridge:
+    "The foundations are in place. The next phase is to formalise and resource them.",
 };
 
 export const investmentSubtitle =
-  "Focused Investment to Convert Demand and Scale Client Value";
+  "Focused investment to convert demand and scale client value.";
 
 export const investmentAreas = [
   {
@@ -330,32 +255,27 @@ export const investmentAreas = [
     amount: "≤\u00a0£0.5m",
     bullets: [
       "Strengthen sales leadership",
-      "Invest in a structured CRM system",
-      "Improve pipeline management and conversion",
+      "Structured CRM and pipeline management",
       "Targeted, high-quality marketing",
-      "Supports efficient conversion of existing pipeline and sustained inbound demand",
     ],
   },
   {
     title: "Product & AI Development",
     amount: "≤\u00a0£0.5m",
     bullets: [
-      "Focused investment in AI / workflow acceleration",
-      "Rapid solution prototyping capability",
-      "Improve onboarding speed and usability",
-      "Enhances platform efficiency and speed to value",
+      "AI and workflow acceleration",
+      "Rapid solution prototyping",
+      "Faster onboarding and improved usability",
     ],
   },
   {
     title: "Delivery & Customer Success",
     amount: "≤\u00a0£1.5m",
     bullets: [
-      "Build a higher-calibre customer success function",
-      "Recruit additional expertise in shopper behaviour, category strategy, and data & analytics",
-      "Deeply understand client challenges",
-      "Use AI to generate rapid, insight-led solutions",
-      "Work with development for QA and productisation",
-      "Drives faster expansion, higher retention, and increased ARR per client",
+      "Higher-calibre customer success function",
+      "Added expertise in shopper, category, and analytics",
+      "AI-led, insight-driven solutions to client challenges",
+      "Drives faster expansion, retention, and ARR per client",
     ],
   },
   {
@@ -366,106 +286,56 @@ export const investmentAreas = [
       "ISO completion + SOC accreditation",
       "US entity setup and initial presence",
       "Global delivery capability (time zone support)",
-      "Removes structural friction and enables scalable global operations",
     ],
   },
 ];
 
-export const investmentSummary = {
-  keyPoint:
-    "Investment is focused on converting demand and accelerating expansion within existing clients, where the greatest value creation opportunity exists",
-  closing:
-    "This is targeted investment to accelerate a proven model, not to fund early-stage growth.",
+export const investmentClosing =
+  "Targeted investment to accelerate a proven model — not to fund early-stage growth.";
+
+export const globalExpansion = {
+  eyebrow: "Geographic Roadmap",
+  title: "Client-Led Global Expansion",
+  subtitle:
+    "Sequenced geography that follows client demand, not speculative market entry.",
+  phases: [
+    {
+      number: "1",
+      horizon: "Now",
+      title: "Europe & Core Markets",
+      body: "Convert ~£5m qualified pipeline and deepen adoption within existing accounts.",
+    },
+    {
+      number: "2",
+      horizon: "FY26/27",
+      title: "US Expansion",
+      body: "Strategic priority. Entry via global clients and retailers; legal entity and local presence being established.",
+    },
+    {
+      number: "3",
+      horizon: "FY27/28+",
+      title: "AsiaPac & MENA",
+      body: "Enabled to support global client rollouts as demand requires — following client footprint, not speculative entry.",
+    },
+  ],
+  summary:
+    "Growth enabled by the global footprint of our clients — supported by a scalable platform and structured operating model.",
 };
-
-export const globalExpansionSteps = [
-  {
-    number: "1",
-    title: "Convert Existing Pipeline (~£5m)",
-    bullets: [
-      "Immediate priority",
-      "High-probability revenue",
-      "Drives near-term ARR growth",
-    ],
-  },
-  {
-    number: "2",
-    title: "Expand Existing Clients (Europe & Core Markets)",
-    bullets: [
-      "Additional markets",
-      "Increased module adoption",
-      "Deeper integration",
-      "Growth driven by depth within accounts",
-    ],
-  },
-  {
-    number: "3",
-    title: "US Expansion (Strategic Priority)",
-    bullets: [
-      "Entry via global clients and retailers",
-      "Establish legal entity and local presence",
-      "Unlocks largest global market opportunity",
-    ],
-  },
-  {
-    number: "4",
-    title: "AsiaPac & MENA Enablement",
-    bullets: [
-      "Support global client rollouts",
-      "Follow client demand",
-      "Extends global footprint efficiently",
-    ],
-  },
-  {
-    number: "5",
-    title: "Global Operating Model",
-    bullets: [
-      "Follow-the-sun delivery capability",
-      "Structured global support",
-      "Enables frictionless global deployment",
-    ],
-  },
-  {
-    number: "6",
-    title: "AI-Led Growth Acceleration",
-    bullets: [
-      "Faster onboarding",
-      "Reduced manual processes",
-      "New revenue streams",
-      "Improves scalability and efficiency",
-    ],
-  },
-];
-
-export const globalExpansionSummary =
-  "Growth is enabled by the global footprint of our clients, supported by a scalable platform and structured operating model";
 
 export const whyNowPillars = [
   {
-    title: "Proven Platform",
-    body: "£3.7m ARR with 30+ global enterprise clients. Strong track record of winning complex, blue-chip business.",
+    title: "Proven & Growing",
+    body: "£3.7m ARR with 30+ global enterprise clients and clear line of sight to £6.3m ARR (FY26/27), backed by qualified pipeline and inbound demand.",
   },
   {
-    title: "Clear Growth Visibility",
-    body: "Line of sight to £6.3m ARR (FY26/27). Supported by qualified pipeline and inbound demand.",
+    title: "Market Is Shifting",
+    body: "Legacy platforms are slow, fragmented, and under-serving clients — a lean, flexible challenger is well positioned to move ahead of incumbents.",
   },
   {
-    title: "Market Opportunity",
-    body: "Legacy platforms are slow, fragmented, and under-serving clients. Strong client appetite for a more responsive, innovative partner.",
-  },
-  {
-    title: "AI as an Accelerator",
-    body: "AI reduces cost, improves product capability, and increases speed. Opportunity to enhance efficiency, scalability, and margin.",
-  },
-  {
-    title: "Strong Strategic Position",
-    body: "Lean, fast, and flexible. Well positioned to move ahead of larger incumbents.",
-  },
-  {
-    title: "Need for Speed",
-    body: "Demand exceeds current execution capacity. Opportunity to scale quickly with the right partner.",
+    title: "Demand Outpaces Capacity",
+    body: "Inbound demand and qualified pipeline already exceed what we can deliver — the opportunity to scale is now, with the right partner.",
   },
 ];
 
 export const closingStatement =
-  "ImpactXP is a proven, enterprise-ready platform operating in a market being reshaped by AI and underserved by legacy suppliers. With the right partner and targeted investment, we can scale quickly, efficiently, and create significant value.";
+  "A proven, enterprise-ready platform in a market being reshaped by AI and underserved by legacy suppliers. With the right partner, we can scale quickly and create significant value.";
