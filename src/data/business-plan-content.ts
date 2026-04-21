@@ -27,7 +27,7 @@ export const ourMission = {
     {
       number: "02",
       title: "Automate Store-Specific Plans",
-      body: "Replace generic cluster planograms with dynamic, store-specific plans generated automatically — saving weeks of manual work.",
+      body: "Replace generic cluster planograms with dynamic, store-specific plans generated automatically, saving weeks of manual work.",
     },
     {
       number: "03",
@@ -116,7 +116,7 @@ export const marketContext = {
 
 export const performanceData = {
   subtitle:
-    "Current traction, near-term visibility, and a clear path to scale, backed by qualified pipeline and expansion within existing clients.",
+    "Significant upside through scaling a proven SaaS platform, with strong operating leverage as ARR increases.",
   current: {
     title: "Current Position (FY25/26 Run Rate)",
     stats: [
@@ -135,10 +135,6 @@ export const performanceData = {
     ],
     note: "High-confidence view based on current client activity and qualified opportunities.",
   },
-  valueCreationLine:
-    "Significant upside through scaling a proven SaaS platform — with strong operating leverage as ARR increases.",
-  alignmentNote:
-    "Founding team retaining ~40% equity — clear alignment with investment partner.",
 };
 
 export const arrChartData = [
@@ -167,7 +163,7 @@ export const howWeGrow = {
       number: "2",
       title: "Client-Led Rollout",
       bullets: [
-        "Growth follows client footprint — not market-by-market selling",
+        "Growth follows client footprint, not market-by-market selling",
         "Zero-CAC expansion into new markets and categories",
         "Each account scales without new commercial spend",
       ],
@@ -293,7 +289,7 @@ export const investmentAreas = [
 ];
 
 export const investmentClosing =
-  "Targeted investment to accelerate a proven model — not to fund early-stage growth.";
+  "Targeted investment to accelerate a proven model, not to fund early-stage growth.";
 
 export const globalExpansion = {
   eyebrow: "Geographic Roadmap",
@@ -317,11 +313,11 @@ export const globalExpansion = {
       number: "3",
       horizon: "FY27/28+",
       title: "AsiaPac & MENA",
-      body: "Enabled to support global client rollouts as demand requires — following client footprint, not speculative entry.",
+      body: "Enabled to support global client rollouts as demand requires, following client footprint, not speculative entry.",
     },
   ],
   summary:
-    "Growth enabled by the global footprint of our clients — supported by a scalable platform and structured operating model.",
+    "Growth enabled by the global footprint of our clients, supported by a scalable platform and structured operating model.",
 };
 
 export const whyNowPillars = [
@@ -331,11 +327,11 @@ export const whyNowPillars = [
   },
   {
     title: "Market Is Shifting",
-    body: "Legacy platforms are slow, fragmented, and under-serving clients — a lean, flexible challenger is well positioned to move ahead of incumbents.",
+    body: "Legacy platforms are slow, fragmented, and under-serving clients. A lean, flexible challenger is well positioned to move ahead of incumbents.",
   },
   {
     title: "Demand Outpaces Capacity",
-    body: "Inbound demand and qualified pipeline already exceed what we can deliver — the opportunity to scale is now, with the right partner.",
+    body: "Inbound demand and qualified pipeline already exceed what we can deliver. The opportunity to scale is now, with the right partner.",
   },
 ];
 

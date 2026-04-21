@@ -215,7 +215,7 @@ export function BusinessPlanPresentation() {
                 <h2 className="mt-2 text-2xl font-bold text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] sm:text-3xl">
                   {platformOverview.title}
                 </h2>
-                <p className="mt-3 max-w-3xl text-sm leading-6 text-white">
+                <p className="mt-3 max-w-3xl text-sm leading-6 text-white sm:text-base sm:leading-7">
                   {platformOverview.intro}
                 </p>
               </div>
@@ -332,7 +332,7 @@ export function BusinessPlanPresentation() {
                 <h2 className="mt-2 text-2xl font-bold text-white sm:text-3xl">
                   {trustedBy.title}
                 </h2>
-                <p className="mt-3 max-w-3xl text-sm leading-6 text-white sm:text-base">
+                <p className="mt-3 max-w-3xl text-sm leading-6 text-white sm:text-base sm:leading-7">
                   {trustedBy.subtitle}
                 </p>
               </AnimateIn>
@@ -371,7 +371,7 @@ export function BusinessPlanPresentation() {
                 <h2 className="mt-2 text-2xl font-bold text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] sm:text-3xl">
                   {marketContext.slideTitle}
                 </h2>
-                <p className="mt-3 max-w-3xl text-sm leading-6 text-white">
+                <p className="mt-3 max-w-3xl text-sm leading-6 text-white sm:text-base sm:leading-7">
                   {marketContext.subtitle}
                 </p>
               </div>
@@ -576,15 +576,6 @@ export function BusinessPlanPresentation() {
                 </AnimateIn>
               </div>
 
-              {/* Value Creation + Alignment — condensed lines under the grid */}
-              <AnimateIn delay={0.3}>
-                <p className="mt-8 text-center text-sm leading-6 text-[#486586] sm:text-base">
-                  {performanceData.valueCreationLine}
-                </p>
-                <p className="mt-2 text-center text-xs italic text-[#486586]/80 sm:text-sm">
-                  {performanceData.alignmentNote}
-                </p>
-              </AnimateIn>
             </div>
           </div>
         </section>
@@ -603,7 +594,7 @@ export function BusinessPlanPresentation() {
                 <h2 className="mt-2 text-2xl font-bold text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] sm:text-3xl">
                   {howWeGrow.title}
                 </h2>
-                <p className="mt-3 max-w-2xl text-sm leading-6 text-white">
+                <p className="mt-3 max-w-3xl text-sm leading-6 text-white sm:text-base sm:leading-7">
                   {howWeGrow.subtitle}
                 </p>
               </div>
